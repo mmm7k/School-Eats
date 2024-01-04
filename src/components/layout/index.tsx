@@ -6,6 +6,7 @@ import LayoutFooter from './footer/LayoutFooter.index';
 import { useRecoilState } from 'recoil';
 import { isLoggedIn } from '../../commons/globalstate/globalstate';
 import SideBanner from './sidebanner/SideBanner.index';
+import Navbar from './navbar/Navbar.index';
 
 interface ILayoutProps {
   children: JSX.Element;
@@ -20,8 +21,8 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 const MainWrapper = styled.div`
-  background-color: beige;
-  height: 1000px;
+  background-color: white;
+  min-height: 1000px;
   width: 500px;
 `;
 
@@ -48,6 +49,7 @@ export default function Layout(props: ILayoutProps): JSX.Element {
         <LayoutBanner />
         <Body>{props.children}</Body>
         <LayoutFooter />
+        <Navbar />
       </MainWrapper>
       <RightWrapper></RightWrapper>
     </Wrapper>

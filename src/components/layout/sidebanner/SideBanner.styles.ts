@@ -42,8 +42,8 @@ export const Gif = styled.div`
   border-radius: 18px;
   background-size: cover;
   background-position: center;
-  opacity: 0; // 초기 투명도는 0으로 설정
-  transition: opacity 0.7s ease-in-out; // 투명도 변경에 대한 트랜지션
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
 `;
 
 export const TagWrapper = styled.div`

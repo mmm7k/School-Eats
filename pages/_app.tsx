@@ -32,14 +32,14 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         strategy="beforeInteractive"
       />
       <Head>
-        <title>School Eats</title>
+        <title>School Eats!</title>
         <meta name="description" content="스쿨 잇츠에 오세욤" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <meta property="og:title" content="School Eats!"></meta>
         <meta property="og:url" content="https://SchoolEats.vercel.app/"></meta>
         <meta property="og:image" content="https://i.ibb.co/gPXN2Ry/image.png"></meta>
         <meta property="og:description" content="스쿨 이츠 오세욤"></meta>
-        <link rel="icon" href="./Logo.ico"></link>
+        <link rel="icon" href="/logo.png"></link>
       </Head>
       <RecoilRoot>
         <Global styles={globalStyles} />

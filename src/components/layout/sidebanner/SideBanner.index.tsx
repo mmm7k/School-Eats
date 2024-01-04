@@ -1,12 +1,10 @@
 import * as S from './SideBanner.styles';
 import React, { useState, useEffect } from 'react';
 
-const gifImages = ['/sidegif1.gif', '/sidegif2.gif', '/sidegif3.gif'];
-
 export default function SideBanner(): JSX.Element {
   const [currentGif, setCurrentGif] = useState(0);
   const [fade, setFade] = useState(true);
-
+  const gifImages = ['/sidegif1.gif', '/sidegif2.gif', '/sidegif3.gif'];
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false); // 페이드 아웃 시작
