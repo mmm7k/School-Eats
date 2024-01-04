@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import LayoutHeader from './header/LayoutHeader.index';
-import LayoutBanner from './banner/LayoutBanner.index';
+
 import { useAuth } from '../hooks/useAuth';
 import LayoutFooter from './footer/LayoutFooter.index';
-import { useRecoilState } from 'recoil';
-import { isLoggedIn } from '../../commons/globalstate/globalstate';
+
 import SideBanner from './sidebanner/SideBanner.index';
 import Navbar from './navbar/Navbar.index';
 
@@ -46,7 +45,6 @@ export default function Layout(props: ILayoutProps): JSX.Element {
       </LeftWrapper>
       <MainWrapper>
         <LayoutHeader />
-        <LayoutBanner />
         <Body>{props.children}</Body>
         <LayoutFooter />
         <Navbar />

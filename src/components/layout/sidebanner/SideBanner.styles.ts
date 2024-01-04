@@ -38,7 +38,7 @@ export const Gif = styled.div`
   width: 260px;
   height: 280px;
   margin-top: 20px;
-  background-color: beige;
+  background-color: #f9f9f9;
   border-radius: 18px;
   background-size: cover;
   background-position: center;

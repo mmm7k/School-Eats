@@ -43,16 +43,16 @@ export const IconWrapper = styled.div`
   align-items: center;
 `;
 export const SearchIcon = styled.div`
-  width: 33px;
-  height: 33px;
+  width: 31px;
+  height: 31px;
   background-image: url('/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
 
 export const StarIcon = styled.div`
-  width: 29px;
-  height: 29px;
+  width: 27px;
+  height: 27px;
   background-image: url('/staricon.png');
   background-size: cover;
   margin-bottom: 1px;
