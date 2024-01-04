@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         strategy="beforeInteractive"
       />
       <Head>
-        <title>I'm coach</title>
+        <title>School Eats</title>
         <meta name="description" content="스쿨 잇츠에 오세욤" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <meta property="og:title" content="School Eats!"></meta>

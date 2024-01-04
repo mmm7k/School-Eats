@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  height: 679px;
+  height: 730px;
   width: 285px;
   background-color: #f9f9f9;
   margin-right: 50px;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
   width: 260px;
   height: 56px;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   color: #2e2e2e;
@@ -27,7 +27,7 @@ export const Title = styled.div`
 `;
 
 export const Image = styled.div`
-  height: 142px;
+  height: 182px;
   width: 270px;
   background-image: url('/sidebannerimage.png');
   background-size: cover;
@@ -37,14 +37,18 @@ export const Image = styled.div`
 export const Gif = styled.div`
   width: 260px;
   height: 280px;
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: beige;
   border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; // 초기 투명도는 0으로 설정
+  transition: opacity 0.7s ease-in-out; // 투명도 변경에 대한 트랜지션
 `;
 
 export const TagWrapper = styled.div`
   width: 260px;
-  height: 114px;
+  height: 120px;
   color: #060606;
 
   margin-top: 22px;
