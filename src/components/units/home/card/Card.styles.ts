@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   height: 180px;
   width: 500px;
-  margin-top: 4px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardImage = styled.div`
+  position: relative;
   width: 472px;
   height: 159px;
   border-radius: 18px;
@@ -18,6 +19,19 @@ export const CardImage = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  :hover {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+  }
 `;
 export const Text = styled.div`
   color: white;
