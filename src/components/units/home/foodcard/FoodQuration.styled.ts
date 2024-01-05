@@ -65,7 +65,7 @@ export const FoodText = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 200;
   width: 500px;
   padding-left: 14px;
