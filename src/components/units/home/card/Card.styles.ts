@@ -2,17 +2,19 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   height: 180px;
-  width: 500px;
+  width: 100%;
   margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding-left: 3%;
+  padding-right: 3%;
 `;
 
 export const CardImage = styled.div`
   position: relative;
-  width: 472px;
+
   height: 159px;
   border-radius: 18px;
   background-image: url('/card2.png');

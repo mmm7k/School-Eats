@@ -22,12 +22,19 @@ const Wrapper = styled.div`
 
   width: 100%;
   min-height: 100vh;
+  /* height: 3000px; */
+  @media only screen and (max-width: 500px) {
+  }
 `;
+
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
   width: 500px;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const LeftWrapper = styled.div`
@@ -51,7 +58,6 @@ export default function Layout(props: ILayoutProps): JSX.Element {
       </LeftWrapper>
       <MainWrapper>
         <LayoutHeader />
-
         <Body>{props.children}</Body>
         <LayoutFooter />
         <ScrollButton />

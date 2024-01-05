@@ -5,10 +5,15 @@ export default function FoodQuration(): JSX.Element {
   const settings = {
     dots: true,
     infinite: false,
-    speed: 500,
-    slidesToShow: 1.4,
+    speed: 800,
+    slidesToShow: 1.3,
     slidesToScroll: 1,
   };
+  // if (typeof window !== 'undefined') {
+  //   if (window.innerWidth < 500) {
+  //     settings.slidesToShow = 1.18;
+  //   }
+  // }
 
   return (
     <>

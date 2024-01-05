@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 
 export const Wrapper = styled.div`
   height: 471px;
-  margin-left: 14px;
+  margin-left: 3%;
   .slick-dots {
     top: 480px;
     left: 10px;
   }
-  margin-right: 14px;
+
   cursor: pointer;
 `;
 
@@ -52,7 +52,7 @@ export const FoodTitle = styled.div`
   font-weight: 600;
   margin-left: 20px;
   margin-top: 30px;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
 export const FoodText = styled.div`
@@ -67,8 +67,8 @@ export const FoodText = styled.div`
 export const SubTitle = styled.div`
   font-size: 14px;
   font-weight: 200;
-  width: 500px;
-  padding-left: 14px;
+  width: 100%;
+  padding-left: 3%;
   color: #696d84;
   margin-top: 40px;
   margin-bottom: 6px;
@@ -76,8 +76,8 @@ export const SubTitle = styled.div`
 export const Title = styled.div`
   font-size: 22px;
   font-weight: 900;
-  width: 500px;
-  padding-left: 14px;
+  width: 100%;
+  margin-left: 3%;
   color: #2b2e3b;
   margin-bottom: 15px;
 `;

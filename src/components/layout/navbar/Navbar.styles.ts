@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   width: 500px;
   box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.05);
   background-color: white;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -17,8 +20,11 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 8%;
+  padding-right: 8%;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.div`

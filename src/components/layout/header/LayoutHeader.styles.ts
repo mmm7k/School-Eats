@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   width: 500px;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const Logo = styled.div`
