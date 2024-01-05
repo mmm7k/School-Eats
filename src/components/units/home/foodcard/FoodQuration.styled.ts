@@ -74,7 +74,7 @@ export const SubTitle = styled.div`
   margin-bottom: 6px;
 `;
 export const Title = styled.div`
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 900;
   width: 500px;
   padding-left: 14px;
