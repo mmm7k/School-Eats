@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   /* height: 3000px; */
   @media only screen and (max-width: 500px) {
@@ -38,14 +38,14 @@ const MainWrapper = styled.div`
 `;
 
 const LeftWrapper = styled.div`
-  width: calc((100% - 500px) / 2);
+  width: calc((100vw - 500px) / 2);
   background-color: #f9f9f9;
   display: flex;
   justify-content: flex-end;
 `;
 
 const RightWrapper = styled.div`
-  width: calc((100% - 500px) / 2);
+  width: calc((100vw - 500px) / 2);
   background-color: #f9f9f9;
 `;
 
