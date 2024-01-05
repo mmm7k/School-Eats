@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Slider from 'react-slick';
 
 export const Wrapper = styled.div`
   height: 471px;
@@ -8,7 +7,8 @@ export const Wrapper = styled.div`
     top: 480px;
     left: 10px;
   }
-
+  width: 97%;
+  overflow: hidden;
   cursor: pointer;
 `;
 
@@ -16,6 +16,7 @@ export const Contents = styled.div`
   :hover {
     opacity: 0.9;
   }
+  margin-right: 3%;
 `;
 export const FoodImage1 = styled.div`
   height: 471px;
@@ -80,4 +81,26 @@ export const Title = styled.div`
   margin-left: 3%;
   color: #2b2e3b;
   margin-bottom: 15px;
+`;
+
+export const DotButton = styled.button`
+  cursor: pointer;
+  border: none;
+  width: 8px;
+  height: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 4px;
+  padding: 0;
+  outline: none;
+  &.is-selected {
+    background-color: #717171;
+  }
+`;
+
+export const DotsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
 `;
