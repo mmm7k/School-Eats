@@ -18,7 +18,7 @@ export default function FoodQuration(): JSX.Element {
   return (
     <>
       <S.SubTitle>오늘의 점심은?</S.SubTitle>
-      <S.Title>School Eats 맛집투어!</S.Title>
+      <S.Title>School Eats 맛집투어 ! 😀</S.Title>
       <S.Wrapper>
         <Slider {...settings}>
           <S.Contents>
