@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.05);
   background-color: white;
   @media only screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
   }
 `;
 
@@ -23,7 +23,7 @@ export const ButtonWrapper = styled.div`
   padding-left: 8%;
   padding-right: 8%;
   @media only screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
   }
 `;
 

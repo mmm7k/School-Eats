@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   padding-right: 15px;
   width: 500px;
   @media only screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
   }
 `;
 

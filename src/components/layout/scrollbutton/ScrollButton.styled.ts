@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   @media only screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
   }
 `;
 
