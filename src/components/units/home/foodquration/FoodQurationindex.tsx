@@ -6,7 +6,7 @@ export default function FoodQuration(): JSX.Element {
     dots: true,
     infinite: false,
     speed: 800,
-    slidesToShow: 1.3,
+    slidesToShow: 1.2,
     slidesToScroll: 1,
   };
   // if (typeof window !== 'undefined') {
