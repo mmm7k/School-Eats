@@ -2,18 +2,12 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   height: 64px;
-  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
   width: 500px;
-  background-color: white;
-  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.2);
 `;
 
 export const Logo = styled.div`

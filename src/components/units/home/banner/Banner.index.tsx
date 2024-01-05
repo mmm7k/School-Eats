@@ -16,9 +16,34 @@ export default function Banner(): JSX.Element {
   return (
     <S.Wrapper>
       <Slider {...settings}>
-        <S.SliderImage1 />
-        <S.SliderImage2 />
-        <S.SliderImage3 />
+        <S.SliderImage1>
+          <S.Banner1Text>
+            School Eats를 맛있게
+            <br />
+            즐기는 방법!
+          </S.Banner1Text>
+          <S.Banner1Text2>School Eats 설명서</S.Banner1Text2>
+
+          <S.Banner1Text3>할인혜택 확인하기 {'>'}</S.Banner1Text3>
+        </S.SliderImage1>
+        <S.SliderImage2>
+          <S.Banner2Text>
+            School Eats
+            <br />
+            신규회원 가입시
+          </S.Banner2Text>
+          <S.Banner2Text2>2,000원 쿠폰 지급!</S.Banner2Text2>
+
+          <S.Banner2Text3>쿠폰 확인하기 {'>'}</S.Banner2Text3>
+        </S.SliderImage2>
+        <S.SliderImage3>
+          <S.Banner2Text>
+            이달의 리뷰는 ? <br /> 최대 상금 100만원
+          </S.Banner2Text>
+          <S.Banner2Text2>베스트 리뷰 공모전</S.Banner2Text2>
+
+          <S.Banner2Text3>신청기간: 7월 1일까지 {'>'}</S.Banner2Text3>
+        </S.SliderImage3>
       </Slider>
     </S.Wrapper>
   );

@@ -43,7 +43,7 @@ export const Gif = styled.div`
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.9s ease-in-out;
 `;
 
 export const TagWrapper = styled.div`
