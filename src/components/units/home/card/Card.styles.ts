@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  height: 180px;
-
-  margin-top: 15px;
+  height: 159x;
+  margin-top: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,14 +10,11 @@ export const Wrapper = styled.div`
   padding-left: 3%;
   padding-right: 3%;
 `;
-
 export const CardImage = styled.div`
   position: relative;
-
   height: 159px;
   border-radius: 18px;
   background-image: url('/card2.png');
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -30,7 +26,7 @@ export const CardImage = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 15px;
     }
   }
@@ -44,18 +40,18 @@ export const Text = styled.div`
   margin-top: 40px;
   margin-left: 30px;
   line-height: 1.3;
-  cursor: pointer;
+
+  z-index: 1;
 `;
 
 export const Text2 = styled.div`
   color: white;
   width: 472px;
   height: 20px;
-
   font-weight: 100;
   font-size: 14px;
   margin-left: 30px;
   margin-top: 25px;
   text-decoration: underline;
-  cursor: pointer;
+  z-index: 1;
 `;

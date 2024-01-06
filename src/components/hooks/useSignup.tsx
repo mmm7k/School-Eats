@@ -1,9 +1,8 @@
 import { ChangeEvent, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { authInstance } from '../../../pages/_app';
 import { Modal } from 'antd';
-import { useMoveToPage } from './useMoveToPage';
-import { Router } from 'react-router-dom';
+
 import { useRouter } from 'next/router';
 
 export const useSignup = () => {

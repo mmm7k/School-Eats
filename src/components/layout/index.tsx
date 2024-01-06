@@ -7,6 +7,7 @@ import LayoutFooter from './footer/LayoutFooter.index';
 import SideBanner from './sidebanner/SideBanner.index';
 import Navbar from './navbar/Navbar.index';
 import ScrollButton from './scrollbutton/ScrollButton.index';
+import { useRouter } from 'next/router';
 
 interface ILayoutProps {
   children: JSX.Element;
@@ -51,17 +52,22 @@ const RightWrapper = styled.div`
 
 export default function Layout(props: ILayoutProps): JSX.Element {
   useAuth();
+  const router = useRouter();
+  const isLoginPage = router.pathname === '/login';
+  const isSignupPage = router.pathname === '/signup';
+  const showLayout = !isLoginPage && !isSignupPage;
+
   return (
     <Wrapper>
       <LeftWrapper>
         <SideBanner />
       </LeftWrapper>
       <MainWrapper>
-        <LayoutHeader />
+        {showLayout && <LayoutHeader />}
         <Body>{props.children}</Body>
-        <LayoutFooter />
+        {showLayout && <LayoutFooter />}
         <ScrollButton />
-        <Navbar />
+        {showLayout && <Navbar />}
       </MainWrapper>
       <RightWrapper></RightWrapper>
     </Wrapper>

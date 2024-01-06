@@ -6,7 +6,7 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
 import { RecoilRoot } from 'recoil';
 import 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import Head from 'next/head';
@@ -24,13 +24,26 @@ export const kakaoKey = process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY;
 export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
+
+declare global {
+  // Kakao 함수를 전역에서 사용할 수 있도록 선언
+  interface Window {
+    Kakao: any;
+  }
+}
+
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  const kakaoInit = () => {
+    // 페이지가 로드되면 실행
+    window.Kakao.init(process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY);
+  };
   return (
     <>
       <Script
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY}&autoload=false`}
         strategy="beforeInteractive"
       />
+      <Script src="https://developers.kakao.com/sdk/js/kakao.js" onLoad={kakaoInit}></Script>
       <Head>
         <title>School Eats!</title>
         <meta name="description" content="스쿨 잇츠에 오세욤" />

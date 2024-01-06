@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
     top: 220px;
   }
   cursor: pointer;
-  background-color: blue;
 `;
 
 export const SliderImage1 = styled.div`

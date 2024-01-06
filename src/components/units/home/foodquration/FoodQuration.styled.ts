@@ -71,7 +71,7 @@ export const SubTitle = styled.div`
   width: 100%;
   padding-left: 3%;
   color: #696d84;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 6px;
 `;
 export const Title = styled.div`
