@@ -37,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     // 페이지가 로드되면 실행
     window.Kakao.init(process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY);
   };
+
   return (
     <>
       <Script
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         strategy="beforeInteractive"
       />
       <Script src="https://developers.kakao.com/sdk/js/kakao.js" onLoad={kakaoInit}></Script>
+
       <Head>
         <title>School Eats!</title>
         <meta name="description" content="스쿨 잇츠에 오세욤" />

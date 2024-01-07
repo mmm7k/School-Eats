@@ -51,7 +51,7 @@ const RightWrapper = styled.div`
 `;
 
 export default function Layout(props: ILayoutProps): JSX.Element {
-  useAuth();
+  // useAuth();
   const router = useRouter();
   const isLoginPage = router.pathname === '/login';
   const isSignupPage = router.pathname === '/signup';

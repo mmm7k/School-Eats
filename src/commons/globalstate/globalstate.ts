@@ -43,3 +43,9 @@ export const userEmail = atom<string | null | undefined>({
   default: null,
   effects_UNSTABLE: [persistAtomEffect],
 });
+
+export const KakaoLoggedIn = atom<boolean | null>({
+  key: 'KakaoLoggedIn',
+  default: null,
+  effects_UNSTABLE: [persistAtomEffect],
+});

@@ -11,7 +11,7 @@ export const useLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
-  const [, setLogin] = useRecoilState<boolean | null>(isLoggedIn);
+  const [, setLoggedin] = useRecoilState<boolean | null>(isLoggedIn);
   const [, setLayoutEmail] = useRecoilState<string | null | undefined>(layoutEmail);
   const [, setUserEmail] = useRecoilState<string | null | undefined>(userEmail);
 
@@ -51,12 +51,12 @@ export const useLogin = () => {
         const atIndex = email?.indexOf('@');
         const emailPrefix = atIndex !== -1 ? email?.substring(0, atIndex) : email;
         setLayoutEmail(emailPrefix);
-        setLogin(true);
+        setLoggedin(true);
         success();
         router.push('/');
         setTimeout(() => {
           alert('로그인 세션이 만료 되었습니다.');
-          setLogin(false);
+          setLoggedin(false);
           setLayoutEmail(null);
           setUserEmail(null);
         }, 3600000);
