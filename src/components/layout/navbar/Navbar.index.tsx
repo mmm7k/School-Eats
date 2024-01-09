@@ -3,12 +3,15 @@ import HomeButton from '../../../../public/homebutton.svg';
 import PlaceButton from '../../../../public/placebutton.svg';
 import BoardButton from '../../../../public/boardbutton.svg';
 import MypageButton from '../../../../public/mypagebutton.svg';
+import MapButton from '../../../../public/mapbutton.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useRecoilValue } from 'recoil';
+import { isLoggedIn } from '../../../commons/globalstate/globalstate';
 
 export default function Navbar(): JSX.Element {
   const router = useRouter();
-
+  const login = useRecoilValue(isLoggedIn);
   return (
     <>
       <S.Wrapper>
@@ -18,6 +21,15 @@ export default function Navbar(): JSX.Element {
               <S.Div style={{ color: router.pathname === '/' ? '#f6786f' : '#000000' }}>
                 <HomeButton style={{ fill: router.pathname === '/' ? '#f6786f' : '#000000' }} />
                 <S.LineDiv />홈
+              </S.Div>
+            </Link>
+          </S.Button>
+          <S.Button>
+            <Link href="/map">
+              <S.Div style={{ color: router.pathname === '/map' ? '#f6786f' : '#000000' }}>
+                <MapButton style={{ fill: router.pathname === '/map' ? '#f6786f' : '#000000' }} />
+                <S.LineDiv />
+                맛집지도
               </S.Div>
             </Link>
           </S.Button>
@@ -40,13 +52,23 @@ export default function Navbar(): JSX.Element {
             </Link>
           </S.Button>
           <S.Button>
-            <Link href="/login">
-              <S.Div style={{ color: router.pathname === '/login' ? '#f6786f' : '#000000' }}>
-                <MypageButton style={{ fill: router.pathname === '/login' ? '#f6786f' : '#000000' }} />
-                <S.LineDiv />
-                마이페이지
-              </S.Div>
-            </Link>
+            {!login ? (
+              <Link href="/login">
+                <S.Div>
+                  <MypageButton />
+                  <S.LineDiv />
+                  마이페이지
+                </S.Div>
+              </Link>
+            ) : (
+              <Link href="/mypage">
+                <S.Div style={{ color: router.pathname === '/mypage' ? '#f6786f' : '#000000' }}>
+                  <MypageButton style={{ fill: router.pathname === '/mypage' ? '#f6786f' : '#000000' }} />
+                  <S.LineDiv />
+                  마이페이지
+                </S.Div>
+              </Link>
+            )}
           </S.Button>
         </S.ButtonWrapper>
       </S.Wrapper>

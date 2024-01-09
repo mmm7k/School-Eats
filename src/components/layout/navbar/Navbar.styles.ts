@@ -22,6 +22,11 @@ export const ButtonWrapper = styled.div`
 
   padding-left: 8%;
   padding-right: 8%;
+  @media only screen and (max-width: 400px) {
+    width: 100vw;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
   @media only screen and (max-width: 500px) {
     width: 100vw;
   }

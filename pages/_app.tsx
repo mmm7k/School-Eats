@@ -6,7 +6,7 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
 import { RecoilRoot } from 'recoil';
 import 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import Head from 'next/head';
@@ -26,10 +26,10 @@ export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
 
 declare global {
-  // Kakao 함수를 전역에서 사용할 수 있도록 선언
   interface Window {
     Kakao: any;
   }
+  const kakao: any;
 }
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
@@ -40,10 +40,15 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <>
-      <Script
+      {/* <Script
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY}&autoload=false`}
         strategy="beforeInteractive"
-      />
+      /> */}
+      <Script
+        type="text/javascript"
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY}&autoload=false&libraries=services,clusterer,drawing`}
+        strategy="beforeInteractive"
+      ></Script>
       <Script src="https://developers.kakao.com/sdk/js/kakao.js" onLoad={kakaoInit}></Script>
 
       <Head>
