@@ -1,41 +1,12 @@
 import Link from 'next/link';
 import { useLogin } from '../../hooks/useLogin';
-import { useMoveToPage } from '../../hooks/useMoveToPage';
 import * as S from './LoginPage.styles';
-import { useRouter } from 'next/router';
+import { useKakaoLogin } from '../../hooks/useKakoLogin';
 
 export default function LoginPage(): JSX.Element {
-  const { onChangeEmail, onChangePassword, onChangeCheckPassword, onClickLogin } = useLogin();
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    onClickLogin(event);
-  };
+  const { register, handleSubmit, errors } = useLogin();
+  const { kakaoLogin } = useKakaoLogin();
 
-  const router = useRouter();
-
-  const kakaoLogin = async () => {
-    //@ts-ignore
-    Kakao.Auth.login({
-      success: function (authObj: any) {
-        router.push('/');
-        console.log(authObj); // 액세스 토큰이 포함된 객체
-        // 사용자 정보 요청
-        //@ts-ignore
-        Kakao.API.request({
-          url: '/v2/user/me',
-          success: function (response: any) {
-            console.log(response); // 사용자 정보 객체
-          },
-          fail: function (error: any) {
-            console.log(error);
-          },
-        });
-      },
-      fail: function (err: any) {
-        console.error(err);
-      },
-    });
-  };
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
@@ -56,9 +27,13 @@ export default function LoginPage(): JSX.Element {
         &nbsp;&nbsp;&nbsp;&nbsp;또는 &nbsp;&nbsp;&nbsp;&nbsp;
         <hr style={{ width: '38%', height: '1px', backgroundColor: '#848484' }} />
       </S.Line>
-      <S.IdInput placeholder="아이디" />
-      <S.PwInput placeholder="비밀번호" />
-      <S.LoginButton>로그인</S.LoginButton>
+      <S.form onSubmit={handleSubmit}>
+        <S.IdInput {...register('email')} placeholder="아이디" />
+        {errors.email && <S.error>{errors.email.message}</S.error>}
+        <S.PwInput {...register('password')} placeholder="비밀번호" />
+        {errors.password && <S.error>{errors.password.message}</S.error>}
+        <S.LoginButton type="submit">로그인</S.LoginButton>
+      </S.form>
       <Link href="signup">
         <S.SignUpText>회원가입</S.SignUpText>
       </Link>

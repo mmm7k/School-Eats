@@ -88,6 +88,8 @@ export const IdInput = styled.input`
   height: 52px;
   margin-top: 10%;
   padding-left: 3%;
+  margin-bottom: 2%;
+
   &:focus {
     border-color: #a4a4a4;
     outline: none;
@@ -106,6 +108,7 @@ export const PwInput = styled.input`
   height: 52px;
   margin-top: 2%;
   padding-left: 3%;
+  margin-bottom: 2%;
   &:focus {
     border-color: #a4a4a4;
     outline: none;
@@ -116,7 +119,7 @@ export const PwInput = styled.input`
   }
 `;
 
-export const LoginButton = styled.div`
+export const LoginButton = styled.button`
   width: 100%;
   border-radius: 5px;
   border: none;
@@ -164,4 +167,15 @@ export const CouponImg = styled.div`
 `;
 export const ColorText = styled.span`
   color: #f6786f;
+`;
+
+export const error = styled.p`
+  font-size: 13px;
+  color: #a4a4a4;
+  margin-left: 2%;
+  margin-bottom: 2%;
+`;
+
+export const form = styled.form`
+  width: 100%;
 `;

@@ -80,13 +80,17 @@ export const InputTitle = styled.div`
   margin-left: 2%;
   margin-bottom: 3%;
 `;
+
+export const form = styled.form`
+  width: 100%;
+`;
 export const Input = styled.input`
   width: 100%;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
   /* background-color: red; */
   height: 52px;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   padding-left: 3%;
   &:focus {
     border-color: #a4a4a4;
@@ -98,7 +102,7 @@ export const Input = styled.input`
   }
 `;
 
-export const SignupButton = styled.div`
+export const SignupButton = styled.button`
   width: 100%;
   border-radius: 26px;
   border: none;
@@ -150,4 +154,11 @@ export const UnderLine = styled.a`
   font-weight: 900;
   text-decoration: underline;
   cursor: pointer;
+`;
+
+export const error = styled.p`
+  font-size: 13px;
+  color: #a4a4a4;
+  margin-left: 2%;
+  margin-bottom: 2%;
 `;
