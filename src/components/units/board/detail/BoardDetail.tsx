@@ -24,7 +24,7 @@ export default function BoardDetail(): JSX.Element {
   const { post, usermatch } = useGetDetailPost('board');
   const { onClickMoveToPage } = useMoveToPage();
   const { onClickDeletePost } = useDeletePost();
-  const { comments, newComment, setNewComment, addComment, deleteComment } = useComments('comment');
+  const { comments, newComment, setNewComment, addComment, deleteComment } = useComments();
   const { confirm } = Modal;
   const logEmail = useRecoilValue(userEmail);
 
