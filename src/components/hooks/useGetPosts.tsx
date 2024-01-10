@@ -35,7 +35,7 @@ export const useGetPosts = (menu: string) => {
       const snapshot = await getDocs(q);
       // const postArr = snapshot.docs.map((doc) => doc.data());
       const postArr = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      console.log('a');
+
       if (postArr.length > 0) {
         setPosts((prevPosts) => [...prevPosts, ...postArr]);
         setLastVisible(snapshot.docs[snapshot.docs.length - 1]);

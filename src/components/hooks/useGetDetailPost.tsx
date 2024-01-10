@@ -15,11 +15,10 @@ export const useGetDetailPost = (menu: string) => {
   const logEmail = useRecoilValue(userEmail);
   const [post, setPost] = useState<Post | null>(null);
   const [usermatch, setUserMatch] = useState(false);
-
   const router = useRouter();
   const data = JSON.stringify(router.query); // boardId를 추출
   const jsonObject = JSON.parse(data);
-  const postId = jsonObject.boadid;
+  const postId = jsonObject.placeid;
 
   useEffect(() => {
     if (router.isReady) {

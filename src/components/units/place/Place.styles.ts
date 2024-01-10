@@ -66,7 +66,6 @@ export const ContentsItem = styled.div`
   max-width: 49%; // 최대 너비도 48%로 설정합니다.
   border-radius: 10px;
   margin-top: 4%;
-
   /* margin-bottom: 3%; */
 `;
 

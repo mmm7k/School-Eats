@@ -10,7 +10,7 @@ interface Post {
   loc: string;
   id: string;
   img: string;
-  menu: string;
+  titlemenu: string;
   breaktime: string;
 }
 
@@ -63,7 +63,7 @@ export default function Place(): JSX.Element {
               </S.ContentsImage>
               <S.ContentsTitle>{post.id}</S.ContentsTitle>
               <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
-              <S.ContentsMenu>{post.menu}</S.ContentsMenu>
+              <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
             </S.ContentsItem>
           )
         )}

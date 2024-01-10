@@ -22,29 +22,35 @@ interface Comment {
   id: string;
   text?: string;
   email?: string;
+  rating?: number;
 }
 
-export const useComments = (menu: string) => {
+export const useComments = () => {
   const router = useRouter();
   const data = JSON.stringify(router.query); // boardId를 추출
   const jsonObject = JSON.parse(data);
-  const postId = jsonObject.boadid;
+  const postId = jsonObject.placeid;
   const [comments, setComments] = useState<Comment[]>([]);
   const [login] = useRecoilState(isLoggedIn);
   const [newComment, setNewComment] = useState<string>('');
   const { confirm } = Modal;
   const [commentusermatch, setCommentUserMatch] = useState(false);
+  const [newRating, setNewRating] = useState<number>(0);
 
-  const user = authInstance.currentUser;
-  const email = user?.email;
+  // const user = authInstance.currentUser;
+  // const email = user?.email;
+  const email = useRecoilValue(userEmail);
   const getComments = async () => {
     let q;
-    q = query(collection(db, menu), orderBy('timestamp', 'desc'), where('postId', '==', postId));
+
+    //@ts-ignore
+    q = query(collection(db, 'comment'), where(postId, '==', postId));
     const snapshot = await getDocs(q);
     const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
       ...doc.data(),
       id: doc.id,
     }));
+
     setComments(commentsArr);
   };
 
@@ -83,8 +89,8 @@ export const useComments = (menu: string) => {
       await addDoc(comments, {
         postId,
         text: newComment,
-        timestamp: new Date(),
         email,
+        rating: newRating,
       });
       success();
     } else {
@@ -107,6 +113,3 @@ export const useComments = (menu: string) => {
     deletemodal,
   };
 };
-function setUserMatch(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
