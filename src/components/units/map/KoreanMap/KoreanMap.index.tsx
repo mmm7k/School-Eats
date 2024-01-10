@@ -1,19 +1,23 @@
-import * as S from './Map.styled';
-import Link from 'next/link';
-import useMap from './useMap';
+import { ChangeEvent, useState } from 'react';
 
-export default function Map(): JSX.Element {
-  useMap();
+import * as S from '../Map.styled';
+
+import Link from 'next/link';
+import useKoreanMap from './useKoreanMap';
+
+export default function KoreanMap(): JSX.Element {
+  useKoreanMap();
 
   return (
     <S.Wrapper>
       <S.Title>조선대 맛집 지도😉</S.Title>
       <S.SubTitle>해시태그와 스쿨잇츠 로고를 눌러보세요!</S.SubTitle>
       <S.ButtonWrapper>
-        <S.SelectButton>#맛집</S.SelectButton>
-        <Link href="/map/koreanmap">
-          <S.Button>#한식</S.Button>
+        <Link href="/map">
+          <S.Button>#맛집</S.Button>
         </Link>
+        <S.SelectButton>#한식</S.SelectButton>
+
         <Link href="/map/chinesemap">
           <S.Button>#중식</S.Button>
         </Link>

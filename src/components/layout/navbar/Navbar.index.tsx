@@ -26,8 +26,8 @@ export default function Navbar(): JSX.Element {
           </S.Button>
           <S.Button>
             <Link href="/map">
-              <S.Div style={{ color: router.pathname === '/map' ? '#f6786f' : '#000000' }}>
-                <MapButton style={{ fill: router.pathname === '/map' ? '#f6786f' : '#000000' }} />
+              <S.Div style={{ color: router.pathname.startsWith('/map') ? '#f6786f' : '#000000' }}>
+                <MapButton style={{ fill: router.pathname.startsWith('/map') ? '#f6786f' : '#000000' }} />
                 <S.LineDiv />
                 맛집지도
               </S.Div>

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export const useMap = (school: string) => {
+export const useGetMap = (school: string) => {
   const router = useRouter();
 
   useEffect(() => {

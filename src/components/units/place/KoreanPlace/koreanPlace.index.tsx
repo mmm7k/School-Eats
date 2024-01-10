@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
-import * as S from './Place.styles';
-import { useGetPosts } from '../../hooks/useGetPosts';
+import * as S from '../Place.styles';
+import { useGetPosts } from '../../../hooks/useGetPosts';
 import { Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useGetCategoryPosts } from '../../../hooks/useGetCategoryPosts';
 
 interface Post {
   title: string;
@@ -14,19 +15,18 @@ interface Post {
   breaktime: string;
 }
 
-export default function Place(): JSX.Element {
-  const router = useRouter();
-  const { posts, hasMore, loading }: any = useGetPosts('all');
+export default function KoreanPlace(): JSX.Element {
+  const { posts, hasMore, loading }: any = useGetCategoryPosts('all', '한식');
   return (
     <S.Wrapper>
       <S.Title>테마별 맛집🍚</S.Title>
       <S.SubTitle>스쿨잇츠가 소개하는 맛집 리스트!</S.SubTitle>
       <S.ButtonWrapper>
-        <S.SelectButton>ALL</S.SelectButton>
-
-        <Link href="/place/koreanplace">
-          <S.Button>한식</S.Button>
+        <Link href="/place">
+          <S.Button>ALL</S.Button>
         </Link>
+
+        <S.SelectButton>한식</S.SelectButton>
         <Link href="/place/chineseplace">
           <S.Button>중식</S.Button>
         </Link>
