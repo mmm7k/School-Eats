@@ -11,6 +11,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import Head from 'next/head';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <Analytics />
       </RecoilRoot>
     </>
   );
