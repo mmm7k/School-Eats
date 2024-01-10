@@ -54,7 +54,7 @@ export default function PlaceDetail(): JSX.Element {
         ))}
         <S.Div />
         {Array.isArray(post?.menu) &&
-          post.menu.map((m: string | null) => (
+          post?.menu.map((m: string) => (
             <S.Infor key={m}>{m}</S.Infor> // 'key' 속성 추가
           ))}
       </S.Wrapper>
