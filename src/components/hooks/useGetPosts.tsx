@@ -21,16 +21,21 @@ export const useGetPosts = (menu: string) => {
     try {
       let q;
 
+      // if (!lastVisible) {
+      //   q = query(collection(db, menu), orderBy('timestamp', 'desc'), limit(6));
+      // } else {
+      //   q = query(collection(db, menu), orderBy('timestamp', 'desc'), limit(6), startAfter(lastVisible));
+      // }
       if (!lastVisible) {
-        q = query(collection(db, menu), orderBy('timestamp', 'desc'), limit(4));
+        q = query(collection(db, menu), limit(4));
       } else {
-        q = query(collection(db, menu), orderBy('timestamp', 'desc'), limit(4), startAfter(lastVisible));
+        q = query(collection(db, menu), limit(4), startAfter(lastVisible));
       }
 
       const snapshot = await getDocs(q);
       // const postArr = snapshot.docs.map((doc) => doc.data());
       const postArr = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-
+      console.log('a');
       if (postArr.length > 0) {
         setPosts((prevPosts) => [...prevPosts, ...postArr]);
         setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
@@ -51,8 +56,6 @@ export const useGetPosts = (menu: string) => {
 
   useEffect(() => {
     getNextPosts(); // 초기 데이터 로딩
-    console.log('새로고침');
-    console.log(posts);
   }, []);
 
   return { posts, getNextPosts, hasMore, loading };

@@ -17,6 +17,7 @@ const nextConfig = {
   },
   images: {
     domains: ['i.ibb.co'],
+    domains: ['firebasestorage.googleapis.com'],
   },
 };
 
