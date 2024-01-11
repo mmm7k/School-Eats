@@ -50,6 +50,9 @@ export const Divine = styled.div`
 `;
 export const Infor = styled.div`
   display: flex;
+  align-items: center;
+  margin-top: 4%;
+  font-size: 14px;
 `;
 
 export const InforText = styled.p`
@@ -64,11 +67,94 @@ export const InforTitle = styled.div`
 `;
 
 export const InforWrapper = styled.div`
-  height: 260px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 3%;
   padding-top: 4%;
   padding-bottom: 4%;
+  padding-right: 3%;
+`;
+
+export const ReviewRate = styled(Rate)`
+  font-size: 12px;
+  margin-left: 2%;
+  margin-bottom: 4px;
+`;
+
+export const ReviewTitle = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+`;
+export const ReviewText = styled.span`
+  font-size: 14px;
+`;
+
+export const ReviewInput = styled.textarea`
+  min-height: 50px;
+  height: auto;
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 15px;
+  border: 1px solid #e7e7e7;
+  padding-left: 3%;
+  margin-top: 3%;
+  padding-top: 3.5%;
+  &:focus {
+    border-color: #a4a4a4;
+    outline: none;
+  }
+  ::placeholder {
+    color: #bdbdbd;
+    font-size: 13px;
+  }
+`;
+
+export const deleteIcon = styled.div`
+  background-image: url('/deleteicon.png');
+  width: 14px;
+  height: 14px;
+  background-size: cover;
+  margin-left: 10px;
+`;
+
+export const ReviewWrapper = styled.div`
+  margin-top: 4%;
+  height: auto;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3% 0;
+  padding-left: 3%;
+`;
+
+export const ReviewInputRate = styled(Rate)`
+  font-size: 15px;
+`;
+
+export const SubmitWrapper = styled.div`
+  font-size: 13px;
+  color: #bdbdbd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2%;
+`;
+export const SubmitButton = styled.button`
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  height: 35px;
+  border-radius: 10px;
+  width: 50px;
+  border: none;
+  background-color: #f6786f;
+  margin-left: 3%;
 `;
