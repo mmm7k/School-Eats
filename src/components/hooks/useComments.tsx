@@ -107,21 +107,28 @@ export const useComments = () => {
 
   // 별점 평균을 계산하고 해당 포스트에 별점을 반영
 
-  const [averageRating, setAverageRating] = useState(0);
-  const [commentscount, setCommentsCount] = useState(0);
+  // const [averageRating, setAverageRating] = useState(0);
+  // const [commentscount, setCommentsCount] = useState(0);
+
+  let avg: number;
+  let count: number;
   const updateRate = async () => {
     const board = doc(db, 'all', postId);
     await updateDoc(board, {
-      rate: averageRating,
-      commentscount: commentscount,
+      // rate: averageRating,
+      rate: avg,
+      // commentscount: commentscount,
+      commentscount: count,
     });
   };
 
   useEffect(() => {
     if (comments.length > 0) {
       const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
-      setAverageRating(totalRating / comments.length);
-      setCommentsCount(comments.length);
+      // setAverageRating(totalRating / comments.length);
+      avg = totalRating / comments.length;
+      // setCommentsCount(comments.length);
+      count = comments.length;
       updateRate();
     }
   }, [comments]); // comments 배열이 변경될 때마다 실행
@@ -129,12 +136,13 @@ export const useComments = () => {
   return {
     comments,
     newComment,
-    commentscount,
+
     setNewComment,
     addComment,
     deleteComment,
     deletemodal,
     //
-    averageRating,
+    // commentscount,
+    // averageRating,
   };
 };

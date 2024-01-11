@@ -9,8 +9,7 @@ import { useEffect, useState } from 'react';
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost('all');
 
-  const { comments, averageRating, commentscount, newComment, setNewComment, addComment, deleteComment } =
-    useComments();
+  const { comments, newComment, setNewComment, addComment, deleteComment } = useComments();
   const router = useRouter();
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
@@ -34,9 +33,11 @@ export default function PlaceDetail(): JSX.Element {
         <S.TitleWrapper>
           <S.Title>{postId}</S.Title>
           <S.RateWrapper>
-            <S.RateStar allowHalf disabled value={averageRating} />
-            <S.RateNum> {averageRating.toFixed(1)}</S.RateNum>
-            <S.CommentsCount>{commentscount}개의 후기</S.CommentsCount>
+            {/* <S.RateStar allowHalf disabled value={averageRating} /> */}
+            <S.RateStar allowHalf disabled value={post?.rate} />
+            {/* <S.RateNum> {averageRating.toFixed(1)}</S.RateNum> */}
+            <S.RateNum> {post?.rate.toFixed(1)}</S.RateNum>
+            <S.CommentsCount>{post?.commentscount}개의 후기</S.CommentsCount>
           </S.RateWrapper>
         </S.TitleWrapper>
         <S.Divine />

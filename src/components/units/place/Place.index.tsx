@@ -4,7 +4,6 @@ import { useGetPosts } from '../../hooks/useGetPosts';
 import { Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Rate } from 'antd';
 
 interface Post {
   title: string;
@@ -19,6 +18,7 @@ interface Post {
 export default function Place(): JSX.Element {
   const router = useRouter();
   const { posts, hasMore, loading }: any = useGetPosts('all');
+  console.log(posts);
   return (
     <S.Wrapper>
       <S.Title>테마별 맛집🍚</S.Title>
