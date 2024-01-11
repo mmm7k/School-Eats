@@ -9,6 +9,7 @@ import {
   getDocs,
   orderBy,
   query,
+  updateDoc,
   where,
 } from 'firebase/firestore';
 import { useRouter } from 'next/router';
@@ -104,12 +105,36 @@ export const useComments = () => {
     deletemodal();
   };
 
+  // 별점 평균을 계산하고 해당 포스트에 별점을 반영
+
+  const [averageRating, setAverageRating] = useState(0);
+  const [commentscount, setCommentsCount] = useState(0);
+  const updateRate = async () => {
+    const board = doc(db, 'all', postId);
+    await updateDoc(board, {
+      rate: averageRating,
+      commentscount: commentscount,
+    });
+  };
+
+  useEffect(() => {
+    if (comments.length > 0) {
+      const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
+      setAverageRating(totalRating / comments.length);
+      setCommentsCount(comments.length);
+      updateRate();
+    }
+  }, [comments]); // comments 배열이 변경될 때마다 실행
+
   return {
     comments,
     newComment,
+    commentscount,
     setNewComment,
     addComment,
     deleteComment,
     deletemodal,
+    //
+    averageRating,
   };
 };

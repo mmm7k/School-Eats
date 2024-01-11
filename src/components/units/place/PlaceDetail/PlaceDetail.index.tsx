@@ -9,22 +9,12 @@ import { useEffect, useState } from 'react';
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost('all');
 
-  const { comments, newComment, setNewComment, addComment, deleteComment, deletemodal } = useComments();
-  const [averageRating, setAverageRating] = useState(0);
-
+  const { comments, averageRating, commentscount, newComment, setNewComment, addComment, deleteComment } =
+    useComments();
   const router = useRouter();
-  const data = JSON.stringify(router.query); // boardId를 추출
+  const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.placeid;
-
-  useEffect(() => {
-    if (comments.length > 0) {
-      const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
-      setAverageRating(totalRating / comments.length);
-    } else {
-      setAverageRating(0); // 댓글이 없는 경우 평균 별점을 0으로 설정
-    }
-  }, [comments]); // comments 배열이 변경될 때마다 실행
 
   return (
     <>
@@ -41,22 +31,56 @@ export default function PlaceDetail(): JSX.Element {
       />
 
       <S.Wrapper>
-        <S.Title>{postId}</S.Title>
-        <p>종합 평점:{averageRating.toFixed(1)}</p>
-        <Rate allowHalf disabled value={averageRating} />
+        <S.TitleWrapper>
+          <S.Title>{postId}</S.Title>
+          <S.RateWrapper>
+            <S.RateStar allowHalf disabled value={averageRating} />
+            <S.RateNum> {averageRating.toFixed(1)}</S.RateNum>
+            <S.CommentsCount>{commentscount}개의 후기</S.CommentsCount>
+          </S.RateWrapper>
+        </S.TitleWrapper>
+        <S.Divine />
+        <S.InforWrapper>
+          <S.InforTitle>상세정보</S.InforTitle>
+          <S.Infor>
+            <S.InforImg src="/inforloc.png" />
+            <S.InforText>{post?.loc}</S.InforText>
+          </S.Infor>
+          <S.Infor>
+            <S.InforImg src="/infortime.png" />
+            <S.InforText>
+              {post?.time}
+              &nbsp; 브레이크 타임:{post?.breaktime}
+            </S.InforText>
+          </S.Infor>
+          <S.Infor>
+            <S.InforImg src="/inforcall.png" />
+            <S.InforText>{post?.call}</S.InforText>
+          </S.Infor>
+          <S.Infor>
+            <S.InforImg src="/inforhashtag.png" />
+            <S.InforText> {post?.hashtag}</S.InforText>
+          </S.Infor>
+          <S.Infor>
+            <S.InforImg src="/inforstatus.png" />
+            <S.InforText>{post?.status}</S.InforText>
+          </S.Infor>
+        </S.InforWrapper>
 
-        <p>댓글 수: {comments.length}</p>
+        {/* 메뉴 리스트입니다
+         {Array.isArray(post?.menu) &&
+          post?.menu.map((m: string) => (
+            <S.Infor key={m}>{m}</S.Infor> // 'key' 속성 추가
+          ))} */}
+        <S.Divine />
+
+        {/* 댓글리스트입니다 
         {comments.map((comment) => (
           <div key={comment.id}>
             <p>{comment.text}</p>
             <Rate allowHalf disabled value={comment.rating} />
           </div>
-        ))}
-        <S.Div />
-        {Array.isArray(post?.menu) &&
-          post?.menu.map((m: string) => (
-            <S.Infor key={m}>{m}</S.Infor> // 'key' 속성 추가
-          ))}
+        ))} */}
       </S.Wrapper>
     </>
   );

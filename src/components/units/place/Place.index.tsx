@@ -4,14 +4,16 @@ import { useGetPosts } from '../../hooks/useGetPosts';
 import { Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Rate } from 'antd';
 
 interface Post {
   title: string;
-  loc: string;
   id: string;
   img: string;
   titlemenu: string;
   breaktime: string;
+  rate: number;
+  commentscount: number;
 }
 
 export default function Place(): JSX.Element {
@@ -61,7 +63,23 @@ export default function Place(): JSX.Element {
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ContentsImage>
-              <S.ContentsTitle>{post.id}</S.ContentsTitle>
+              <S.ContentsTitleWrapper>
+                <S.ContentsTitle>{post.id}</S.ContentsTitle>
+                <S.RateWrapper>
+                  <Image
+                    src={
+                      '/rate.png' ||
+                      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+                    }
+                    alt={post.title}
+                    width={11}
+                    height={11}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                  />
+                  {post.rate.toFixed(1)}({post.commentscount})
+                </S.RateWrapper>
+              </S.ContentsTitleWrapper>
               <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
               <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
             </S.ContentsItem>

@@ -74,10 +74,20 @@ export const ContentsImage = styled.div`
   overflow: hidden;
 `;
 
-export const ContentsTitle = styled.div`
-  font-size: 15px;
-  font-weight: 700;
+export const ContentsTitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 3%;
+`;
+
+export const RateWrapper = styled.div`
+  color: #424242;
+`;
+
+export const ContentsTitle = styled.div`
+  font-size: 16px;
+  font-weight: 700;
 `;
 export const ContentsBreakTime = styled.div`
   font-size: 13px;
