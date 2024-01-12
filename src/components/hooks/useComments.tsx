@@ -40,7 +40,7 @@ export const useComments = () => {
 
   // const user = authInstance.currentUser;
   // const email = user?.email;
-  const email = useRecoilValue(layoutEmail);
+  const email = useRecoilValue(userEmail);
   const getComments = async () => {
     let q;
 

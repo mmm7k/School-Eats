@@ -57,12 +57,11 @@ export const useLogin = () => {
     authInstance
       .signOut()
       .then(() => {
+        window.location.href = '/';
         setLoggedin(null); // Recoil 상태를 초기화
         setLayoutEmail(null);
         setUserEmailState(null);
-
         localStorage.removeItem('recoil-persist');
-        window.location.href = '/';
       })
       .catch((error) => {
         console.log(error);
@@ -73,5 +72,6 @@ export const useLogin = () => {
     register,
     handleSubmit: handleSubmit(onSubmit),
     errors,
+    onClickLogout,
   };
 };

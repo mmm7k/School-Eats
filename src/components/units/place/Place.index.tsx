@@ -49,43 +49,46 @@ export default function Place(): JSX.Element {
           (
             post: Post // posts 배열을 map 함수로 순회합니다.
           ) => (
-            <S.ContentsItem key={post.id}>
-              <S.ContentsImage>
-                <Image
-                  src={
-                    post.img ||
-                    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-                  }
-                  alt={post.title}
-                  width={230}
-                  height={240}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                />
-              </S.ContentsImage>
-              <S.ContentsTitleWrapper>
-                <S.ContentsTitle>{post.id}</S.ContentsTitle>
-                <S.RateWrapper>
+            <Link href={`/place/${post.id}`}>
+              <S.ContentsItem key={post.id}>
+                <S.ContentsImage>
                   <Image
                     src={
-                      '/rate.png' ||
+                      post.img ||
                       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                     }
                     alt={post.title}
-                    width={11}
-                    height={11}
+                    width={230}
+                    height={240}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                   />
-                  {post.rate.toFixed(1)}({post.commentscount})
-                </S.RateWrapper>
-              </S.ContentsTitleWrapper>
-              <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
-              <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
-            </S.ContentsItem>
+                </S.ContentsImage>
+                <S.ContentsTitleWrapper>
+                  <S.ContentsTitle>{post.id}</S.ContentsTitle>
+                  <S.RateWrapper>
+                    <Image
+                      src={
+                        '/rate.png' ||
+                        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+                      }
+                      alt={post.title}
+                      width={11}
+                      height={11}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                    />
+                    {post.rate.toFixed(1)}({post.commentscount})
+                  </S.RateWrapper>
+                </S.ContentsTitleWrapper>
+                <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
+                <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
+              </S.ContentsItem>
+            </Link>
           )
         )}
       </S.ContentsWrapper>
+
       <S.SpinDiv>{hasMore && loading && <Spin size="default" />}</S.SpinDiv>
     </S.Wrapper>
   );

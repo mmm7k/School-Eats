@@ -32,7 +32,7 @@ export const useSignup = () => {
     try {
       await createUserWithEmailAndPassword(authInstance, email, password);
       Modal.success({ content: '회원가입에 성공하였습니다!' });
-      router.push('/');
+      router.push('/login');
     } catch (error) {
       Modal.error({ title: '회원가입 정보가 올바르지 않습니다.' });
     }

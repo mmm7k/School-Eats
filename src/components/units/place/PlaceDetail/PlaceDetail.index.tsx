@@ -6,8 +6,9 @@ import { Rate } from 'antd';
 import { useComments } from '../../../hooks/useComments';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { layoutEmail } from '../../../../commons/globalstate/globalstate';
+import { layoutEmail, userEmail } from '../../../../commons/globalstate/globalstate';
 import { DeleteIcon } from '../../board/detail/BoardDetail.style';
+import { useBookmark } from '../../../hooks/useBookmark';
 
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost('all');
@@ -19,10 +20,35 @@ export default function PlaceDetail(): JSX.Element {
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.placeid;
 
-  const email = useRecoilValue(layoutEmail);
+  const email = useRecoilValue(userEmail);
 
   const handleRatingChange = (value: number) => {
     setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
+  };
+
+  const { addBookmark, deleteBookmark, getBookmark, bookmark } = useBookmark();
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      if (postId) {
+        await getBookmark();
+        setIsBookmarked(bookmark.some((b) => b.email === email));
+      }
+    })();
+  }, []);
+
+  const handleBookmark = async () => {
+    if (isBookmarked) {
+      // 이미 북마크한 경우, 북마크 삭제
+      const bookmarkId = bookmark.find((b) => b.email === email)?.id;
+      if (bookmarkId) await deleteBookmark(bookmarkId);
+    } else {
+      // 북마크하지 않은 경우, 북마크 추가
+      await addBookmark();
+    }
+    await getBookmark(); // 북마크 상태 업데이트
+    setIsBookmarked(!isBookmarked); // 상태 토글
   };
 
   return (
@@ -41,7 +67,11 @@ export default function PlaceDetail(): JSX.Element {
 
       <S.Wrapper>
         <S.TitleWrapper>
-          <S.Title>{postId}</S.Title>
+          <S.BookmarkWrapper>
+            <S.Title>{postId}</S.Title>
+            <div onClick={handleBookmark}>{isBookmarked ? <S.ColorBookmarkIcon /> : <S.BookmarkIcon />}</div>
+          </S.BookmarkWrapper>
+
           <S.RateWrapper>
             {/* <S.RateStar allowHalf disabled value={averageRating} /> */}
             <S.RateStar allowHalf disabled value={averageRating.toFixed(1)} />
@@ -102,7 +132,7 @@ export default function PlaceDetail(): JSX.Element {
           {comments.map((comment) => (
             <S.ReviewWrapper key={comment.id}>
               <S.ReviewTitle>
-                {comment.email}
+                {comment.email?.split('@')[0]}
                 <S.ReviewRate allowHalf disabled value={comment.rating} />
                 {comment.email === email && <S.deleteIcon onClick={() => deleteComment(comment.id)}></S.deleteIcon>}
               </S.ReviewTitle>

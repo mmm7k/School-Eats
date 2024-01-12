@@ -43,12 +43,12 @@ export const useKakaoLogin = () => {
       Kakao.API.request({
         url: '/v1/user/unlink',
         success: function (response: any) {
+          window.location.href = '/';
           setKakaoLoggedin(false);
           setLoggedin(false);
           setLayoutEmail(null);
           setUserEmailState(null);
           localStorage.removeItem('recoil-persist');
-          window.location.href = '/';
         },
         fail: function (error: any) {
           console.log(error);

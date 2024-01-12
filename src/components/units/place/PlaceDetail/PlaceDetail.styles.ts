@@ -158,3 +158,27 @@ export const SubmitButton = styled.button`
   background-color: #f6786f;
   margin-left: 3%;
 `;
+
+export const BookmarkIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url('/bookmark.png');
+  background-size: cover;
+  margin-top: 3%;
+  margin-left: 10%;
+  cursor: pointer;
+`;
+
+export const ColorBookmarkIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url('/colorbookmark.png');
+  background-size: cover;
+  margin-top: 3%;
+  margin-left: 10%;
+  cursor: pointer;
+`;
+
+export const BookmarkWrapper = styled.div`
+  display: flex;
+`;

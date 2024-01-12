@@ -67,6 +67,10 @@ export const ContentsItem = styled.div`
   border-radius: 10px;
   margin-top: 4%;
   /* margin-bottom: 3%; */
+
+  :hover {
+    opacity: 0.8;
+  }
 `;
 
 export const ContentsImage = styled.div`

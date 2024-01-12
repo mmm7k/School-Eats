@@ -55,15 +55,19 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const router = useRouter();
   const isLoginPage = router.pathname === '/login';
   const isSignupPage = router.pathname === '/signup';
+  const isMyPage = router.pathname === '/mypage';
+  const isBookmarkPage = router.pathname === '/bookmark';
   const showLayout = !isLoginPage && !isSignupPage;
-
+  const mypage = isMyPage;
+  const bookmark = isBookmarkPage;
   return (
     <Wrapper>
       <LeftWrapper>
         <SideBanner />
       </LeftWrapper>
       <MainWrapper>
-        {showLayout && <LayoutHeader />}
+        {showLayout && !mypage && !bookmark && <LayoutHeader />}
+
         <Body>{props.children}</Body>
         {showLayout && <LayoutFooter />}
         <ScrollButton />

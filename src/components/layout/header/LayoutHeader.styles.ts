@@ -5,12 +5,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 500px;
-  @media only screen and (max-width: 500px) {
-    width: 100vw;
-  }
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export const Logo = styled.div`
@@ -47,12 +45,13 @@ export const SearchIcon = styled.div`
   cursor: pointer;
 `;
 
-export const StarIcon = styled.div`
-  width: 27px;
-  height: 27px;
-  background-image: url('/staricon.png');
+export const BookmarkIcon = styled.div`
+  width: 29px;
+  height: 29px;
+  background-image: url('/bookmark.png');
   background-size: cover;
-  margin-bottom: 1px;
+  /* margin-bottom: 1px; */
+  margin-top: 3%;
   margin-left: 7px;
   cursor: pointer;
 `;
