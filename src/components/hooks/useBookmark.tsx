@@ -19,7 +19,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
 interface Bookmark {
   id: string;
-  placeId?: string;
+  text?: string;
   email?: string;
 }
 

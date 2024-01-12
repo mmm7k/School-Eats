@@ -36,7 +36,7 @@ export default function PlaceDetail(): JSX.Element {
         setIsBookmarked(bookmark.some((b) => b.email === email));
       }
     })();
-  }, []);
+  }, [postId, email, bookmark]);
 
   const handleBookmark = async () => {
     if (isBookmarked) {
