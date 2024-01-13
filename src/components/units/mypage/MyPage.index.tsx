@@ -58,8 +58,9 @@ export default function MyPage(): JSX.Element {
         <S.UserWrapper>
           <S.User>
             <Avatar
+              size="small"
               shape="square"
-              style={{ backgroundColor: '#f6786f', marginBottom: '1px', marginRight: '3%' }}
+              style={{ backgroundColor: '#f6786f', marginRight: '3%' }}
               icon={<UserOutlined rev={undefined} />}
             />
             <S.UserEmail>{user}님, 반갑습니다!</S.UserEmail>

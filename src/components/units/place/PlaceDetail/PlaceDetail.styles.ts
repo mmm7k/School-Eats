@@ -56,7 +56,8 @@ export const Infor = styled.div`
 `;
 
 export const InforText = styled.p`
-  font-size: 14px;
+  font-size: 13px;
+  margin-left: 2%;
 `;
 export const InforImg = styled.img`
   margin-right: 2%;
@@ -81,6 +82,7 @@ export const ReviewRate = styled(Rate)`
   font-size: 12px;
   margin-left: 2%;
   margin-bottom: 4px;
+  margin-right: 1.5%;
 `;
 
 export const ReviewTitle = styled.div`
@@ -164,7 +166,6 @@ export const BookmarkIcon = styled.div`
   height: 24px;
   background-image: url('/bookmark.png');
   background-size: cover;
-  margin-top: 3%;
   margin-left: 10%;
   cursor: pointer;
 `;
@@ -174,7 +175,6 @@ export const ColorBookmarkIcon = styled.div`
   height: 24px;
   background-image: url('/colorbookmark.png');
   background-size: cover;
-  margin-top: 3%;
   margin-left: 10%;
   cursor: pointer;
 `;

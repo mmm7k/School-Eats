@@ -8,6 +8,14 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { layoutEmail, userEmail } from '../../../../commons/globalstate/globalstate';
 import { useBookmark } from '../../../hooks/useBookmark';
+import {
+  ClockCircleOutlined,
+  DeleteOutlined,
+  EnvironmentOutlined,
+  InfoCircleOutlined,
+  PhoneOutlined,
+  TagsOutlined,
+} from '@ant-design/icons';
 
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost('all');
@@ -83,26 +91,26 @@ export default function PlaceDetail(): JSX.Element {
         <S.InforWrapper>
           <S.InforTitle>상세정보</S.InforTitle>
           <S.Infor>
-            <S.InforImg src="/inforloc.png" />
+            <EnvironmentOutlined rev={undefined} />
             <S.InforText>{post?.loc}</S.InforText>
           </S.Infor>
           <S.Infor>
-            <S.InforImg src="/infortime.png" />
+            <ClockCircleOutlined rev={undefined} />
             <S.InforText>
               {post?.time}
               &nbsp; 브레이크 타임:{post?.breaktime}
             </S.InforText>
           </S.Infor>
           <S.Infor>
-            <S.InforImg src="/inforcall.png" />
+            <PhoneOutlined rev={undefined} />
             <S.InforText>{post?.call}</S.InforText>
           </S.Infor>
           <S.Infor>
-            <S.InforImg src="/inforhashtag.png" />
+            <TagsOutlined rev={undefined} />
             <S.InforText> {post?.hashtag}</S.InforText>
           </S.Infor>
           <S.Infor>
-            <S.InforImg src="/inforstatus.png" />
+            <InfoCircleOutlined rev={undefined} />
             <S.InforText>{post?.status}</S.InforText>
           </S.Infor>
         </S.InforWrapper>
@@ -133,7 +141,9 @@ export default function PlaceDetail(): JSX.Element {
               <S.ReviewTitle>
                 {comment.email?.split('@')[0]}
                 <S.ReviewRate allowHalf disabled value={comment.rating} />
-                {comment.email === email && <S.deleteIcon onClick={() => deleteComment(comment.id)}></S.deleteIcon>}
+                {comment.email === email && (
+                  <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
+                )}
               </S.ReviewTitle>
 
               <S.ReviewText>{comment.text}</S.ReviewText>

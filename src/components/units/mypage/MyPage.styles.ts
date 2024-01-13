@@ -23,7 +23,7 @@ export const Title = styled.span`
   font-size: 18px;
   font-weight: 600;
   position: absolute;
-  left: 42%;
+  left: 40%;
 `;
 export const BackButton = styled.a`
   background-image: url('/backarrow.png');
@@ -73,11 +73,11 @@ export const User = styled.div`
   width: 70%;
 `;
 export const UserEmail = styled.span`
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
 `;
 export const Logout = styled.span`
-  font-size: 15px;
+  font-size: 12px;
   color: #a5a5a5;
   text-decoration: underline;
   cursor: pointer;
@@ -117,7 +117,7 @@ export const TextWrapper = styled.div`
   width: 50%;
 `;
 export const ContentsText = styled.span`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 `;
 export const BookmarkIcon = styled.div`
@@ -129,7 +129,7 @@ export const BookmarkIcon = styled.div`
 `;
 
 export const ContentsTitle = styled.span`
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
 `;
 
