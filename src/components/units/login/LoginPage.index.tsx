@@ -2,17 +2,21 @@ import Link from 'next/link';
 import { useLogin } from '../../hooks/useLogin';
 import * as S from './LoginPage.styles';
 import { useKakaoLogin } from '../../hooks/useKakoLogin';
+import { useRouter } from 'next/router';
 
 export default function LoginPage(): JSX.Element {
   const { register, handleSubmit, errors } = useLogin();
   const { kakaoLogin } = useKakaoLogin();
 
+  const router = useRouter();
+  const goBack = () => {
+    router.back();
+  };
+
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
-        <Link href="/">
-          <S.BackButton />
-        </Link>
+        <S.BackButton onClick={goBack} />
         <Link href="/">
           <S.HomeButton />
         </Link>

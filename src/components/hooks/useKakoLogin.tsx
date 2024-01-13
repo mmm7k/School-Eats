@@ -25,6 +25,12 @@ export const useKakaoLogin = () => {
             const emailPrefix = email.split('@')[0];
             setUserEmailState(email); // 사용자 이메일 저장
             setLayoutEmail(emailPrefix); // 이메일의 '@' 앞 부분 저장
+            setTimeout(() => {
+              setLoggedin(false);
+              setLayoutEmail(null);
+              setUserEmailState(null);
+              alert('로그인 세션이 만료되었습니다.');
+            }, 3600000); // 1시간 후 세션 만료
           },
           fail: function (error: any) {
             console.log(error);

@@ -13,7 +13,7 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 2%;
   color: #8f8f8f;
@@ -87,20 +87,22 @@ export const ContentsTitleWrapper = styled.div`
 
 export const RateWrapper = styled.div`
   color: #424242;
+  font-size: 15px;
+  padding-bottom: 1px;
 `;
 
 export const ContentsTitle = styled.div`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
 `;
 export const ContentsBreakTime = styled.div`
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 2%;
   color: #6f6f6f;
 `;
 
 export const ContentsMenu = styled.div`
-  font-size: 15px;
+  font-size: 13px;
   margin-top: 2%;
   font-weight: 700;
   color: #424242;

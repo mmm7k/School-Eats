@@ -42,10 +42,10 @@ export const useLogin = () => {
         router.push('/');
 
         setTimeout(() => {
-          alert('로그인 세션이 만료 되었습니다.');
           setLoggedin(false);
           setLayoutEmail(null);
           setUserEmailState(null);
+          alert('로그인 세션이 만료되었습니다.');
         }, 3600000); // 1시간 후 세션 만료
       })
       .catch(() => {
