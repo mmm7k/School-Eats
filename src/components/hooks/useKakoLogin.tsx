@@ -26,10 +26,28 @@ export const useKakaoLogin = () => {
             setUserEmailState(email); // 사용자 이메일 저장
             setLayoutEmail(emailPrefix); // 이메일의 '@' 앞 부분 저장
             setTimeout(() => {
-              setLoggedin(false);
-              setLayoutEmail(null);
-              setUserEmailState(null);
-              alert('로그인 세션이 만료되었습니다.');
+              //@ts-ignore
+              Kakao.API.request({
+                url: '/v1/user/unlink',
+                success: function (response: any) {
+                  setKakaoLoggedin(false);
+                  setLoggedin(false);
+                  setLayoutEmail(null);
+                  setUserEmailState(null);
+                  localStorage.removeItem('recoil-persist');
+                  alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
+                  window.location.href = '/';
+                },
+                fail: function (error: any) {
+                  setKakaoLoggedin(false);
+                  setLoggedin(false);
+                  setLayoutEmail(null);
+                  setUserEmailState(null);
+                  localStorage.removeItem('recoil-persist');
+                  alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
+                  window.location.href = '/';
+                },
+              });
             }, 3600000); // 1시간 후 세션 만료
           },
           fail: function (error: any) {

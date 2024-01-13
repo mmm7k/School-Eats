@@ -2,9 +2,6 @@ import Link from 'next/link';
 import { useSignup } from '../../hooks/useSignup';
 import * as S from './SignupPage.styles';
 import { useRouter } from 'next/router';
-import { kakaoKey } from '../../../../pages/_app';
-import { KakaoLoggedIn, isLoggedIn } from '../../../commons/globalstate/globalstate';
-import { useRecoilState } from 'recoil';
 import { useKakaoLogin } from '../../hooks/useKakoLogin';
 
 export default function SignupPage(): JSX.Element {
@@ -23,7 +20,6 @@ export default function SignupPage(): JSX.Element {
           <S.HomeButton />
         </Link>
       </S.HomeButtonWrapper>
-
       <S.CouponDiv>
         <S.CouponImg>🎁</S.CouponImg>
         회원 가입시 <S.ColorText>&nbsp;&nbsp;제휴 맛집 쿠폰&nbsp;&nbsp;</S.ColorText> 즉시 지급
@@ -35,7 +31,6 @@ export default function SignupPage(): JSX.Element {
       <>
         <hr style={{ margin: '8%', width: '100%', height: '1px', backgroundColor: '#E6E6E6' }} />
       </>
-
       <S.form onSubmit={handleSubmit}>
         <S.InputTitle>이메일</S.InputTitle>
         <S.Input {...register('email')} placeholder="이메일을 입력해주세요." />
@@ -51,7 +46,6 @@ export default function SignupPage(): JSX.Element {
 
         <S.SignupButton type="submit">회원가입하기</S.SignupButton>
       </S.form>
-
       <Link href="/login">
         <S.LoginRouter>
           이미 아이디가 있으신가요?&nbsp;&nbsp;

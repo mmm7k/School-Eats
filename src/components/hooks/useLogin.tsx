@@ -42,10 +42,13 @@ export const useLogin = () => {
         router.push('/');
 
         setTimeout(() => {
+          authInstance.signOut();
           setLoggedin(false);
           setLayoutEmail(null);
           setUserEmailState(null);
-          alert('로그인 세션이 만료되었습니다.');
+          localStorage.removeItem('recoil-persist');
+          alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
+          window.location.href = '/';
         }, 3600000); // 1시간 후 세션 만료
       })
       .catch(() => {

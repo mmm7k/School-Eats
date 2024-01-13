@@ -92,5 +92,5 @@ export const RateWrapper = styled.div`
 `;
 
 export const StyledSkeleton = styled(Skeleton)`
-  margin-top: 7%;
+  margin-top: 10%;
 `;

@@ -8,13 +8,13 @@ export default function LayoutFooter(): JSX.Element {
         <S.Infor>
           대표자: 김민수
           <br />
-          사업자 등록번호:777-777-77777
+          사업자 등록번호:-
           <br />
-          통신판매업신고번호:2222-서울용산-2222
+          통신판매업신고번호:-
           <br />
           개인정보관리책임 : 김민수
           <br />
-          주소: 서울특별시 용산구 스쿨잇츠32길 (스쿨빌딩) 222
+          주소: -
           <br />
           이메일: computerking0646@gmail.com
           <br />

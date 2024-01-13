@@ -38,59 +38,22 @@ export const BackButton = styled.a`
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-left: 3%;
-  padding-right: 3%;
+  height: 50%;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
 `;
 
-//
 export const Notice = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
-  margin-top: 7%;
-  padding-left: 3%;
+  margin-top: 10%;
 `;
 
 export const SubNotice = styled.div`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  margin-top: 2%;
+  margin-top: 5%;
   color: #8f8f8f;
-  padding-left: 3%;
-`;
-
-export const Bookmarktitle = styled.div`
-  font-size: 14px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-`;
-export const BookmarkText = styled.span`
-  font-size: 13px;
-`;
-
-export const BookmarkWrapper = styled.div`
-  line-height: 1.5;
-  margin-top: 4%;
-  height: auto;
-  border: 2px solid #e6e6e6;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3% 0;
-  padding-left: 3%;
-  cursor: pointer;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.03); // slightly darken on hover
-  }
-`;
-
-export const RateWrapper = styled.div`
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1px;
-`;
-
-export const StyledSkeleton = styled(Skeleton)`
-  margin-top: 10%;
 `;
