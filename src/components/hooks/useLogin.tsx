@@ -38,18 +38,11 @@ export const useLogin = () => {
         setUserEmailState(userCredential.user.email);
         setLayoutEmail(userCredential.user.email?.split('@')[0]);
         setLoggedin(true);
+        const now = new Date();
+        const sessionExpiry = now.getTime() + 10000; // 현재 시간에서 1시간 후
+        localStorage.setItem('sessionExpiry', sessionExpiry.toString());
         Modal.success({ content: '로그인에 성공하였습니다!' });
         router.push('/');
-
-        setTimeout(() => {
-          authInstance.signOut();
-          setLoggedin(false);
-          setLayoutEmail(null);
-          setUserEmailState(null);
-          localStorage.removeItem('recoil-persist');
-          alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
-          window.location.href = '/';
-        }, 3600000); // 1시간 후 세션 만료
       })
       .catch(() => {
         Modal.error({ title: '회원 정보가 올바르지 않습니다.' });

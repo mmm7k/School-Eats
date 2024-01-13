@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import * as S from './MyPage.styles';
-import { useRecoilSnapshot, useRecoilState, useRecoilValue } from 'recoil';
-import { KakaoLoggedIn, isLoggedIn, layoutEmail, userEmail } from '../../../commons/globalstate/globalstate';
+import { useRecoilValue } from 'recoil';
+import { KakaoLoggedIn, layoutEmail } from '../../../commons/globalstate/globalstate';
 import { useKakaoLogin } from '../../hooks/useKakoLogin';
 import { useLogin } from '../../hooks/useLogin';
 import { useRouter } from 'next/router';
@@ -22,10 +22,8 @@ import { Avatar } from 'antd';
 import { useMoveToPage } from '../../hooks/useMoveToPage';
 
 export default function MyPage(): JSX.Element {
-  const { user, setUser }: any = useRecoilState(layoutEmail);
-  const { kakaoLogin, setKakaoLogin }: any = useRecoilState(KakaoLoggedIn);
-  const { email, setEmail }: any = useRecoilState(userEmail);
-  const { loggedin, setLoggedin }: any = useRecoilState(isLoggedIn);
+  const user = useRecoilValue(layoutEmail);
+  const kakaoLogin = useRecoilValue(KakaoLoggedIn);
   const { kakaoLogout } = useKakaoLogin();
   const { onClickLogout } = useLogin();
   const { onClickMoveToPage } = useMoveToPage();
@@ -35,16 +33,11 @@ export default function MyPage(): JSX.Element {
   };
 
   const logout = () => {
-    console.log('a');
     if (kakaoLogin) {
       kakaoLogout();
     } else {
       onClickLogout();
     }
-    setKakaoLogin(false);
-    setLoggedin(false);
-    setUser(null);
-    setEmail(null);
     localStorage.removeItem('recoil-persist');
     window.location.href = '/';
   };
