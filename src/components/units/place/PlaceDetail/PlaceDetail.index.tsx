@@ -7,7 +7,6 @@ import { useComments } from '../../../hooks/useComments';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { layoutEmail, userEmail } from '../../../../commons/globalstate/globalstate';
-import { DeleteIcon } from '../../board/detail/BoardDetail.style';
 import { useBookmark } from '../../../hooks/useBookmark';
 
 export default function PlaceDetail(): JSX.Element {
