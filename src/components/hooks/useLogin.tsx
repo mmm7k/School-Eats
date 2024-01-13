@@ -41,7 +41,8 @@ export const useLogin = () => {
         if (!autologin) {
           // 자동로그인이 활성화된 경우만 세션 만료 시간 설정
           const now = new Date();
-          const sessionExpiry = now.getTime() + 3600000;
+          // const sessionExpiry = now.getTime() + 3600000;
+          const sessionExpiry = now.getTime() + 5000;
           // 현재 시간에서 1시간 후
           localStorage.setItem('sessionExpiry', sessionExpiry.toString());
         }

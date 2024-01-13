@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         if (now > parseInt(sessionExpiry, 10)) {
           authInstance.signOut();
           alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
-          clearInterval(interval); // 인터벌 정지
+          // clearInterval(interval); // 인터벌 정지
           localStorage.removeItem('sessionExpiry');
           localStorage.removeItem('recoil-persist');
           window.location.href = '/';
