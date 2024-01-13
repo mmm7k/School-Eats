@@ -48,7 +48,8 @@ export const useKakaoLogin = () => {
                   window.location.href = '/';
                 },
               });
-            }, 3600000); // 1시간 후 세션 만료
+              // }, 3600000); // 1시간 후 세션 만료
+            }, 15000); // 1시간 후 세션 만료
           },
           fail: function (error: any) {
             console.log(error);

@@ -78,7 +78,7 @@ export const UserEmail = styled.span`
 `;
 export const Logout = styled.span`
   font-size: 12px;
-  color: #a5a5a5;
+  color: #848484;
   text-decoration: underline;
   cursor: pointer;
 `;
