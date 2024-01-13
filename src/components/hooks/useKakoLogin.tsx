@@ -1,5 +1,5 @@
-import { useRecoilState } from 'recoil';
-import { KakaoLoggedIn, isLoggedIn, layoutEmail, userEmail } from '../../commons/globalstate/globalstate';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { KakaoLoggedIn, autoLogin, isLoggedIn, layoutEmail, userEmail } from '../../commons/globalstate/globalstate';
 import { useRouter } from 'next/router';
 
 export const useKakaoLogin = () => {
@@ -8,7 +8,6 @@ export const useKakaoLogin = () => {
   const [, setKakaoLoggedin] = useRecoilState<boolean | null>(KakaoLoggedIn);
   const [, setLayoutEmail] = useRecoilState<string | null | undefined>(layoutEmail);
   const [, setUserEmailState] = useRecoilState<string | null | undefined>(userEmail);
-
   const kakaoLogin = async () => {
     //@ts-ignore
     Kakao.Auth.login({
@@ -16,9 +15,7 @@ export const useKakaoLogin = () => {
         router.push('/');
         setLoggedin(true);
         setKakaoLoggedin(true);
-        const now = new Date();
-        const sessionExpiry = now.getTime() + 10000; // 현재 시간에서 1시간 후
-        localStorage.setItem('sessionExpiry', sessionExpiry.toString());
+
         // 사용자 정보 요청
         //@ts-ignore
         Kakao.API.request({
@@ -51,6 +48,7 @@ export const useKakaoLogin = () => {
           setLoggedin(false);
           setLayoutEmail(null);
           setUserEmailState(null);
+
           localStorage.removeItem('recoil-persist');
         },
         fail: function (error: any) {

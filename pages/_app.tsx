@@ -38,13 +38,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     // 페이지가 로드되면 실행
     window.Kakao.init(process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY);
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       const sessionExpiry = localStorage.getItem('sessionExpiry');
       if (sessionExpiry) {
         const now = new Date().getTime();
         if (now > parseInt(sessionExpiry, 10)) {
+          authInstance.signOut();
           alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
           clearInterval(interval); // 인터벌 정지
           localStorage.removeItem('sessionExpiry');

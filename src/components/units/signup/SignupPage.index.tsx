@@ -33,15 +33,15 @@ export default function SignupPage(): JSX.Element {
       </>
       <S.form onSubmit={handleSubmit}>
         <S.InputTitle>이메일</S.InputTitle>
-        <S.Input {...register('email')} placeholder="이메일을 입력해주세요." />
+        <S.Input {...register('email')} type="email" placeholder="이메일을 입력해주세요." />
         {errors.email && <S.error>{errors.email.message}</S.error>}
 
         <S.InputTitle>비밀번호</S.InputTitle>
-        <S.Input {...register('password')} placeholder="비밀번호를 입력해주세요" />
+        <S.Input {...register('password')} type="password" placeholder="비밀번호를 입력해주세요" />
         {errors.password && <S.error>{errors.password.message}</S.error>}
 
         <S.InputTitle>비밀번호 확인</S.InputTitle>
-        <S.Input {...register('checkPassword')} placeholder="비밀번호를 입력해주세요" />
+        <S.Input {...register('checkPassword')} type="password" placeholder="비밀번호를 입력해주세요" />
         {errors.checkPassword && <S.error>{errors.checkPassword.message}</S.error>}
 
         <S.SignupButton type="submit">회원가입하기</S.SignupButton>

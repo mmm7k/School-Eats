@@ -3,10 +3,18 @@ import { useLogin } from '../../hooks/useLogin';
 import * as S from './LoginPage.styles';
 import { useKakaoLogin } from '../../hooks/useKakoLogin';
 import { useRouter } from 'next/router';
+import { Checkbox, CheckboxProps } from 'antd';
+import { useRecoilState } from 'recoil';
+import { autoLogin } from '../../../commons/globalstate/globalstate';
 
 export default function LoginPage(): JSX.Element {
   const { register, handleSubmit, errors } = useLogin();
+  const [, setCheck] = useRecoilState(autoLogin);
   const { kakaoLogin } = useKakaoLogin();
+
+  const onChange: CheckboxProps['onChange'] = (e) => {
+    setCheck(e.target.checked);
+  };
 
   const router = useRouter();
   const goBack = () => {
@@ -32,10 +40,11 @@ export default function LoginPage(): JSX.Element {
         <hr style={{ width: '38%', height: '1px', backgroundColor: '#848484' }} />
       </S.Line>
       <S.form onSubmit={handleSubmit}>
-        <S.IdInput {...register('email')} placeholder="아이디" />
+        <S.IdInput {...register('email')} type="email" placeholder="아이디" />
         {errors.email && <S.error>{errors.email.message}</S.error>}
-        <S.PwInput {...register('password')} placeholder="비밀번호" />
+        <S.PwInput {...register('password')} type="password" placeholder="비밀번호" />
         {errors.password && <S.error>{errors.password.message}</S.error>}
+        <Checkbox onChange={onChange}>자동로그인</Checkbox>
         <S.LoginButton type="submit">로그인</S.LoginButton>
       </S.form>
       <Link href="signup">

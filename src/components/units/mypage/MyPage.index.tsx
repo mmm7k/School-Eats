@@ -38,6 +38,7 @@ export default function MyPage(): JSX.Element {
     } else {
       onClickLogout();
     }
+    localStorage.removeItem('sessionExpiry');
     localStorage.removeItem('recoil-persist');
     window.location.href = '/';
   };
