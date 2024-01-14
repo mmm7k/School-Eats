@@ -114,3 +114,12 @@ export const SpinDiv = styled.div`
   justify-content: center;
   margin-top: 5%;
 `;
+
+export const SelectDiv = styled.div`
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: flex-end;
+`;
