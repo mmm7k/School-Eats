@@ -21,7 +21,7 @@ interface Post {
 
 export default function KoreanPlace(): JSX.Element {
   const [order, setOrder]: any = useState('commentscount');
-  const { posts, hasMore, loading }: any = useGetCategoryPosts('all', '한식', order);
+  const { posts, loading }: any = useGetCategoryPosts('all', '한식', order);
   const handleChange = (value: string) => {
     setOrder(value);
   };
@@ -109,7 +109,6 @@ export default function KoreanPlace(): JSX.Element {
           )
         )}
       </S.ContentsWrapper>
-      {/* <S.SpinDiv>{hasMore && loading && <Spin size="default" />}</S.SpinDiv> */}
     </S.Wrapper>
   );
 }

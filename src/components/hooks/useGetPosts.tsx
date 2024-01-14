@@ -84,7 +84,6 @@ export const useGetPosts = (menu: string, orderb: string) => {
       setLoading(false);
     }
   };
-  console.log(orderb);
   useEffect(() => {
     getAllPosts();
   }, [orderb]);

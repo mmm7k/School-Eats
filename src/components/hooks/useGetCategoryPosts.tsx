@@ -103,7 +103,6 @@ export const useGetCategoryPosts = (menu: string, category: string, orderb: stri
       setLoading(false);
     }
   };
-  console.log(orderb);
   useEffect(() => {
     getAllPosts();
   }, [orderb]);

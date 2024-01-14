@@ -19,11 +19,6 @@ interface Post {
 }
 
 export default function Place(): JSX.Element {
-  const router = useRouter();
-  //@ts-ignore
-  // const { posts, hasMore, loading }: any = useGetPosts('all');
-  //@ts-ignore
-
   const [order, setOrder]: any = useState('commentscount');
   const { posts, loading }: any = useGetPosts('all', order);
   const handleChange = (value: string) => {

@@ -21,7 +21,7 @@ interface Post {
 
 export default function JapanesePlace(): JSX.Element {
   const [order, setOrder]: any = useState('commentscount');
-  const { posts, hasMore, loading }: any = useGetCategoryPosts('all', '일식', order);
+  const { posts, loading }: any = useGetCategoryPosts('all', '일식', order);
   const handleChange = (value: string) => {
     setOrder(value);
   };
