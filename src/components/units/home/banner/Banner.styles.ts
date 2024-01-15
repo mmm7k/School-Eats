@@ -11,12 +11,12 @@ export const Wrapper = styled.div`
 export const SliderImage1 = styled.div`
   height: 257px;
   background-image: url('/banner1.png');
-
+  background-size: cover;
   cursor: pointer;
 `;
 
 export const Banner1Text = styled.div`
-  color: #ee5555;
+  color: #f04f4f;
   height: 40px;
   font-weight: 550;
   font-size: 17px;
@@ -25,7 +25,7 @@ export const Banner1Text = styled.div`
   margin-left: 9%;
 `;
 export const Banner1Text2 = styled.div`
-  color: #f00508;
+  color: #e32929;
   height: 40px;
   font-weight: 900;
   font-size: 20px;
@@ -35,54 +35,67 @@ export const Banner1Text2 = styled.div`
 `;
 
 export const Banner1Text3 = styled.div`
-  color: #ee5555;
+  color: #e32929;
   height: 40px;
   font-weight: 400;
   font-size: 11px;
   cursor: pointer;
-  margin-top: 52px;
+  margin-top: 51px;
   margin-left: 9%;
 `;
 
 export const Banner2Text = styled.div`
-  color: white;
-
-  height: 40px;
-  font-weight: 550;
-  font-size: 21px;
-  line-height: 1.2;
-  cursor: pointer;
-  margin-top: 60px;
-  margin-left: 9%;
-`;
-export const Banner2Text2 = styled.div`
-  color: white;
+  color: #062794;
 
   height: 40px;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 21px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-left: 9%;
 `;
 
-export const Banner2Text3 = styled.div`
-  color: white;
+export const Banner2Text2 = styled.div`
+  color: #062794;
   height: 40px;
   font-weight: 400;
   font-size: 11px;
-  margin-left: 9%;
   cursor: pointer;
-  margin-top: 35px;
+  margin-top: 59px;
+  margin-left: 9%;
 `;
+
+export const Banner3Text = styled.div`
+  color: #872c01;
+
+  height: 40px;
+  font-weight: 900;
+  font-size: 21px;
+  cursor: pointer;
+  margin-top: 71px;
+  margin-left: 9%;
+`;
+
+export const Banner3Text2 = styled.div`
+  color: #872c01;
+  height: 40px;
+  font-weight: 400;
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 88px;
+  margin-left: 9%;
+`;
+
 export const SliderImage2 = styled.div`
   height: 257px;
   background-image: url('/banner2.png');
+  background-size: cover;
   cursor: pointer;
 `;
 
 export const SliderImage3 = styled.div`
   height: 257px;
   background-image: url('/banner3.png');
+  background-size: cover;
   cursor: pointer;
 `;
