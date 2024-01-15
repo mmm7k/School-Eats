@@ -50,7 +50,9 @@ export default function MyPage(): JSX.Element {
         </S.IconWrapper>
         <S.Title>마이페이지</S.Title>
         <S.IconWrapper>
-          <S.SearchIcon />
+          <Link href="/search">
+            <S.SearchIcon />
+          </Link>
           <Link href="/mypage/bookmark">
             <S.TitleBookmarkIcon />
           </Link>
@@ -102,7 +104,7 @@ export default function MyPage(): JSX.Element {
             </S.TextWrapper>
             &rarr;
           </S.Contents>
-          <S.Contents onClick={onClickMoveToPage('/mypage/request')}>
+          <S.Contents onClick={onClickMoveToPage('/request')}>
             <S.TextWrapper>
               <SmileOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
               <S.ContentsText>맛집 추가 요청</S.ContentsText>
@@ -110,7 +112,7 @@ export default function MyPage(): JSX.Element {
             &rarr;
           </S.Contents>
 
-          <S.Contents onClick={onClickMoveToPage('/mypage/feedback')}>
+          <S.Contents onClick={onClickMoveToPage('/feedback')}>
             <S.TextWrapper>
               <FireOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
               <S.ContentsText>개선 사항 요청</S.ContentsText>

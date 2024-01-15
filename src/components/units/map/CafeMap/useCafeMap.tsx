@@ -26,35 +26,35 @@ export default function useCafeMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14512088091175, 126.92067364615829),
-            route: '/asdasd',
+            route: '/place/소맥베이커리',
           },
           {
             name: '솔티드머랭',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148196020756, 126.9266268771945),
-            route: '/asdasd',
+            route: '/place/솔티드머랭',
           },
           {
             name: '스타벅스',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14459266339337, 126.93016088563874),
-            route: '/asdasd',
+            route: '/place/스타벅스',
           },
           {
             name: '코로로9',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.147688364546944, 126.92557656534944),
-            route: '/asdasd',
+            route: '/place/코코로9',
           },
           {
             name: '플로리다',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14926498612606, 126.9243487535859),
-            route: '/asdasd',
+            route: '/place/플로리다',
           },
         ];
         locations.map((location, index) => {

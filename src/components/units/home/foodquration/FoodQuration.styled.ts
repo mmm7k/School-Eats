@@ -47,9 +47,18 @@ export const FoodImage4 = styled.div`
   overflow: hidden;
 `;
 
+export const FoodImage5 = styled.div`
+  height: 471px;
+  background-image: url('/카페.jpg');
+  background-size: cover;
+  width: 314px;
+  border-radius: 15px;
+  overflow: hidden;
+`;
+
 export const FoodTitle = styled.div`
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
   margin-left: 20px;
   margin-top: 30px;
@@ -58,7 +67,7 @@ export const FoodTitle = styled.div`
 
 export const FoodText = styled.div`
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   margin-left: 20px;
   margin-top: 10px;

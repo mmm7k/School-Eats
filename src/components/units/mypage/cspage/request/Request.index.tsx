@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import * as S from '../CsPage.styles';
 import { useWritePost } from '../../../../hooks/useWritePost';
+import { useRouter } from 'next/router';
 
 export default function Request() {
   const { register, handleSubmit, errors, onSubmit } = useWritePost(
@@ -9,13 +10,17 @@ export default function Request() {
     '맛집 추가 요청이 등록되었습니다.',
     '/mypage'
   );
+
+  const router = useRouter();
+  const goBack = () => {
+    router.back();
+  };
+
   return (
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <Link href="/mypage">
-            <S.BackButton />
-          </Link>
+          <S.BackButton onClick={goBack} />
         </S.IconWrapper>
         <S.TitleText>맛집 추가 요청</S.TitleText>
       </S.TitleWrapper>

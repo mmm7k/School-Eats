@@ -26,28 +26,28 @@ export default function useMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.146898076214555, 126.92665273360377),
-            route: '/asdasd',
+            route: '/place/미미원',
           },
           {
             name: '고기오닭갈비',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14449078311788, 126.92933794935098),
-            route: '/asdasd',
+            route: '/place/고기오닭갈비',
           },
           {
             name: '길목식당',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14515740629279, 126.92868169258986),
-            route: '/asdasd',
+            route: '/place/길목식당',
           },
           {
             name: '무진장떡볶이',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14441879083262, 126.9295382804047),
-            route: '/asdasd',
+            route: '/place/무진장떡볶이',
           },
           //중식
           {
@@ -55,14 +55,14 @@ export default function useMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14359797325633, 126.92482585917169),
-            route: '/asdasd',
+            route: '/place/백두산',
           },
           {
             name: '열도지',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14708066821672, 126.92312443151344),
-            route: '/asdasd',
+            route: '/place/열도지',
           },
           //일식
           {
@@ -70,21 +70,21 @@ export default function useMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148389608485296, 126.92628924778579),
-            route: '/asdasd',
+            route: '/place/달곰식당',
           },
           {
             name: '소보쿠',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14720714131704, 126.92723133525503),
-            route: '/asdasd',
+            route: '/place/소보쿠',
           },
           {
             name: '통큰돈까스',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14523238403192, 126.92973510658162),
-            route: '/asdasd',
+            route: '/place/통큰돈까스',
           },
           //양식
           {
@@ -92,14 +92,14 @@ export default function useMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14922179431202, 126.92741610454412),
-            route: '/asdasd',
+            route: '/place/부엌간',
           },
           {
             name: '행복경양식',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
-            route: '/asdasd',
+            route: '/place/행복경양식',
           },
           //카페~
           {
@@ -107,35 +107,35 @@ export default function useMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14512088091175, 126.92067364615829),
-            route: '/asdasd',
+            route: '/place/소맥베이커리',
           },
           {
             name: '솔티드머랭',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148196020756, 126.9266268771945),
-            route: '/asdasd',
+            route: '/place/솔티드머랭',
           },
           {
             name: '스타벅스',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14459266339337, 126.93016088563874),
-            route: '/asdasd',
+            route: '/place/스타벅스',
           },
           {
             name: '코로로9',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.147688364546944, 126.92557656534944),
-            route: '/asdasd',
+            route: '/place/코코로9',
           },
           {
             name: '플로리다',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14926498612606, 126.9243487535859),
-            route: '/asdasd',
+            route: '/place/플로리다',
           },
         ];
         locations.map((location, index) => {

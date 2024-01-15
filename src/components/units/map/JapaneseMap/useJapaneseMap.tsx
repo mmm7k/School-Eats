@@ -26,21 +26,21 @@ export default function useJapaneseMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148389608485296, 126.92628924778579),
-            route: '/asdasd',
+            route: '/place/달곰식당',
           },
           {
             name: '소보쿠',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14720714131704, 126.92723133525503),
-            route: '/asdasd',
+            route: '/place/소보쿠',
           },
           {
             name: '통큰돈까스',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14523238403192, 126.92973510658162),
-            route: '/asdasd',
+            route: '/place/통큰돈까스',
           },
         ];
         locations.map((location, index) => {

@@ -40,7 +40,7 @@ export default function SideBanner(): JSX.Element {
           <S.Tag>&nbsp;&nbsp;# 친구와함께&nbsp;&nbsp;</S.Tag>
         </S.TagLine>
         <S.TagLine>
-          <S.Tag>&nbsp;&nbsp;# 가입혜택&nbsp;&nbsp;</S.Tag>
+          <S.Tag>&nbsp;&nbsp;# 오늘 점심은?&nbsp;&nbsp;</S.Tag>
         </S.TagLine>
       </S.TagWrapper>
     </S.Wrapper>

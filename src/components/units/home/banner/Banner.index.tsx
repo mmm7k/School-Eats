@@ -3,6 +3,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import * as S from './Banner.styles';
 import React from 'react';
+import Link from 'next/link';
+import { useMoveToPage } from '../../../hooks/useMoveToPage';
 export default function Banner(): JSX.Element {
   const settings = {
     dots: true,
@@ -13,18 +15,18 @@ export default function Banner(): JSX.Element {
     autoplay: true,
   };
 
+  const { onClickMoveToPage } = useMoveToPage();
   return (
     <S.Wrapper>
       <Slider {...settings}>
-        <S.SliderImage1>
+        <S.SliderImage1 onClick={onClickMoveToPage('/guide')}>
           <S.Banner1Text>
             School Eats를 맛있게
             <br />
             즐기는 방법!
           </S.Banner1Text>
           <S.Banner1Text2>School Eats 설명서</S.Banner1Text2>
-
-          <S.Banner1Text3>할인혜택 확인하기 {'>'}</S.Banner1Text3>
+          <S.Banner1Text3>이용안내 확인하기 {'>'}</S.Banner1Text3>
         </S.SliderImage1>
         <S.SliderImage2>
           <S.Banner2Text>

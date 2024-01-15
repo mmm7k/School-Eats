@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   padding-right: 3%;
   width: 100%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 `;
 
 export const Logo = styled.div`

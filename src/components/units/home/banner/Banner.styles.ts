@@ -11,43 +11,36 @@ export const Wrapper = styled.div`
 export const SliderImage1 = styled.div`
   height: 257px;
   background-image: url('/banner1.png');
+
   cursor: pointer;
 `;
+
 export const Banner1Text = styled.div`
   color: #ee5555;
-
   height: 40px;
-
   font-weight: 550;
-  font-size: 21px;
-
+  font-size: 17px;
   line-height: 1.2;
-
   margin-top: 60px;
   margin-left: 9%;
 `;
 export const Banner1Text2 = styled.div`
   color: #f00508;
-
   height: 40px;
-
   font-weight: 900;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 8px;
   margin-left: 9%;
 `;
 
 export const Banner1Text3 = styled.div`
   color: #ee5555;
-
   height: 40px;
-
   font-weight: 400;
   font-size: 11px;
-
   cursor: pointer;
-  margin-top: 35px;
+  margin-top: 52px;
   margin-left: 9%;
 `;
 

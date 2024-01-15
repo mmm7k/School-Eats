@@ -27,7 +27,9 @@ export default function LayoutHeader(): JSX.Element {
           </S.Logo>
         </Link>
         <S.IconWrapper>
-          <S.SearchIcon />
+          <Link href="/search">
+            <S.SearchIcon />
+          </Link>
           <S.BookmarkIcon onClick={goBookmark} />
         </S.IconWrapper>
       </S.Wrapper>

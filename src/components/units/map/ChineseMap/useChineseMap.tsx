@@ -26,14 +26,14 @@ export default function useChineseMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14359797325633, 126.92482585917169),
-            route: '/asdasd',
+            route: '/place/백두산',
           },
           {
             name: '열도지',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14708066821672, 126.92312443151344),
-            route: '/asdasd',
+            route: '/place/열도지',
           },
         ];
         locations.map((location, index) => {

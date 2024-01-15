@@ -58,20 +58,28 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const isMyPage = router.pathname === '/mypage' || router.pathname.startsWith('/mypage/');
   const isNoticePage = router.pathname === '/notice';
   const isGuidePage = router.pathname === '/guide';
+  const isSearchPage = router.pathname === '/search';
+  const isFeedbackPage = router.pathname === '/feedback';
+  const isRequestPage = router.pathname === '/request';
   const showLayout = !isLoginPage && !isSignupPage;
   const mypage = isMyPage;
   const noticePage = isNoticePage;
   const guidePage = isGuidePage;
+  const searchPage = isSearchPage;
+  const requestPage = isRequestPage;
+  const feedbackPage = isFeedbackPage;
   return (
     <Wrapper>
       <LeftWrapper>
         <SideBanner />
       </LeftWrapper>
       <MainWrapper>
-        {showLayout && !mypage && !noticePage && !guidePage && <LayoutHeader />}
+        {showLayout && !mypage && !noticePage && !guidePage && !searchPage && !feedbackPage && !requestPage && (
+          <LayoutHeader />
+        )}
 
         <Body>{props.children}</Body>
-        {showLayout && <LayoutFooter />}
+        {showLayout && !searchPage && <LayoutFooter />}
         <ScrollButton />
         {showLayout && <Navbar />}
       </MainWrapper>

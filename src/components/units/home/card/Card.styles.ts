@@ -36,7 +36,7 @@ export const Text = styled.div`
   width: 472px;
 
   font-weight: 600;
-  font-size: 21px;
+  font-size: 17px;
   margin-top: 40px;
   margin-left: 30px;
   line-height: 1.3;
@@ -49,7 +49,7 @@ export const Text2 = styled.div`
   width: 472px;
   height: 20px;
   font-weight: 100;
-  font-size: 14px;
+  font-size: 11px;
   margin-left: 30px;
   margin-top: 25px;
   text-decoration: underline;

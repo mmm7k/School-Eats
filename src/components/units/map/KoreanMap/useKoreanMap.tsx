@@ -26,28 +26,28 @@ export default function useKoreanMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.146898076214555, 126.92665273360377),
-            route: '/asdasd',
+            route: '/place/미미원',
           },
           {
             name: '고기오닭갈비',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14449078311788, 126.92933794935098),
-            route: '/asdasd',
+            route: '/place/고기오닭갈비',
           },
           {
             name: '길목식당',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14515740629279, 126.92868169258986),
-            route: '/asdasd',
+            route: '/place/길목식당',
           },
           {
             name: '무진장떡볶이',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14441879083262, 126.9295382804047),
-            route: '/asdasd',
+            route: '/place/무진장떡볶이',
           },
         ];
         locations.map((location, index) => {

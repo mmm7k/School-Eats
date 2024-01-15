@@ -26,14 +26,14 @@ export default function useWesternMap(): JSX.Element {
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14922179431202, 126.92741610454412),
-            route: '/asdasd',
+            route: '/place/부엌간',
           },
           {
             name: '행복경양식',
             imageSrc: '/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
-            route: '/asdasd',
+            route: '/place/행복경양식',
           },
         ];
         locations.map((location, index) => {
