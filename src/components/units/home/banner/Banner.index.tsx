@@ -28,15 +28,15 @@ export default function Banner(): JSX.Element {
           <S.Banner1Text2>School Eats 설명서</S.Banner1Text2>
           <S.Banner1Text3>이용안내 확인하기 {'>'}</S.Banner1Text3>
         </S.SliderImage1>
-        <S.SliderImage2>
+        <S.SliderImage2 onClick={onClickMoveToPage('/feedback')}>
           <S.Banner2Text>
             함께 만들어 갈 <br />
             아이디어를 <br />
-            들려주세요!
+            저희에게 들려주세요!
           </S.Banner2Text>
-          <S.Banner2Text2>피드백 하러가기 {'>'}</S.Banner2Text2>
+          <S.Banner2Text2>개선사항 요청하기 {'>'}</S.Banner2Text2>
         </S.SliderImage2>
-        <S.SliderImage3>
+        <S.SliderImage3 onClick={onClickMoveToPage('/request')}>
           <S.Banner3Text>
             숨은 맛집, <br />
             여러분이 알고 있는 곳은

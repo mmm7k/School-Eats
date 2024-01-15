@@ -16,10 +16,10 @@ export const SliderImage1 = styled.div`
 `;
 
 export const Banner1Text = styled.div`
-  color: #f04f4f;
+  color: #e32929;
   height: 40px;
   font-weight: 550;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.2;
   margin-top: 60px;
   margin-left: 9%;
@@ -28,7 +28,7 @@ export const Banner1Text2 = styled.div`
   color: #e32929;
   height: 40px;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
   margin-top: 8px;
   margin-left: 9%;
@@ -51,7 +51,7 @@ export const Banner2Text = styled.div`
   font-weight: 900;
   font-size: 21px;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 71px;
   margin-left: 9%;
 `;
 
@@ -61,7 +61,7 @@ export const Banner2Text2 = styled.div`
   font-weight: 400;
   font-size: 11px;
   cursor: pointer;
-  margin-top: 59px;
+  margin-top: 88px;
   margin-left: 9%;
 `;
 
