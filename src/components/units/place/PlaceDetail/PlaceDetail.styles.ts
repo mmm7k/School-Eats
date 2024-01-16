@@ -86,14 +86,17 @@ export const ReviewRate = styled(Rate)`
 `;
 
 export const ReviewTitle = styled.div`
-  font-size: 14px;
-  font-weight: 600;
-
+  /* font-size: 14px;
+  font-weight: 600; */
+  margin-top: 1%;
+  font-size: 12px;
   display: flex;
   align-items: center;
 `;
 export const ReviewText = styled.span`
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 13px;
+  font-weight: 600;
 `;
 
 export const ReviewInput = styled.textarea`

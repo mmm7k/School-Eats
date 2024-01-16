@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import * as S from './Search.styles';
 import { SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { useFirebaseSearch } from '../../hooks/useSearch';
+import { usePlaceSearch } from '../../hooks/usePlaceSearch';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -13,7 +13,7 @@ export default function Search() {
   };
 
   const [searchTerm, setSearchTerm] = useState(''); // 사용자 입력을 추적하는 상태
-  const searchResults = useFirebaseSearch('all', searchTerm); // 훅 사용
+  const searchResults = usePlaceSearch('all', searchTerm); // 훅 사용
 
   const handleSearchInputChange = (e: any) => {
     setSearchTerm(e.target.value); // 입력 변경 시 searchTerm 업데이트

@@ -1,6 +1,5 @@
 import {
   DocumentData,
-  Firestore,
   QueryDocumentSnapshot,
   addDoc,
   collection,
@@ -14,9 +13,9 @@ import {
 } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { authInstance, db } from '../../../pages/_app';
+import { db } from '../../../pages/_app';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, layoutEmail, userEmail } from '../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
 import { Modal } from 'antd';
 
 interface Comment {
@@ -34,12 +33,8 @@ export const useComments = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [login] = useRecoilState(isLoggedIn);
   const [newComment, setNewComment] = useState<string>('');
-  const { confirm } = Modal;
-  const [commentusermatch, setCommentUserMatch] = useState(false);
   const [newRating, setNewRating] = useState<number>(0);
 
-  // const user = authInstance.currentUser;
-  // const email = user?.email;
   const email = useRecoilValue(userEmail);
   const getComments = async () => {
     let q;
@@ -84,26 +79,17 @@ export const useComments = () => {
     }
   }, [postId]);
 
-  // const addComment = async () => {
-  //   if (login) {
-  //     const comments = collection(db, 'comment');
-  //     await addDoc(comments, {
-  //       placeId: postId,
-  //       text: newComment,
-  //       email,
-  //       rating: newRating,
-  //     });
-  //     success();
-  //   } else {
-  //     addDocError();
-  //   }
-  // };
-
   const addComment = async () => {
     if (login) {
       if (newRating === 0) {
         Modal.error({
           title: '별점은 필수항목입니다.',
+        });
+        return; // 함수 종료
+      }
+      if (newComment.length > 150) {
+        Modal.error({
+          title: '댓글은 150자 이내로 작성해주세요.',
         });
         return; // 함수 종료
       }
@@ -130,16 +116,13 @@ export const useComments = () => {
   // 별점 평균을 계산하고 해당 포스트에 별점을 반영
 
   const [averageRating, setAverageRating]: any = useState(0);
-  // const [commentscount, setCommentsCount] = useState(0);
 
   let avg: number;
   let count: number;
   const updateRate = async () => {
     const board = doc(db, 'all', postId);
     await updateDoc(board, {
-      // rate: averageRating,
       rate: avg,
-      // commentscount: commentscount,
       commentscount: count,
     });
   };
@@ -147,10 +130,8 @@ export const useComments = () => {
   useEffect(() => {
     if (comments.length > 0) {
       const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
-      // setAverageRating(totalRating / comments.length);
       avg = totalRating / comments.length;
       setAverageRating(avg);
-      // setCommentsCount(comments.length);
       count = comments.length;
       updateRate();
     }
@@ -161,13 +142,10 @@ export const useComments = () => {
     newComment,
     newRating,
     setNewRating,
-
     setNewComment,
     addComment,
     deleteComment,
     deletemodal,
-    //
-    // commentscount,
     averageRating,
   };
 };

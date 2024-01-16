@@ -138,7 +138,7 @@ export default function PlaceDetail(): JSX.Element {
           </S.SubmitWrapper>
           {comments.map((comment) => (
             <S.ReviewWrapper key={comment.id}>
-              <S.ReviewTitle>
+              {/* <S.ReviewTitle>
                 {comment.email?.split('@')[0]}
                 <S.ReviewRate allowHalf disabled value={comment.rating} />
                 {comment.email === email && (
@@ -146,7 +146,16 @@ export default function PlaceDetail(): JSX.Element {
                 )}
               </S.ReviewTitle>
 
+              <S.ReviewText>{comment.text}</S.ReviewText> */}
+
               <S.ReviewText>{comment.text}</S.ReviewText>
+              <S.ReviewTitle>
+                {comment.email?.split('@')[0]}
+                <S.ReviewRate allowHalf disabled value={comment.rating} />
+                {comment.email === email && (
+                  <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
+                )}
+              </S.ReviewTitle>
             </S.ReviewWrapper>
           ))}
         </S.InforWrapper>

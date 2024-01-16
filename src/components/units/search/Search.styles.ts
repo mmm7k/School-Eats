@@ -36,7 +36,6 @@ export const SearchInput = styled.input`
   height: auto;
   background: none;
   border: none;
-  border-radius: 10px;
   outline: none;
   margin-left: 2%;
   ::placeholder {

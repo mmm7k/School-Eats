@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 import LayoutHeader from './header/LayoutHeader.index';
-
-import { useAuth } from '../hooks/useAuth';
 import LayoutFooter from './footer/LayoutFooter.index';
-
 import SideBanner from './sidebanner/SideBanner.index';
 import Navbar from './navbar/Navbar.index';
 import ScrollButton from './scrollbutton/ScrollButton.index';
@@ -61,6 +58,7 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const isSearchPage = router.pathname === '/search';
   const isFeedbackPage = router.pathname === '/feedback';
   const isRequestPage = router.pathname === '/request';
+  const isWritePage = router.pathname === '/boards/write';
   const showLayout = !isLoginPage && !isSignupPage;
   const mypage = isMyPage;
   const noticePage = isNoticePage;
@@ -68,15 +66,21 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const searchPage = isSearchPage;
   const requestPage = isRequestPage;
   const feedbackPage = isFeedbackPage;
+  const writePage = isWritePage;
   return (
     <Wrapper>
       <LeftWrapper>
         <SideBanner />
       </LeftWrapper>
       <MainWrapper>
-        {showLayout && !mypage && !noticePage && !guidePage && !searchPage && !feedbackPage && !requestPage && (
-          <LayoutHeader />
-        )}
+        {showLayout &&
+          !writePage &&
+          !mypage &&
+          !noticePage &&
+          !guidePage &&
+          !searchPage &&
+          !feedbackPage &&
+          !requestPage && <LayoutHeader />}
 
         <Body>{props.children}</Body>
         {showLayout && !searchPage && <LayoutFooter />}

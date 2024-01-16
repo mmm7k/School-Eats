@@ -49,7 +49,7 @@ interface SearchResult extends DocumentData {
 
 //   return searchResults;
 // };
-export const useFirebaseSearch = (collectionName: string, searchTerm: string) => {
+export const usePlaceSearch = (collectionName: string, searchTerm: string) => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ export const useFirebaseSearch = (collectionName: string, searchTerm: string) =>
       try {
         // 모든 문서를 가져오기
         const allDocsSnapshot = await getDocs(collection(db, collectionName));
+
         const allSearchData = allDocsSnapshot.docs
           .map((doc) => ({
             ...doc.data(),

@@ -109,7 +109,6 @@ export default function Place(): JSX.Element {
           )
         )}
       </S.ContentsWrapper>
-      {/* <S.SpinDiv>{hasMore && loading && <Spin size="default" />}</S.SpinDiv> */}
     </S.Wrapper>
   );
 }
