@@ -38,9 +38,24 @@ export const useWriteBoardPost = () => {
   const [image, setImage]: any = useState(null);
   const [uploading, setUploading] = useState(false);
 
-  const onImageChange = async (event: any) => {
+  // const onImageChange = async (event: any) => {
+  //   if (event.target.files[0]) {
+  //     setImage(event.target.files[0]);
+  //   }
+  // };
+  const onImageChange = (event: any) => {
     if (event.target.files[0]) {
-      setImage(event.target.files[0]);
+      const file = event.target.files[0];
+      // const fileType = file.type;
+
+      // // PNG와 JPG 이미지만 허용
+      // if (fileType === 'image/png' || fileType === 'image/jpeg') {
+      setImage(file);
+      // } else {
+      //   alert('PNG 또는 JPG 이미지만 업로드할 수 있습니다.');
+      //   // 파일 선택 초기화
+      //   event.target.value = '';
+      // }
     }
   };
 

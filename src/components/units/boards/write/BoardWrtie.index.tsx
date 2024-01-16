@@ -1,16 +1,24 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import * as S from './BoardWrite.styles';
-
 import { useRouter } from 'next/router';
 import { useWriteBoardPost } from '../../../hooks/useWriteBoardPost';
 
 export default function BoardWrite() {
   const { register, handleSubmit, errors, onSubmit, onImageChange, uploading } = useWriteBoardPost();
-
+  const [selectedFile, setSelectedFile] = useState('');
   const router = useRouter();
   const goBack = () => {
     router.back();
+  };
+
+  const handleFileChange = (event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file.name);
+    } else {
+      setSelectedFile('');
+    }
+    onImageChange(event); // 이미지 변경 처리
   };
 
   return (
@@ -22,16 +30,18 @@ export default function BoardWrite() {
         <S.TitleText>글쓰기</S.TitleText>
       </S.TitleWrapper>
       <S.Wrapper>
-        <S.Title>여러분의 소중한 의견을 남겨주세요!</S.Title>
+        <S.Title>여러분의 소장ㅎ</S.Title>
         <S.SubTitle>요청을 등록하시면 빠른 시일 내 검토 후 반영됩니다.</S.SubTitle>
         <S.form onSubmit={handleSubmit(onSubmit)}>
           <S.InputTitle>제목</S.InputTitle>
           <S.Input {...register('title')} placeholder="제목을 입력해주세요." />
           {errors.title && <p>{errors.title.message}</p>}
-          <S.InputTitle>요청 사항</S.InputTitle>
+          <S.InputTitle>내용</S.InputTitle>
           <S.ContentsInput {...register('contents')} placeholder="내용을 입력해주세요." />
           {errors.contents && <p>{errors.contents.message}</p>}
-          <input type="file" onChange={onImageChange} />
+          {/* <input type="file" accept=".jpg,.png" onChange={onImageChange} /> */}
+          <S.UploadLabel htmlFor="file-upload">{selectedFile || '사진 선택'}</S.UploadLabel>
+          <S.HiddenFileInput id="file-upload" type="file" accept=".jpg,.png" onChange={handleFileChange} />
           <S.SubmitButton type="submit">등록하기</S.SubmitButton>
         </S.form>
       </S.Wrapper>

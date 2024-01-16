@@ -60,7 +60,6 @@ export const InputTitle = styled.div`
   font-size: 14px;
   font-weight: 600;
   width: 100%;
-
   margin-top: 3%;
   margin-bottom: 3%;
 `;
@@ -119,4 +118,29 @@ export const SubmitButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+export const UploadLabel = styled.label`
+  display: inline-block;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5.5%;
+  font-size: 13px;
+  line-height: 22px;
+  color: #333;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:hover {
+    background-color: #e9e9e9;
+  }
+`;
+
+export const HiddenFileInput = styled.input`
+  display: none;
 `;
