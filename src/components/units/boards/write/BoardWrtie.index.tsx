@@ -30,8 +30,8 @@ export default function BoardWrite() {
         <S.TitleText>글쓰기</S.TitleText>
       </S.TitleWrapper>
       <S.Wrapper>
-        <S.Title>여러분의 소장ㅎ</S.Title>
-        <S.SubTitle>요청을 등록하시면 빠른 시일 내 검토 후 반영됩니다.</S.SubTitle>
+        <S.Title>숨겨진 맛집을 공유해주세요!</S.Title>
+        <S.SubTitle>여러분만의 맛집을 함께 나눠요!</S.SubTitle>
         <S.form onSubmit={handleSubmit(onSubmit)}>
           <S.InputTitle>제목</S.InputTitle>
           <S.Input {...register('title')} placeholder="제목을 입력해주세요." />

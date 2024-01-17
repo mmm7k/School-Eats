@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { DocumentData, collection, doc, getDoc, query, where } from 'firebase/firestore';
 import { db } from '../../../pages/_app';
 import { useRouter } from 'next/router';
-// import { useAuth } from './useAuth';
-import { useLogin } from './useLogin';
 import { userEmail } from '../../commons/globalstate/globalstate';
 import { useRecoilValue } from 'recoil';
 
@@ -11,7 +9,7 @@ interface Post extends DocumentData {
   email?: string;
 }
 
-export const useGetDetailPost = (menu: string) => {
+export const useGetDetailPost = () => {
   const logEmail = useRecoilValue(userEmail);
   const [post, setPost] = useState<Post | null>(null);
   const [usermatch, setUserMatch] = useState(false);
@@ -23,7 +21,7 @@ export const useGetDetailPost = (menu: string) => {
   useEffect(() => {
     if (router.isReady) {
       const getPost = async () => {
-        const postRef = doc(db, menu, postId); // menu와 boardId를 사용하여 문서에 접근
+        const postRef = doc(db, 'all', postId); // menu와 boardId를 사용하여 문서에 접근
         const postDoc = await getDoc(postRef);
 
         if (postDoc.exists()) {

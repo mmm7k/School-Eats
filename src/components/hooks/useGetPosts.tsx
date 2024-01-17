@@ -62,7 +62,7 @@ interface Post extends DocumentData {
   commentscount?: number;
 }
 
-export const useGetPosts = (menu: string, orderb: string) => {
+export const useGetPosts = (menu: string, ord: string) => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -75,7 +75,7 @@ export const useGetPosts = (menu: string, orderb: string) => {
 
       postsArray.sort((a, b) => {
         //@ts-ignore
-        return (b[orderb] || 0) - (a[orderb] || 0);
+        return (b[ord] || 0) - (a[ord] || 0);
       });
       setPosts(postsArray);
     } catch (error) {
@@ -86,7 +86,7 @@ export const useGetPosts = (menu: string, orderb: string) => {
   };
   useEffect(() => {
     getAllPosts();
-  }, [orderb]);
+  }, [ord]);
 
   return { posts, loading };
 };

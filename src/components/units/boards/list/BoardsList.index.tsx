@@ -6,6 +6,7 @@ import { Spin } from 'antd';
 import { useState } from 'react';
 import { useBoardSearch } from '../../../hooks/useBoardSearch';
 import Image from 'next/image';
+import { LikeOutlined, StarOutlined } from '@ant-design/icons';
 
 interface Post {
   title?: string;
@@ -14,6 +15,8 @@ interface Post {
   email?: string;
   timestamp?: string;
   img?: string;
+  likecount?: number;
+  commentscount?: number;
 }
 
 export default function BoardsList() {
@@ -36,62 +39,81 @@ export default function BoardsList() {
         <S.SearchOutlinedIcon style={{ color: '#848484' }} rev={undefined} />
         <S.SearchbarInput placeholder="나만 알고있는 맛집!" onChange={handleSearchChange} />
       </S.Searchbar>
-
       {!searchResults || searchResults.length === 0
         ? // 검색 결과가 없거나 searchResults가 null일 때
           posts.map((post: Post) => (
-            <S.ContentsWrapper key={post.id} id={post.id}>
-              {post.img && (
-                <S.Image>
-                  <Image
-                    src={
-                      post.img ||
-                      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-                    }
-                    alt={post.title}
-                    width={50}
-                    height={50}
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                  />
-                </S.Image>
-              )}
+            <Link href={`boards/${post.id}`}>
+              <S.ContentsWrapper key={post.id} id={post.id}>
+                {post.img && (
+                  <S.Image>
+                    <Image
+                      src={
+                        post.img ||
+                        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+                      }
+                      alt={post.title}
+                      width={50}
+                      height={50}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                    />
+                  </S.Image>
+                )}
 
-              <S.ContentsTitle>{post.title}</S.ContentsTitle>
-              <S.Contents>{post.contents}</S.Contents>
-              <S.ContentsInfor>
-                {post.email?.split('@')[0]}
-                {post.timestamp}
-              </S.ContentsInfor>
-            </S.ContentsWrapper>
+                <S.ContentsTitle>{post.title}</S.ContentsTitle>
+                <S.Contents>{post.contents}</S.Contents>
+
+                <S.ContentsInfor>
+                  <span style={{ marginRight: '0.4%' }}>
+                    <LikeOutlined rev={undefined} />
+                  </span>
+                  <span style={{ marginRight: '1%' }}>{post.likecount}</span>
+                  <span style={{ marginRight: '0.4%' }}>
+                    <StarOutlined rev={undefined} />
+                  </span>
+                  <span style={{ marginRight: '1.5%' }}>{post.commentscount}</span>
+                  <span style={{ marginRight: '1.5%' }}>{post.email?.split('@')[0]}</span>
+                  <span>{post.timestamp}</span>
+                </S.ContentsInfor>
+              </S.ContentsWrapper>
+            </Link>
           ))
         : // 검색 결과가 있을 때
           searchResults.map((post: Post) => (
-            <S.ContentsWrapper key={post.id} id={post.id}>
-              {post.img && (
-                <S.Image>
-                  <Image
-                    src={
-                      post.img ||
-                      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-                    }
-                    alt={post.title}
-                    width={50}
-                    height={50}
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                  />
-                </S.Image>
-              )}
-              <S.ContentsTitle>{post.title}</S.ContentsTitle>
-              <S.Contents>{post.contents}</S.Contents>
-              <S.ContentsInfor>
-                {post.email?.split('@')[0]}
-                {post.timestamp}
-              </S.ContentsInfor>
-            </S.ContentsWrapper>
+            <Link href={`boards/${post.id}`}>
+              <S.ContentsWrapper key={post.id} id={post.id}>
+                {post.img && (
+                  <S.Image>
+                    <Image
+                      src={
+                        post.img ||
+                        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+                      }
+                      alt={post.title}
+                      width={50}
+                      height={50}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                    />
+                  </S.Image>
+                )}
+                <S.ContentsTitle>{post.title}</S.ContentsTitle>
+                <S.Contents>{post.contents}</S.Contents>
+                <S.ContentsInfor>
+                  <span style={{ marginRight: '0.4%' }}>
+                    <LikeOutlined rev={undefined} />
+                  </span>
+                  <span style={{ marginRight: '1%' }}>{post.likecount}</span>
+                  <span style={{ marginRight: '0.4%' }}>
+                    <StarOutlined rev={undefined} />
+                  </span>
+                  <span style={{ marginRight: '1.5%' }}>{post.commentscount}</span>
+                  <span style={{ marginRight: '1.5%' }}>{post.email?.split('@')[0]}</span>
+                  <span>{post.timestamp}</span>
+                </S.ContentsInfor>
+              </S.ContentsWrapper>
+            </Link>
           ))}
-
       <S.SpinDiv>{hasMore && loading && <Spin size="large" />}</S.SpinDiv>
     </S.Wrapper>
   );

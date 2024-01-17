@@ -22,39 +22,51 @@ interface Comment {
   id: string;
   text?: string;
   email?: string;
-  rating?: number;
+  timestamp?: string;
 }
 
-export const useComments = () => {
+export const useBoardComments = () => {
   const router = useRouter();
   const data = JSON.stringify(router.query); // boardId를 추출
   const jsonObject = JSON.parse(data);
-  const postId = jsonObject.placeid;
+  const postId = jsonObject.boardid;
   const [comments, setComments] = useState<Comment[]>([]);
   const [login] = useRecoilState(isLoggedIn);
   const [newComment, setNewComment] = useState<string>('');
-  const [newRating, setNewRating] = useState<number>(0);
+
+  const formatDate = (date: any) => {
+    const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월 (0부터 시작하므로 1을 더함)
+    const day = date.getDate().toString().padStart(2, '0'); // 일
+    const hours = date.getHours().toString().padStart(2, '0'); // 시간
+    const minutes = date.getMinutes().toString().padStart(2, '0'); // 분
+
+    return `${year}/${month}/${day} ${hours}:${minutes}`;
+  };
 
   const email = useRecoilValue(userEmail);
   const getComments = async () => {
     let q;
-
-    //@ts-ignore
-    // 이전코드입니다.
-    // q = query(collection(db, 'comment'), orderBy('timestamp', 'desc'), where('placeId', '==', postId));
-    q = query(collection(db, 'all', postId, 'comment'), orderBy('timestamp', 'desc'));
+    q = query(collection(db, 'board', postId, 'comment'), orderBy('timestamp', 'desc'));
     const snapshot = await getDocs(q);
-    const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
+    const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => {
+      const data = doc.data();
+      // Firestore 타임스탬프를 Date 객체로 변환
+      const date = data.timestamp ? data.timestamp.toDate() : new Date();
+      // 포맷된 날짜 문자열로 변환
+      const formattedDate = formatDate(date);
+      return {
+        ...data,
+        id: doc.id,
+        timestamp: formattedDate, // 포맷된 날짜 사용
+      };
+    });
 
     setComments(commentsArr);
   };
-
   const success = () => {
     Modal.success({
-      content: '리뷰 등록에 성공하였습니다!',
+      content: '댓글 등록에 성공하였습니다!',
       onOk: () => {
         window.location.reload();
       },
@@ -63,7 +75,7 @@ export const useComments = () => {
 
   const deletemodal = () => {
     Modal.success({
-      content: '리뷰 삭제에 성공하였습니다!',
+      content: '댓글 삭제에 성공하였습니다!',
       onOk: () => {
         window.location.reload();
       },
@@ -83,9 +95,9 @@ export const useComments = () => {
 
   const addComment = async () => {
     if (login) {
-      if (newRating === 0) {
+      if (newComment.length === 0) {
         Modal.error({
-          title: '별점은 필수항목입니다.',
+          title: '댓글을 작성해주세요.',
         });
         return; // 함수 종료
       }
@@ -97,12 +109,11 @@ export const useComments = () => {
       }
       //이전코드
       // const commentsRef = collection(db, 'comment');
-      const commentsRef = collection(db, 'all', postId, 'comment');
+      const commentsRef = collection(db, 'board', postId, 'comment');
       await addDoc(commentsRef, {
         // placeId: postId,
         text: newComment,
         email,
-        rating: newRating,
         timestamp: new Date(),
       });
       success();
@@ -115,44 +126,34 @@ export const useComments = () => {
     //이전코드
     // const comments: any = doc(db, 'comment', commentId);
 
-    const comments = doc(db, 'all', postId, 'comment', commentId);
+    const comments = doc(db, 'board', postId, 'comment', commentId);
     await deleteDoc(comments);
     deletemodal();
   };
 
   // 별점 평균을 계산하고 해당 포스트에 별점을 반영
 
-  const [averageRating, setAverageRating]: any = useState(0);
-
-  let avg: number;
   let count: number;
-  const updateRate = async () => {
-    const board = doc(db, 'all', postId);
+  const updateCount = async () => {
+    const board = doc(db, 'board', postId);
     await updateDoc(board, {
-      rate: avg,
       commentscount: count,
     });
   };
 
   useEffect(() => {
     if (comments.length > 0) {
-      const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
-      avg = totalRating / comments.length;
-      setAverageRating(avg);
       count = comments.length;
-      updateRate();
+      updateCount();
     }
   }, [comments]); // comments 배열이 변경될 때마다 실행
 
   return {
     comments,
     newComment,
-    newRating,
-    setNewRating,
     setNewComment,
     addComment,
     deleteComment,
     deletemodal,
-    averageRating,
   };
 };

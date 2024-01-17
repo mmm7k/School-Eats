@@ -58,15 +58,10 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const isSearchPage = router.pathname === '/search';
   const isFeedbackPage = router.pathname === '/feedback';
   const isRequestPage = router.pathname === '/request';
-  const isWritePage = router.pathname === '/boards/write';
+  const isPlaceDetailPage = router.pathname.startsWith('/place/');
+  const isBoardsDetailPage = router.pathname.startsWith('/boards/');
   const showLayout = !isLoginPage && !isSignupPage;
-  const mypage = isMyPage;
-  const noticePage = isNoticePage;
-  const guidePage = isGuidePage;
-  const searchPage = isSearchPage;
-  const requestPage = isRequestPage;
-  const feedbackPage = isFeedbackPage;
-  const writePage = isWritePage;
+
   return (
     <Wrapper>
       <LeftWrapper>
@@ -74,16 +69,17 @@ export default function Layout(props: ILayoutProps): JSX.Element {
       </LeftWrapper>
       <MainWrapper>
         {showLayout &&
-          !writePage &&
-          !mypage &&
-          !noticePage &&
-          !guidePage &&
-          !searchPage &&
-          !feedbackPage &&
-          !requestPage && <LayoutHeader />}
+          !isBoardsDetailPage &&
+          !isMyPage &&
+          !isNoticePage &&
+          !isGuidePage &&
+          !isSearchPage &&
+          !isFeedbackPage &&
+          !isPlaceDetailPage &&
+          !isRequestPage && <LayoutHeader />}
 
         <Body>{props.children}</Body>
-        {showLayout && !searchPage && <LayoutFooter />}
+        {showLayout && !isSearchPage && <LayoutFooter />}
         <ScrollButton />
         {showLayout && <Navbar />}
       </MainWrapper>

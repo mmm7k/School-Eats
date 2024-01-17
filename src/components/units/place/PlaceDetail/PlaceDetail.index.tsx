@@ -2,11 +2,10 @@ import Image from 'next/image';
 import { useGetDetailPost } from '../../../hooks/useGetDetailPost';
 import * as S from './PlaceDetail.styles';
 import { useRouter } from 'next/router';
-import { Rate } from 'antd';
 import { useComments } from '../../../hooks/useComments';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { layoutEmail, userEmail } from '../../../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { useBookmark } from '../../../hooks/useBookmark';
 import {
   ClockCircleOutlined,
@@ -16,9 +15,11 @@ import {
   PhoneOutlined,
   TagsOutlined,
 } from '@ant-design/icons';
+import Link from 'next/link';
+import { Modal } from 'antd';
 
 export default function PlaceDetail(): JSX.Element {
-  const { post } = useGetDetailPost('all');
+  const { post } = useGetDetailPost();
 
   const { averageRating, comments, newComment, setNewComment, addComment, deleteComment, newRating, setNewRating } =
     useComments();
@@ -31,6 +32,10 @@ export default function PlaceDetail(): JSX.Element {
 
   const handleRatingChange = (value: number) => {
     setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
+  };
+
+  const goBack = () => {
+    router.back();
   };
 
   const { addBookmark, deleteBookmark, getBookmark, bookmark } = useBookmark();
@@ -58,8 +63,32 @@ export default function PlaceDetail(): JSX.Element {
     setIsBookmarked(!isBookmarked); // 상태 토글
   };
 
+  const login = useRecoilValue(isLoggedIn);
+  const goBookmark = () => {
+    if (!login) {
+      Modal.error({
+        title: '로그인이 필요합니다!',
+      });
+    } else {
+      router.push('/mypage/bookmark');
+    }
+  };
+
   return (
     <>
+      <S.HeaderWrapper>
+        <S.IconWrapper>
+          <S.BackButton onClick={goBack} />
+        </S.IconWrapper>
+        <S.HeaderText>맛집투어</S.HeaderText>
+        <S.IconWrapper>
+          <Link href="/search">
+            <S.SearchIcon />
+          </Link>
+
+          <S.TitleBookmarkIcon onClick={goBookmark} />
+        </S.IconWrapper>
+      </S.HeaderWrapper>
       <Image
         src={
           post?.img ||

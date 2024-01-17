@@ -30,7 +30,7 @@ export const ContentsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   border-top: 1px solid #e6e6e6;
-  line-height: 1.4;
+  line-height: 1.6;
   cursor: pointer;
   &:hover {
     background-color: rgba(0, 0, 0, 0.03); // slightly darken on hover
@@ -66,7 +66,7 @@ export const Contents = styled.div`
 `;
 
 export const ContentsInfor = styled.div`
-  font-size: 10px;
+  font-size: 12px;
   color: #a4a4a4;
 `;
 

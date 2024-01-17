@@ -35,7 +35,8 @@ export const useBookmark = () => {
   const getBookmark = async () => {
     let q;
 
-    q = query(collection(db, 'bookmark'), where('placeId', '==', postId));
+    // q = query(collection(db, 'bookmark'), where('placeId', '==', postId));
+    q = query(collection(db, 'all', postId, 'bookmark'));
     const snapshot = await getDocs(q);
     const bookmarkArr = snapshot.docs.map((doc: any) => ({
       ...doc.data(),
@@ -47,9 +48,10 @@ export const useBookmark = () => {
 
   const addBookmark = async () => {
     if (login) {
-      const bookmarkRef = collection(db, 'bookmark');
+      // const bookmarkRef = collection(db, 'bookmark');
+      const bookmarkRef = collection(db, 'all', postId, 'bookmark');
       await addDoc(bookmarkRef, {
-        placeId: postId,
+        // placeId: postId,
         email,
       });
     } else {
@@ -66,9 +68,9 @@ export const useBookmark = () => {
   }, [postId]);
 
   const deleteBookmark = async (bookmarkId: any) => {
-    const comments: any = doc(db, 'bookmark', bookmarkId);
+    const deletebookmark: any = doc(db, 'all', postId, 'bookmark', bookmarkId);
 
-    await deleteDoc(comments);
+    await deleteDoc(deletebookmark);
   };
   return { addBookmark, deleteBookmark, getBookmark, bookmark };
 };
