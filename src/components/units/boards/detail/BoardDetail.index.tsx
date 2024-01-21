@@ -5,19 +5,18 @@ import { useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { Avatar, Modal } from 'antd';
 import { CommentOutlined, DeleteOutlined, LikeOutlined, StarOutlined, UserOutlined } from '@ant-design/icons';
-
+import { Image } from 'antd';
 import { useGetDetailBoardPost } from '../../../hooks/useGetDetailBoardPost';
 import { useBoardComments } from '../../../hooks/useBoardComments';
-import { useLikeScrap } from '../../../hooks/useLikeScrap';
 import { useEffect, useState } from 'react';
+import { useScrap } from '../../../hooks/useScrap';
+import { useLike } from '../../../hooks/useLike';
 
 export default function BoardDetail(): JSX.Element {
   const { comments, newComment, setNewComment, addComment, deleteComment } = useBoardComments();
   const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
-  const { addLike, deleteLike, getLike, getScrap, deleteScrap, addScrap, scrap, like } = useLikeScrap();
-  const [isLiked, setIsLiked] = useState(false);
-  const [isScraped, setIsScraped] = useState(false);
-
+  const { handleScrap, isScraped } = useScrap();
+  const { handleLike, isLiked, like } = useLike();
   const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
 
@@ -25,32 +24,6 @@ export default function BoardDetail(): JSX.Element {
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.boardid;
-
-  const handleLike = async () => {
-    if (isLiked) {
-      // 이미 북마크한 경우, 북마크 삭제
-      const likeId = like.find((b) => b.email === email)?.id;
-      if (likeId) await deleteLike(likeId);
-    } else {
-      // 북마크하지 않은 경우, 북마크 추가
-      await addLike();
-    }
-    await getLike(); // 북마크 상태 업데이트
-    setIsLiked(!isLiked); // 상태 토글
-  };
-
-  const handleScrap = async () => {
-    if (isScraped) {
-      // 이미 북마크한 경우, 북마크 삭제
-      const scrapId = scrap.find((b) => b.email === email)?.id;
-      if (scrapId) await deleteScrap(scrapId);
-    } else {
-      // 북마크하지 않은 경우, 북마크 추가
-      await addScrap();
-    }
-    await getScrap(); // 북마크 상태 업데이트
-    setIsScraped(!isScraped); // 상태 토글
-  };
 
   const goBack = () => {
     router.back();
@@ -66,29 +39,6 @@ export default function BoardDetail(): JSX.Element {
     }
   };
 
-  useEffect(() => {
-    (async () => {
-      if (postId) {
-        await getScrap();
-        setIsScraped(scrap.some((b) => b.email === email));
-      }
-    })();
-  }, [postId, email, scrap]);
-  useEffect(() => {
-    (async () => {
-      if (postId) {
-        await getLike();
-        setIsLiked(like.some((b) => b.email === email));
-      }
-    })();
-  }, [postId, email, like]);
-
-  //내일 테스트 로직 라이크카운트가 그때그때 반영되게 .
-  //   const [likeCount, setLikeCount] = useState(post?.likecount || 0);
-
-  //   useEffect(() => {
-  //     setLikeCount(post?.likecount || 0);
-  //   }, [post?.likecount]);
   return (
     <>
       <S.HeaderWrapper>
@@ -122,12 +72,12 @@ export default function BoardDetail(): JSX.Element {
         <S.ContentsWrapper>
           <S.ContentsTitle>{post?.title}</S.ContentsTitle>
           <S.Contents>{post?.contents}</S.Contents>
+          <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post?.img} />
         </S.ContentsWrapper>
         <S.LikeCommentCount>
           <S.LikeCount>
             <LikeOutlined style={{ color: '#f6786f', marginRight: '15%' }} rev={undefined} />
-            {post?.likecount}
-            {/* 내일 사용해볼 로직 {likeCount} */}
+            {like.length}
           </S.LikeCount>
           <S.CommentCount>
             <CommentOutlined style={{ color: '#2eccfa', marginRight: '15%' }} rev={undefined} /> {comments.length}
@@ -136,7 +86,7 @@ export default function BoardDetail(): JSX.Element {
         <S.ButtonWrapper>
           <S.LikeButton onClick={handleLike}>
             <LikeOutlined rev={undefined} />
-            &nbsp; {isLiked ? '공감 취소' : '공감'}
+            &nbsp; {isLiked ? '좋아요 취소' : '좋아요'}
           </S.LikeButton>
           <S.ScrapButton onClick={handleScrap}>
             <StarOutlined rev={undefined} />

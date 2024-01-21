@@ -12,10 +12,12 @@ import {
   FireOutlined,
   FormOutlined,
   InfoCircleOutlined,
+  LikeOutlined,
   MoreOutlined,
   NotificationOutlined,
   QuestionOutlined,
   SmileOutlined,
+  StarOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar } from 'antd';
@@ -86,6 +88,27 @@ export default function MyPage(): JSX.Element {
             <S.TextWrapper>
               <FormOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
               <S.ContentsText>나의 리뷰</S.ContentsText>
+            </S.TextWrapper>
+            &rarr;
+          </S.Contents>
+          <S.Contents onClick={onClickMoveToPage('/mypage/comment')}>
+            <S.TextWrapper>
+              <CommentOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
+              <S.ContentsText>내가 쓴 댓글</S.ContentsText>
+            </S.TextWrapper>
+            &rarr;
+          </S.Contents>
+          <S.Contents onClick={onClickMoveToPage('/mypage/like')}>
+            <S.TextWrapper>
+              <LikeOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
+              <S.ContentsText>좋아요</S.ContentsText>
+            </S.TextWrapper>
+            &rarr;
+          </S.Contents>
+          <S.Contents onClick={onClickMoveToPage('/mypage/scrap')}>
+            <S.TextWrapper>
+              <StarOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
+              <S.ContentsText>스크랩</S.ContentsText>
             </S.TextWrapper>
             &rarr;
           </S.Contents>

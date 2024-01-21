@@ -20,50 +20,47 @@ import { Modal } from 'antd';
 
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost();
-
   const { averageRating, comments, newComment, setNewComment, addComment, deleteComment, newRating, setNewRating } =
     useComments();
+  const { handleBookmark, isBookmarked } = useBookmark();
+  // const [isBookmarked, setIsBookmarked] = useState(false);
   const router = useRouter();
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.placeid;
-
+  const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
-
-  const handleRatingChange = (value: number) => {
-    setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
-  };
 
   const goBack = () => {
     router.back();
   };
 
-  const { addBookmark, deleteBookmark, getBookmark, bookmark } = useBookmark();
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      if (postId) {
-        await getBookmark();
-        setIsBookmarked(bookmark.some((b) => b.email === email));
-      }
-    })();
-  }, [postId, email, bookmark]);
-
-  const handleBookmark = async () => {
-    if (isBookmarked) {
-      // 이미 북마크한 경우, 북마크 삭제
-      const bookmarkId = bookmark.find((b) => b.email === email)?.id;
-      if (bookmarkId) await deleteBookmark(bookmarkId);
-    } else {
-      // 북마크하지 않은 경우, 북마크 추가
-      await addBookmark();
-    }
-    await getBookmark(); // 북마크 상태 업데이트
-    setIsBookmarked(!isBookmarked); // 상태 토글
+  const handleRatingChange = (value: number) => {
+    setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
   };
 
-  const login = useRecoilValue(isLoggedIn);
+  // useEffect(() => {
+  //   (async () => {
+  //     if (postId) {
+  //       await getBookmark();
+  //       setIsBookmarked(bookmark.some((b) => b.email === email));
+  //     }
+  //   })();
+  // }, [postId, email, bookmark]);
+
+  // const handleBookmark = async () => {
+  //   if (isBookmarked) {
+  //     // 이미 북마크한 경우, 북마크 삭제
+  //     const bookmarkId = bookmark.find((b) => b.email === email)?.id;
+  //     if (bookmarkId) await deleteBookmark(bookmarkId);
+  //   } else {
+  //     // 북마크하지 않은 경우, 북마크 추가
+  //     await addBookmark();
+  //   }
+  //   await getBookmark(); // 북마크 상태 업데이트
+  //   setIsBookmarked(!isBookmarked); // 상태 토글
+  // };
+
   const goBookmark = () => {
     if (!login) {
       Modal.error({
@@ -107,12 +104,9 @@ export default function PlaceDetail(): JSX.Element {
             <S.Title>{postId}</S.Title>
             <div onClick={handleBookmark}>{isBookmarked ? <S.ColorBookmarkIcon /> : <S.BookmarkIcon />}</div>
           </S.BookmarkWrapper>
-
           <S.RateWrapper>
-            {/* <S.RateStar allowHalf disabled value={averageRating} /> */}
             <S.RateStar allowHalf disabled value={averageRating.toFixed(1)} />
             <S.RateNum> {averageRating.toFixed(1)}</S.RateNum>
-            {/* <S.RateNum> {post?.rate.toFixed(1)}</S.RateNum> */}
             <S.CommentsCount>{comments.length}개의 후기</S.CommentsCount>
           </S.RateWrapper>
         </S.TitleWrapper>
@@ -155,7 +149,6 @@ export default function PlaceDetail(): JSX.Element {
         <S.Divine />
         <S.InforWrapper>
           <S.InforTitle>리뷰</S.InforTitle>
-
           <S.ReviewInput
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
@@ -167,16 +160,6 @@ export default function PlaceDetail(): JSX.Element {
           </S.SubmitWrapper>
           {comments.map((comment) => (
             <S.ReviewWrapper key={comment.id}>
-              {/* <S.ReviewTitle>
-                {comment.email?.split('@')[0]}
-                <S.ReviewRate allowHalf disabled value={comment.rating} />
-                {comment.email === email && (
-                  <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
-                )}
-              </S.ReviewTitle>
-
-              <S.ReviewText>{comment.text}</S.ReviewText> */}
-
               <S.ReviewText>{comment.text}</S.ReviewText>
               <S.ReviewTitle>
                 {comment.email?.split('@')[0]}

@@ -6,7 +6,7 @@ import { Spin } from 'antd';
 import { useState } from 'react';
 import { useBoardSearch } from '../../../hooks/useBoardSearch';
 import Image from 'next/image';
-import { LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { CommentOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 
 interface Post {
   title?: string;
@@ -69,7 +69,7 @@ export default function BoardsList() {
                   </span>
                   <span style={{ marginRight: '1%' }}>{post.likecount}</span>
                   <span style={{ marginRight: '0.4%' }}>
-                    <StarOutlined rev={undefined} />
+                    <CommentOutlined rev={undefined} />
                   </span>
                   <span style={{ marginRight: '1.5%' }}>{post.commentscount}</span>
                   <span style={{ marginRight: '1.5%' }}>{post.email?.split('@')[0]}</span>

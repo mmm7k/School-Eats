@@ -58,7 +58,13 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const isSearchPage = router.pathname === '/search';
   const isFeedbackPage = router.pathname === '/feedback';
   const isRequestPage = router.pathname === '/request';
-  const isPlaceDetailPage = router.pathname.startsWith('/place/');
+  const isPlaceDetailPage =
+    router.pathname !== '/place/koreanplace' &&
+    router.pathname !== '/place/chineseplace' &&
+    router.pathname !== '/place/japaneseplace' &&
+    router.pathname !== '/place/cafeplace' &&
+    router.pathname !== '/place/westernplace' &&
+    router.pathname.startsWith('/place/');
   const isBoardsDetailPage = router.pathname.startsWith('/boards/');
   const showLayout = !isLoginPage && !isSignupPage;
 

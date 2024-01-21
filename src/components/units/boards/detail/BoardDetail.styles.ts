@@ -137,7 +137,7 @@ export const LikeButton = styled.div`
   font-size: 12px;
   font-weight: 600;
   border-radius: 7px;
-  width: 70px;
+  width: 85px;
   height: 35px;
   background-color: #f2f2f2;
   display: flex;

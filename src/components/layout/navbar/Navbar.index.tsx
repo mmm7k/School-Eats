@@ -35,8 +35,16 @@ export default function Navbar(): JSX.Element {
           </S.Button>
           <S.Button>
             <Link href="/place">
-              <S.Div style={{ color: router.pathname === '/place' ? '#f6786f' : '#000000' }}>
-                <PlaceButton style={{ fill: router.pathname === '/place' ? '#f6786f' : '#000000' }} />
+              <S.Div
+                style={{
+                  color: router.pathname === '/place' || router.pathname.startsWith('/place/') ? '#f6786f' : '#000000',
+                }}
+              >
+                <PlaceButton
+                  style={{
+                    fill: router.pathname === '/place' || router.pathname.startsWith('/place/') ? '#f6786f' : '#000000',
+                  }}
+                />
                 <S.LineDiv />
                 맛집투어
               </S.Div>
@@ -44,8 +52,18 @@ export default function Navbar(): JSX.Element {
           </S.Button>
           <S.Button>
             <Link href="/boards">
-              <S.Div style={{ color: router.pathname === '/boards' ? '#f6786f' : '#000000' }}>
-                <BoardButton style={{ fill: router.pathname === '/boards' ? '#f6786f' : '#000000' }} />
+              <S.Div
+                style={{
+                  color:
+                    router.pathname === '/boards' || router.pathname.startsWith('/boards/') ? '#f6786f' : '#000000',
+                }}
+              >
+                <BoardButton
+                  style={{
+                    fill:
+                      router.pathname === '/boards' || router.pathname.startsWith('/boards/') ? '#f6786f' : '#000000',
+                  }}
+                />
                 <S.LineDiv />
                 커뮤니티
               </S.Div>
@@ -62,8 +80,18 @@ export default function Navbar(): JSX.Element {
               </Link>
             ) : (
               <Link href="/mypage">
-                <S.Div style={{ color: router.pathname === '/mypage' ? '#f6786f' : '#000000' }}>
-                  <MypageButton style={{ fill: router.pathname === '/mypage' ? '#f6786f' : '#000000' }} />
+                <S.Div
+                  style={{
+                    color:
+                      router.pathname === '/mypage' || router.pathname.startsWith('/mypage/') ? '#f6786f' : '#000000',
+                  }}
+                >
+                  <MypageButton
+                    style={{
+                      fill:
+                        router.pathname === '/mypage' || router.pathname.startsWith('/mypage/') ? '#f6786f' : '#000000',
+                    }}
+                  />
                   <S.LineDiv />
                   마이페이지
                 </S.Div>

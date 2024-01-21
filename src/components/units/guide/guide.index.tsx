@@ -30,6 +30,12 @@ export default function Guide() {
           페이지에서는 해당 맛집의 자세한 정보를 확인하고, 북마크를 추가하거나 리뷰를 작성할 수 있습니다.
         </S.SubNotice>
         <S.Divine />
+        <S.Notice>커뮤니티</S.Notice>
+        <S.SubNotice>
+          커뮤니티 페이지에서는 자신만의 맛집을 공유하고, 좋아요, 스크랩, 댓글 기능을 통해 다른 사용자와의 소통을 할 수
+          있습니다.
+        </S.SubNotice>
+        <S.Divine />
         <S.Notice>마이페이지</S.Notice>
         <S.SubNotice>
           마이페이지에서는 여러분이 찜한 맛집 목록과 작성하신 리뷰를 한눈에 확인하실 수 있습니다. 또한, 고객센터를 통해
