@@ -30,7 +30,9 @@ export const Text = styled.span`
   font-size: 15px;
   margin-top: 8px;
 `;
+
 export const ButtonWrapper = styled.div`
+  margin-top: 25px;
   width: 50px;
   height: auto;
   display: flex;
