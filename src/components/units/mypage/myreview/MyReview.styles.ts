@@ -40,6 +40,7 @@ export const Wrapper = styled.div`
   width: 100%;
   padding-left: 3%;
   padding-right: 3%;
+  min-height: 430px;
 `;
 
 //

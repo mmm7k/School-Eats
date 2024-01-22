@@ -13,9 +13,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Contents = styled.div`
-  :hover {
-    opacity: 0.9;
-  }
   margin-right: 3%;
 `;
 export const FoodImage1 = styled.div`
@@ -80,7 +77,7 @@ export const SubTitle = styled.div`
   width: 100%;
   padding-left: 3%;
   color: #696d84;
-  margin-top: 60px;
+  margin-top: 100px;
   margin-bottom: 6px;
 `;
 export const Title = styled.div`

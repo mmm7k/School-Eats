@@ -1,9 +1,21 @@
+import Link from 'next/link';
 import * as S from './LayoutFooter.styles';
 
 export default function LayoutFooter(): JSX.Element {
   return (
     <>
       <S.Wrapper>
+        <Link href="notice">
+          <S.Request>공지사항</S.Request>
+        </Link>
+        &nbsp;&nbsp;&nbsp;|&nbsp; &nbsp;&nbsp;
+        <Link href="guide">
+          <S.Request>이용안내</S.Request>
+        </Link>
+        &nbsp;&nbsp;&nbsp;|&nbsp; &nbsp;&nbsp;
+        <Link href="feedback">
+          <S.Request>문의</S.Request>
+        </Link>
         <S.Header>(주)School Eats</S.Header>
         <S.Infor>
           대표자: 김민수

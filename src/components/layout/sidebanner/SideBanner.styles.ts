@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 27px;
+
+  @media only screen and (max-width: 1199px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.div`

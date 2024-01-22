@@ -38,11 +38,10 @@ export const BackButton = styled.a`
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 50%;
   display: flex;
-
   flex-direction: column;
   align-items: center;
+  min-height: 430px;
 `;
 
 export const Notice = styled.div`
