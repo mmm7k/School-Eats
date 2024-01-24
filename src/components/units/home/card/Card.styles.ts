@@ -14,7 +14,7 @@ export const CardImage = styled.div`
   position: relative;
   height: 159px;
   border-radius: 18px;
-  background-image: url('/card2.png');
+  background-image: url('/card.png');
   display: flex;
   flex-direction: column;
   overflow: hidden;

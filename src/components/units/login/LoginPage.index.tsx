@@ -17,14 +17,13 @@ export default function LoginPage(): JSX.Element {
   };
 
   const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
 
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
-        <S.BackButton onClick={goBack} />
+        <Link href="/">
+          <S.BackButton />
+        </Link>
         <Link href="/">
           <S.HomeButton />
         </Link>
