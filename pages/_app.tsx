@@ -73,12 +73,16 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
       <Head>
         <title>School Eats!</title>
-        <meta name="description" content="스쿨 잇츠에 오세욤" />
+        <meta name="description" content="대학생들의 점심 고민을 해결해줄 School Eats!" />
+        <meta charSet="UTF - 8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <meta property="og:title" content="School Eats!"></meta>
         <meta property="og:url" content="https://SchoolEats.vercel.app/"></meta>
-        <meta property="og:image" content="https://i.ibb.co/gPXN2Ry/image.png"></meta>
-        <meta property="og:description" content="스쿨 이츠 오세욤"></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/school-eats.appspot.com/o/metaimage.jpg?alt=media&token=4a5bbe21-8cc3-4468-adc8-52f937cd477f"
+        ></meta>
+        <meta property="og:description" content="대학생들의 점심 고민을 해결해줄 School Eats!"></meta>
         <link rel="icon" href="/logo.png"></link>
       </Head>
       <RecoilRoot>
