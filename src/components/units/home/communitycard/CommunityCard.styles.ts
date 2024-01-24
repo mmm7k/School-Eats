@@ -24,6 +24,8 @@ export const ImageWrapper = styled.div`
   width: 94%;
   border-radius: 16px; /* 보더 레디우스 추가 */
   overflow: hidden; /* 이미지가 둥근 모서리를 넘지 않도록 설정 */
-  position: relative;
   cursor: pointer;
+  &:hover {
+    filter: brightness(93%);
+  }
 `;

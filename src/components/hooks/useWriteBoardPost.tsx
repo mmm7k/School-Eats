@@ -88,6 +88,8 @@ export const useWriteBoardPost = () => {
       timestamp: new Date(),
       email,
       img: imageUrl,
+      commentscount: 0,
+      likecount: 0,
     });
     success();
     router.push('/boards');

@@ -5,11 +5,7 @@ import { useWritePost } from '../../../../hooks/useWritePost';
 import { useRouter } from 'next/router';
 
 export default function Request() {
-  const { register, handleSubmit, errors, onSubmit } = useWritePost(
-    'request',
-    '맛집 추가 요청이 등록되었습니다.',
-    '/mypage'
-  );
+  const { register, handleSubmit, errors, onSubmit } = useWritePost('request', '맛집 추가 요청이 등록되었습니다.', '/');
 
   const router = useRouter();
   const goBack = () => {

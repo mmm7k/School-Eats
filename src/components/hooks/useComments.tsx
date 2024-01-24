@@ -219,6 +219,9 @@ export const useComments = () => {
 
       // 백그라운드에서 데이터베이스 업데이트
       updateRate(avgRating, commentCount);
+    } else {
+      setAverageRating(0);
+      updateRate(0, 0);
     }
   }, [comments]);
 

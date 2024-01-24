@@ -14,61 +14,36 @@ export const Wrapper = styled.div`
 
 export const Contents = styled.div`
   margin-right: 3%;
-`;
-export const FoodImage1 = styled.div`
-  height: 471px;
-  background-image: url('/한식.jpg');
-  width: 314px;
+  min-width: 314px;
+  position: relative;
   border-radius: 15px;
   overflow: hidden;
-`;
-export const FoodImage2 = styled.div`
   height: 471px;
-  background-image: url('/중식.jpg');
-  width: 314px;
-  border-radius: 15px;
-  overflow: hidden;
-`;
-export const FoodImage3 = styled.div`
-  height: 471px;
-  background-image: url('/일식.jpg');
-  width: 314px;
-  border-radius: 15px;
-  overflow: hidden;
-`;
-export const FoodImage4 = styled.div`
-  height: 471px;
-  background-image: url('/양식.jpg');
-  width: 314px;
-  border-radius: 15px;
-  overflow: hidden;
-`;
-
-export const FoodImage5 = styled.div`
-  height: 471px;
-  background-image: url('/카페.jpg');
-  background-size: cover;
-  width: 314px;
-  border-radius: 15px;
-  overflow: hidden;
+  &:hover {
+    filter: brightness(93%);
+  }
 `;
 
 export const FoodTitle = styled.div`
   color: white;
   font-size: 30px;
   font-weight: 600;
-  margin-left: 20px;
-  margin-top: 30px;
+
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 30px;
+  left: 20px;
 `;
 
 export const FoodText = styled.div`
   color: white;
   font-size: 18px;
   font-weight: 400;
-  margin-left: 20px;
-  margin-top: 10px;
+
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 75px;
+  left: 20px;
 `;
 
 export const SubTitle = styled.div`
@@ -77,7 +52,7 @@ export const SubTitle = styled.div`
   width: 100%;
   padding-left: 3%;
   color: #696d84;
-  margin-top: 100px;
+  margin-top: 95px;
   margin-bottom: 6px;
 `;
 export const Title = styled.div`

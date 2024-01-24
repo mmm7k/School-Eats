@@ -27,7 +27,7 @@ export const CardImage = styled.div`
       bottom: 0;
       left: 0;
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 15px;
+      border-radius: 18px;
     }
   }
 `;

@@ -128,14 +128,19 @@ export default function PlaceDetail(): JSX.Element {
             <PhoneOutlined rev={undefined} />
             <S.InforText>{post?.call}</S.InforText>
           </S.Infor>
-          <S.Infor>
-            <TagsOutlined rev={undefined} />
-            <S.InforText> {post?.hashtag}</S.InforText>
-          </S.Infor>
-          <S.Infor>
-            <InfoCircleOutlined rev={undefined} />
-            <S.InforText>{post?.status}</S.InforText>
-          </S.Infor>
+          {post?.hashtag && (
+            <S.Infor>
+              <TagsOutlined rev={undefined} />
+              <S.InforText> {post?.hashtag}</S.InforText>
+            </S.Infor>
+          )}
+
+          {post?.status && (
+            <S.Infor>
+              <InfoCircleOutlined rev={undefined} />
+              <S.InforText>{post?.status}</S.InforText>
+            </S.Infor>
+          )}
         </S.InforWrapper>
         <S.Divine />
         <S.InforWrapper>
