@@ -12,7 +12,7 @@ export const globalStyles = css`
     margin: 0px;
     box-sizing: border-box;
     font-weight: 400;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular', sans-serif;
   }
   html,
   body {

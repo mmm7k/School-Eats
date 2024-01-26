@@ -93,7 +93,7 @@ export default function FoodQuration(): JSX.Element {
               <S.Contents>
                 <Image
                   src={
-                    '/일식.jpg' ||
+                    '/양식.jpg' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'배너'}
