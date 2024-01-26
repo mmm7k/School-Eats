@@ -84,12 +84,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         ></meta>
         <meta property="og:description" content="대학생들의 점심 고민을 해결해줄 School Eats!"></meta>
         <link rel="icon" href="/logo.png"></link>
-        <link
-          rel="stylesheet"
-          as="style"
-          crossOrigin=""
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
-        />
       </Head>
       <RecoilRoot>
         <Global styles={globalStyles} />
