@@ -20,8 +20,6 @@ export default function MapButton() {
                   alt={'전체'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
@@ -40,8 +38,6 @@ export default function MapButton() {
                   alt={'한식'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
@@ -60,8 +56,6 @@ export default function MapButton() {
                   alt={'중식'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
@@ -80,8 +74,6 @@ export default function MapButton() {
                   alt={'일식'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
@@ -100,8 +92,6 @@ export default function MapButton() {
                   alt={'양식'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
@@ -120,8 +110,6 @@ export default function MapButton() {
                   alt={'카페'}
                   width={30}
                   height={30}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </S.ImageWrapper>
             </S.Button>
