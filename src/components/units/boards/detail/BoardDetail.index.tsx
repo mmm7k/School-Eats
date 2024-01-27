@@ -4,11 +4,17 @@ import Link from 'next/link';
 import { useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { Avatar, Modal } from 'antd';
-import { CommentOutlined, DeleteOutlined, LikeOutlined, StarOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  CommentOutlined,
+  DeleteOutlined,
+  EditOutlined,
+  LikeOutlined,
+  StarOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { Image } from 'antd';
 import { useGetDetailBoardPost } from '../../../hooks/useGetDetailBoardPost';
 import { useBoardComments } from '../../../hooks/useBoardComments';
-import { useEffect, useState } from 'react';
 import { useScrap } from '../../../hooks/useScrap';
 import { useLike } from '../../../hooks/useLike';
 
@@ -17,6 +23,7 @@ export default function BoardDetail(): JSX.Element {
   const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
   const { handleScrap, isScraped } = useScrap();
   const { handleLike, isLiked, like } = useLike();
+
   const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
 
@@ -64,7 +71,16 @@ export default function BoardDetail(): JSX.Element {
           <S.InforUser>
             <S.UserEmail>
               {post?.email?.split('@')[0]}
-              {usermatch && <DeleteOutlined onClick={onClickDeletePost} rev={undefined} style={{ fontSize: '18px' }} />}
+              <S.EditButton>
+                {usermatch && (
+                  <Link href={`/boards/${postId}/edit`}>
+                    <EditOutlined rev={undefined} style={{ fontSize: '18px', marginRight: '15%' }} />
+                  </Link>
+                )}
+                {usermatch && (
+                  <DeleteOutlined onClick={onClickDeletePost} rev={undefined} style={{ fontSize: '18px' }} />
+                )}
+              </S.EditButton>
             </S.UserEmail>
             <S.Timestamp>{post?.timestamp}</S.Timestamp>
           </S.InforUser>

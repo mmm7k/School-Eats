@@ -66,8 +66,6 @@ export const useGetBoardPosts = () => {
 
   useEffect(() => {
     getNextPosts(); // 초기 데이터 로딩
-    console.log('새로고침');
-    console.log(posts);
   }, []);
 
   return { posts, getNextPosts, hasMore, loading };

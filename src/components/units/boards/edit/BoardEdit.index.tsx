@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import * as S from './BoardWrite.styles';
+import * as S from './BoardEdit.styles';
 import { useRouter } from 'next/router';
-import { useWriteBoardPost } from '../../../hooks/useWriteBoardPost';
+import { useEditBoardPost } from '../../../hooks/useEditBoardPost';
 
-export default function BoardWrite() {
-  const { register, handleSubmit, errors, onSubmit, onImageChange, uploading } = useWriteBoardPost();
+export default function BoardEdit() {
   const [selectedFile, setSelectedFile] = useState('');
   const router = useRouter();
+  const data = JSON.stringify(router.query);
+  const jsonObject = JSON.parse(data);
+  const postId = jsonObject.boardid;
+  const { register, handleSubmit, errors, onSubmit, onImageChange } = useEditBoardPost(postId);
+  console.log(postId);
   const goBack = () => {
     router.back();
   };
@@ -27,7 +31,7 @@ export default function BoardWrite() {
         <S.IconWrapper>
           <S.BackButton onClick={goBack} />
         </S.IconWrapper>
-        <S.TitleText>글쓰기</S.TitleText>
+        <S.TitleText>수정하기</S.TitleText>
       </S.TitleWrapper>
       <S.Wrapper>
         <S.Title>숨겨진 맛집을 공유해주세요!</S.Title>

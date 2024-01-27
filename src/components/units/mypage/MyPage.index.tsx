@@ -11,6 +11,7 @@ import {
   EditOutlined,
   FireOutlined,
   FormOutlined,
+  HighlightOutlined,
   InfoCircleOutlined,
   LikeOutlined,
   MoreOutlined,
@@ -86,8 +87,15 @@ export default function MyPage(): JSX.Element {
           </S.Contents>
           <S.Contents onClick={onClickMoveToPage('/mypage/myreview')}>
             <S.TextWrapper>
-              <FormOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
+              <HighlightOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
               <S.ContentsText>나의 리뷰</S.ContentsText>
+            </S.TextWrapper>
+            &rarr;
+          </S.Contents>
+          <S.Contents onClick={onClickMoveToPage('/mypage/myboard')}>
+            <S.TextWrapper>
+              <FormOutlined style={{ marginLeft: '1%', marginRight: '4%' }} rev={undefined} />
+              <S.ContentsText>내가 쓴 게시물</S.ContentsText>
             </S.TextWrapper>
             &rarr;
           </S.Contents>

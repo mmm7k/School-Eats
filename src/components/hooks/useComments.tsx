@@ -142,6 +142,8 @@ export const useComments = () => {
 
       const docRef = await addDoc(commentsRef, newCommentObj);
       success();
+      setNewComment('');
+
       setComments((prevComments) =>
         prevComments.map((comment) =>
           //@ts-ignore

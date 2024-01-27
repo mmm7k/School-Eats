@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
 import { db } from '../../../pages/_app';
-import { addDoc, collection } from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilValue } from 'recoil';
 import { userEmail } from '../../commons/globalstate/globalstate';
@@ -17,7 +17,7 @@ const postSchema = yup
   })
   .required();
 
-export const useWriteBoardPost = () => {
+export const useEditBoardPost = (postId: string) => {
   const router = useRouter();
   const email = useRecoilValue(userEmail);
 
@@ -31,7 +31,7 @@ export const useWriteBoardPost = () => {
 
   const success = () => {
     Modal.success({
-      content: '게시물 등록에 성공하였습니다.',
+      content: '게시물 수정에 성공하였습니다.',
     });
   };
 
@@ -40,16 +40,13 @@ export const useWriteBoardPost = () => {
 
   const onImageChange = (event: any) => {
     if (event.target.files[0]) {
-      const file = event.target.files[0];
-
-      setImage(file);
+      setImage(event.target.files[0]);
     }
   };
 
   const uploadImage = async () => {
     if (image) {
       const storage = getStorage();
-
       const storageRef = ref(storage, `board/${image.name}`);
       setUploading(true);
       try {
@@ -58,7 +55,7 @@ export const useWriteBoardPost = () => {
         setUploading(false);
         return url;
       } catch (error) {
-        alert('Error uploading image: ' + error);
+        console.error('Error uploading image: ', error);
         setUploading(false);
         return null;
       }
@@ -68,16 +65,16 @@ export const useWriteBoardPost = () => {
 
   const onSubmit = async (data: any) => {
     const imageUrl = await uploadImage();
-    const board = collection(db, 'board');
-    await addDoc(board, {
+    const boardDoc = doc(db, 'board', postId);
+
+    await updateDoc(boardDoc, {
       title: data.title,
       contents: data.contents,
       timestamp: new Date(),
       email,
-      img: imageUrl,
-      commentscount: 0,
-      likecount: 0,
+      ...(imageUrl && { img: imageUrl }), // 새 이미지가 있으면 img 필드 업데이트
     });
+
     success();
     router.push('/boards');
   };

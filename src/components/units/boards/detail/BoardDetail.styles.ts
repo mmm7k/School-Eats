@@ -72,6 +72,7 @@ export const InforUser = styled.div`
   justify-content: center;
   line-height: 1.5;
   width: 100%;
+  position: relative;
 `;
 
 export const UserEmail = styled.div`
@@ -82,6 +83,14 @@ export const UserEmail = styled.div`
   justify-content: space-between;
 `;
 
+export const EditButton = styled.div`
+  /* background-color: red; */
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  right: 2.5%;
+  top: 0%;
+`;
 export const Timestamp = styled.span`
   color: #848484;
   font-size: 12px;
