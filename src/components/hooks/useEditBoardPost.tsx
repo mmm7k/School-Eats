@@ -2,13 +2,14 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
-import { db } from '../../../pages/_app';
+import { db, storage } from '../../../pages/_app';
 import { doc, updateDoc } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilValue } from 'recoil';
 import { userEmail } from '../../commons/globalstate/globalstate';
-import { useState } from 'react';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { useEffect, useState } from 'react';
+import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
+import { useGetDetailBoardPost } from './useGetDetailBoardPost';
 
 const postSchema = yup
   .object({
@@ -20,14 +21,26 @@ const postSchema = yup
 export const useEditBoardPost = (postId: string) => {
   const router = useRouter();
   const email = useRecoilValue(userEmail);
+  const { post } = useGetDetailBoardPost();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(postSchema),
+    defaultValues: {},
   });
+
+  useEffect(() => {
+    if (post) {
+      reset({
+        title: post.title,
+        contents: post.contents,
+      });
+    }
+  }, [post, reset]);
 
   const success = () => {
     Modal.success({
@@ -74,6 +87,12 @@ export const useEditBoardPost = (postId: string) => {
       email,
       ...(imageUrl && { img: imageUrl }), // 새 이미지가 있으면 img 필드 업데이트
     });
+    // 새 이미지 업로드 후 기존 이미지 삭제
+
+    if (imageUrl && post?.img) {
+      const oldImageRef = ref(storage, post.img);
+      await deleteObject(oldImageRef).catch((error) => console.error('Error deleting old image:', error));
+    }
 
     success();
     router.push('/boards');

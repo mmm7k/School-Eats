@@ -10,6 +10,7 @@ import { useBookmark } from '../../../hooks/useBookmark';
 import {
   ClockCircleOutlined,
   DeleteOutlined,
+  EditOutlined,
   EnvironmentOutlined,
   InfoCircleOutlined,
   PhoneOutlined,
@@ -20,8 +21,17 @@ import { Modal } from 'antd';
 
 export default function PlaceDetail(): JSX.Element {
   const { post } = useGetDetailPost();
-  const { averageRating, comments, newComment, setNewComment, addComment, deleteComment, newRating, setNewRating } =
-    useComments();
+  const {
+    averageRating,
+    comments,
+    newComment,
+    updateComment,
+    setNewComment,
+    addComment,
+    deleteComment,
+    newRating,
+    setNewRating,
+  } = useComments();
   const { handleBookmark, isBookmarked } = useBookmark();
   // const [isBookmarked, setIsBookmarked] = useState(false);
   const router = useRouter();
@@ -39,28 +49,6 @@ export default function PlaceDetail(): JSX.Element {
     setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
   };
 
-  // useEffect(() => {
-  //   (async () => {
-  //     if (postId) {
-  //       await getBookmark();
-  //       setIsBookmarked(bookmark.some((b) => b.email === email));
-  //     }
-  //   })();
-  // }, [postId, email, bookmark]);
-
-  // const handleBookmark = async () => {
-  //   if (isBookmarked) {
-  //     // 이미 북마크한 경우, 북마크 삭제
-  //     const bookmarkId = bookmark.find((b) => b.email === email)?.id;
-  //     if (bookmarkId) await deleteBookmark(bookmarkId);
-  //   } else {
-  //     // 북마크하지 않은 경우, 북마크 추가
-  //     await addBookmark();
-  //   }
-  //   await getBookmark(); // 북마크 상태 업데이트
-  //   setIsBookmarked(!isBookmarked); // 상태 토글
-  // };
-
   const goBookmark = () => {
     if (!login) {
       Modal.error({
@@ -68,6 +56,33 @@ export default function PlaceDetail(): JSX.Element {
       });
     } else {
       router.push('/mypage/bookmark');
+    }
+  };
+
+  const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
+  const [editingCommentText, setEditingCommentText] = useState('');
+  const [editingCommentRating, setEditingCommentRating] = useState<number>(0);
+
+  const startEditing = (comment: any) => {
+    setEditingCommentId(comment.id);
+    setEditingCommentText(comment.text || '');
+    setEditingCommentRating(comment.rating || 0);
+  };
+
+  const cancelEditing = () => {
+    setEditingCommentId(null);
+    setEditingCommentText('');
+    setEditingCommentRating(0);
+  };
+
+  const handleEditingRatingChange = (value: number) => {
+    setEditingCommentRating(value); // 사용자가 선택한 별점을 상태에 저장
+  };
+
+  const submitEditedComment = async () => {
+    if (editingCommentId) {
+      await updateComment(editingCommentId, editingCommentText, editingCommentRating);
+      cancelEditing();
     }
   };
 
@@ -154,6 +169,7 @@ export default function PlaceDetail(): JSX.Element {
         <S.Divine />
         <S.InforWrapper>
           <S.InforTitle>리뷰</S.InforTitle>
+
           <S.ReviewInput
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
@@ -163,18 +179,73 @@ export default function PlaceDetail(): JSX.Element {
             <S.ReviewInputRate onChange={handleRatingChange} value={newRating} />
             <S.SubmitButton onClick={addComment}>등록</S.SubmitButton>
           </S.SubmitWrapper>
+
           {comments.map((comment) => (
+            <div key={comment.id}>
+              {/* 편집 상태에 따라 댓글 표시 또는 편집 필드 표시 */}
+              {editingCommentId === comment.id ? (
+                <>
+                  <S.ReviewInput
+                    value={editingCommentText}
+                    onChange={(e) => setEditingCommentText(e.target.value)}
+                    placeholder="여러분의 소중한 리뷰와 별점을 남겨주세요!"
+                  ></S.ReviewInput>
+                  <S.SubmitWrapper>
+                    <S.ReviewInputRate onChange={handleEditingRatingChange} value={editingCommentRating} />
+                    <S.CancelButton onClick={cancelEditing}>취소</S.CancelButton>
+                    <S.SubmitButton onClick={submitEditedComment}>등록</S.SubmitButton>
+                  </S.SubmitWrapper>
+                </>
+              ) : (
+                <>
+                  {/* 기존 댓글 내용 */}
+                  <S.ReviewWrapper>
+                    <S.ReviewText>{comment.text}</S.ReviewText>
+                    <S.ReviewTitle>
+                      {comment.email?.split('@')[0]}
+                      <S.ReviewRate allowHalf disabled value={comment.rating} />
+                      {comment.email === email && (
+                        <>
+                          <EditOutlined
+                            onClick={() => startEditing(comment)}
+                            rev={undefined}
+                            style={{ fontSize: '14px', marginLeft: '1%', marginRight: '1%' }}
+                          />
+
+                          <DeleteOutlined
+                            style={{ fontSize: '14px' }}
+                            onClick={() => deleteComment(comment.id)}
+                            rev={undefined}
+                          />
+                        </>
+                      )}
+                    </S.ReviewTitle>
+                  </S.ReviewWrapper>
+                </>
+              )}
+            </div>
+          ))}
+
+          {/* {comments.map((comment) => (
             <S.ReviewWrapper key={comment.id}>
               <S.ReviewText>{comment.text}</S.ReviewText>
               <S.ReviewTitle>
                 {comment.email?.split('@')[0]}
                 <S.ReviewRate allowHalf disabled value={comment.rating} />
                 {comment.email === email && (
-                  <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
+                  <>
+                    <EditOutlined
+                      onClick={() => startEditing(comment)}
+                      rev={undefined}
+                      style={{ fontSize: '15px', marginRight: '1%' }}
+                    />
+                    //////
+                    <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
+                  </>
                 )}
               </S.ReviewTitle>
             </S.ReviewWrapper>
-          ))}
+          ))} */}
         </S.InforWrapper>
       </S.Wrapper>
     </>

@@ -17,9 +17,10 @@ import { useGetDetailBoardPost } from '../../../hooks/useGetDetailBoardPost';
 import { useBoardComments } from '../../../hooks/useBoardComments';
 import { useScrap } from '../../../hooks/useScrap';
 import { useLike } from '../../../hooks/useLike';
+import { useState } from 'react';
 
 export default function BoardDetail(): JSX.Element {
-  const { comments, newComment, setNewComment, addComment, deleteComment } = useBoardComments();
+  const { comments, newComment, updateComment, setNewComment, addComment, deleteComment } = useBoardComments();
   const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
   const { handleScrap, isScraped } = useScrap();
   const { handleLike, isLiked, like } = useLike();
@@ -46,6 +47,27 @@ export default function BoardDetail(): JSX.Element {
     }
   };
 
+  ///
+
+  const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
+  const [editingCommentText, setEditingCommentText] = useState('');
+
+  const startEditing = (comment: any) => {
+    setEditingCommentId(comment.id);
+    setEditingCommentText(comment.text || '');
+  };
+
+  const cancelEditing = () => {
+    setEditingCommentId(null);
+    setEditingCommentText('');
+  };
+
+  const submitEditedComment = async () => {
+    if (editingCommentId) {
+      await updateComment(editingCommentId, editingCommentText);
+      cancelEditing();
+    }
+  };
   return (
     <>
       <S.HeaderWrapper>
@@ -88,7 +110,7 @@ export default function BoardDetail(): JSX.Element {
         <S.ContentsWrapper>
           <S.ContentsTitle>{post?.title}</S.ContentsTitle>
           <S.Contents>{post?.contents}</S.Contents>
-          <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post?.img} />
+          {post?.img && <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post.img} />}
         </S.ContentsWrapper>
         <S.LikeCommentCount>
           <S.LikeCount>
@@ -110,6 +132,7 @@ export default function BoardDetail(): JSX.Element {
           </S.ScrapButton>
         </S.ButtonWrapper>
         <S.CommentsTitle>댓글</S.CommentsTitle>
+
         <S.CommentsInput
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
@@ -119,6 +142,7 @@ export default function BoardDetail(): JSX.Element {
           <S.SubmitButton onClick={addComment}>등록</S.SubmitButton>
         </S.SubmitWrapper>
 
+        {/* 
         {comments.map((comment) => (
           <S.CommentsWrapper key={comment.id}>
             <S.CommentsUser>
@@ -132,15 +156,79 @@ export default function BoardDetail(): JSX.Element {
                 {comment.email?.split('@')[0]}
               </S.CommentsUserEmail>
               {comment.email === email && (
-                <DeleteOutlined
-                  onClick={() => deleteComment(comment.id)}
-                  rev={undefined}
-                  style={{ fontSize: '15px' }}
-                />
+                <>
+                  <EditOutlined rev={undefined} style={{ fontSize: '15px', marginRight: '1%' }} />
+                  <DeleteOutlined
+                    onClick={() => deleteComment(comment.id)}
+                    rev={undefined}
+                    style={{ fontSize: '15px' }}
+                  />
+                </>
               )}
             </S.CommentsUser>
             <S.Comments>{comment.text}</S.Comments>
             <S.CommentsTimestamp>{comment.timestamp}</S.CommentsTimestamp>
+          </S.CommentsWrapper>
+        ))} */}
+
+        {comments.map((comment) => (
+          <S.CommentsWrapper key={comment.id}>
+            {/* 편집 상태에 따라 댓글 표시 또는 편집 필드 표시 */}
+            {editingCommentId === comment.id ? (
+              <>
+                <S.CommentsUser>
+                  <S.CommentsUserEmail>
+                    <Avatar
+                      size="small"
+                      shape="square"
+                      style={{ marginRight: '2%' }}
+                      icon={<UserOutlined rev={undefined} />}
+                    />
+                    {comment.email?.split('@')[0]}
+                  </S.CommentsUserEmail>
+                </S.CommentsUser>
+                <S.CommentsInput
+                  value={editingCommentText}
+                  onChange={(e) => setEditingCommentText(e.target.value)}
+                  placeholder="여러분의 소중한 댓글을 남겨주세요!"
+                ></S.CommentsInput>
+                <S.SubmitWrapper>
+                  <S.CancelButton onClick={cancelEditing}>취소</S.CancelButton>
+                  <S.SubmitButton onClick={submitEditedComment}>등록</S.SubmitButton>
+                </S.SubmitWrapper>
+              </>
+            ) : (
+              <>
+                {/* 기존 댓글 내용 */}
+                <S.CommentsUser>
+                  <S.CommentsUserEmail>
+                    <Avatar
+                      size="small"
+                      shape="square"
+                      style={{ marginRight: '2%' }}
+                      icon={<UserOutlined rev={undefined} />}
+                    />
+                    {comment.email?.split('@')[0]}
+                  </S.CommentsUserEmail>
+                  {comment.email === email && (
+                    <>
+                      <EditOutlined
+                        onClick={() => startEditing(comment)}
+                        rev={undefined}
+                        style={{ fontSize: '15px', marginRight: '1%' }}
+                      />
+                      <DeleteOutlined
+                        onClick={() => deleteComment(comment.id)}
+                        rev={undefined}
+                        style={{ fontSize: '15px' }}
+                      />
+                    </>
+                  )}
+                </S.CommentsUser>
+                <S.Comments>{comment.text}</S.Comments>
+                <S.CommentsTimestamp>{comment.timestamp}</S.CommentsTimestamp>
+              </>
+            )}
           </S.CommentsWrapper>
         ))}
       </S.Wrapper>

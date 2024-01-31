@@ -34,6 +34,7 @@ export const useBoardComments = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [login] = useRecoilState(isLoggedIn);
   const [newComment, setNewComment] = useState<string>('');
+
   const email = useRecoilValue(userEmail);
 
   const formatDate = (date: any) => {
@@ -87,6 +88,13 @@ export const useBoardComments = () => {
   const addComment = async () => {
     if (!login) {
       addDocError();
+      return;
+    }
+
+    if (newComment.length === 0) {
+      Modal.error({
+        title: '댓글을 작성해주세요.',
+      });
       return;
     }
 
@@ -159,13 +167,39 @@ export const useBoardComments = () => {
     }
   };
 
-  // 별점 평균을 계산하고 해당 포스트에 별점을 반영
-
   const updateCount = async (commentCount: number) => {
     const board = doc(db, 'board', postId);
     await updateDoc(board, {
       commentscount: commentCount,
     });
+  };
+
+  const updateComment = async (commentId: string, newText: string) => {
+    try {
+      const commentDocRef = doc(db, 'boardcomment', commentId);
+      await updateDoc(commentDocRef, {
+        text: newText,
+      });
+
+      // UI 업데이트
+      setComments(
+        comments.map((comment) => {
+          if (comment.id === commentId) {
+            return { ...comment, text: newText };
+          }
+          return comment;
+        })
+      );
+
+      Modal.success({
+        content: '댓글이 수정되었습니다!',
+      });
+    } catch (error) {
+      console.log(error);
+      Modal.error({
+        title: '댓글 수정에 실패했습니다.',
+      });
+    }
   };
 
   useEffect(() => {
@@ -189,5 +223,6 @@ export const useBoardComments = () => {
     addComment,
     deleteComment,
     deletemodal,
+    updateComment,
   };
 };

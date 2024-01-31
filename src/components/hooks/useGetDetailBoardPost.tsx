@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { DocumentData, collection, deleteDoc, doc, getDoc, query, where } from 'firebase/firestore';
-import { db } from '../../../pages/_app';
+import { db, storage } from '../../../pages/_app';
 import { useRouter } from 'next/router';
 import { userEmail } from '../../commons/globalstate/globalstate';
 import { useRecoilValue } from 'recoil';
+import { deleteObject, ref } from 'firebase/storage';
 
 interface Post extends DocumentData {
   email?: string;
@@ -57,7 +58,15 @@ export const useGetDetailBoardPost = () => {
   const onClickDeletePost = async () => {
     try {
       const postRef = doc(db, 'board', postId);
+      const postData = (await getDoc(postRef)).data();
+
       await deleteDoc(postRef);
+
+      // 게시물에 이미지가 있는 경우, Firebase Storage에서 이미지 삭제
+      if (postData?.img) {
+        const imageRef = ref(storage, postData.img);
+        await deleteObject(imageRef);
+      }
 
       router.push('/boards');
     } catch (error) {

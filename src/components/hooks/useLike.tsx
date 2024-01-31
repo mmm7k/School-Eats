@@ -114,9 +114,9 @@ export const useLike = () => {
   };
 
   useEffect(() => {
-    // if (postId) {
-    getLike();
-    // }
+    if (postId) {
+      getLike();
+    }
   }, [postId]);
 
   useEffect(() => {

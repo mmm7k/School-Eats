@@ -150,6 +150,9 @@ export const ReviewText = styled.span`
   /* font-size: 14px; */
   font-size: 13px;
   font-weight: 600;
+  white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 필요에 따라 줄바꿈 */
+  overflow-wrap: break-word; /* 긴 단어가 요소의 너비를 넘어갈 때 줄바꿈 */
+  word-break: break-word; /* 긴 단어를 끊어서 줄바꿈 */
 `;
 
 export const ReviewInput = styled.textarea`
@@ -190,6 +193,8 @@ export const ReviewWrapper = styled.div`
   justify-content: center;
   padding: 3% 0;
   padding-left: 3%;
+
+  position: relative;
 `;
 
 export const ReviewInputRate = styled(Rate)`
@@ -214,6 +219,19 @@ export const SubmitButton = styled.button`
   width: 50px;
   border: none;
   background-color: #f6786f;
+  margin-left: 3%;
+`;
+
+export const CancelButton = styled.button`
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #f6786f;
+  height: 35px;
+  border-radius: 10px;
+  width: 50px;
+  border: 1px solid #f6786f;
+  background-color: white;
   margin-left: 3%;
 `;
 

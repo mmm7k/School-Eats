@@ -30,6 +30,7 @@ export default function BoardsList() {
     setSearchTerm(newSearchTerm);
   };
 
+  console.log(posts);
   return (
     <S.Wrapper>
       <WriteButton />
@@ -42,8 +43,8 @@ export default function BoardsList() {
       {!searchResults || searchResults.length === 0
         ? // 검색 결과가 없거나 searchResults가 null일 때
           posts.map((post: Post) => (
-            <Link href={`boards/${post.id}`}>
-              <S.ContentsWrapper key={post.id} id={post.id}>
+            <Link href={`/boards/${post.id}`} key={post.id}>
+              <S.ContentsWrapper id={post.id}>
                 {post.img && (
                   <S.Image>
                     <Image
@@ -80,8 +81,8 @@ export default function BoardsList() {
           ))
         : // 검색 결과가 있을 때
           searchResults.map((post: Post) => (
-            <Link href={`boards/${post.id}`}>
-              <S.ContentsWrapper key={post.id} id={post.id}>
+            <Link href={`/boards/${post.id}`} key={post.id}>
+              <S.ContentsWrapper id={post.id}>
                 {post.img && (
                   <S.Image>
                     <Image

@@ -219,6 +219,19 @@ export const SubmitButton = styled.button`
   margin-bottom: 4%;
 `;
 
+export const CancelButton = styled.button`
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #f6786f;
+  height: 35px;
+  border-radius: 10px;
+  width: 50px;
+  border: 1px solid #f6786f;
+  background-color: white;
+  margin-left: 3%;
+  margin-bottom: 4%;
+`;
 export const CommentsWrapper = styled.div`
   width: 100%;
   min-height: 85px;

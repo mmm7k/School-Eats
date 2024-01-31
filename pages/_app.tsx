@@ -12,6 +12,7 @@ import { getFirestore } from 'firebase/firestore';
 import Head from 'next/head';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
+import { getStorage } from 'firebase/storage';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -25,7 +26,7 @@ export const kakaoKey = process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY;
 export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
-
+export const storage = getStorage(firebaseapp);
 declare global {
   interface Window {
     Kakao: any;

@@ -40,9 +40,7 @@ export const useComments = () => {
     let q;
 
     //@ts-ignore
-    // 이전코드입니다.
     q = query(collection(db, 'comment'), orderBy('timestamp', 'desc'), where('placeId', '==', postId));
-    // q = query(collection(db, 'all', postId, 'comment'), orderBy('timestamp', 'desc'));
     const snapshot = await getDocs(q);
     const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
       ...doc.data(),
@@ -70,34 +68,6 @@ export const useComments = () => {
     });
   };
 
-  // const addComment = async () => {
-  //   if (login) {
-  //     if (newRating === 0) {
-  //       Modal.error({
-  //         title: '별점은 필수항목입니다.',
-  //       });
-  //       return; // 함수 종료
-  //     }
-  //     if (newComment.length > 150) {
-  //       Modal.error({
-  //         title: '댓글은 150자 이내로 작성해주세요.',
-  //       });
-  //       return; // 함수 종료
-  //     }
-
-  //     const commentsRef = collection(db, 'all', postId, 'comment');
-  //     await addDoc(commentsRef, {
-  //       text: newComment,
-  //       email,
-  //       rating: newRating,
-  //       timestamp: new Date(),
-  //     });
-  //     success();
-  //   } else {
-  //     addDocError();
-  //   }
-  // };
-
   // 사용자에게 먼저 ui 보여주고 백그라운드에서 add 진행
   const addComment = async () => {
     if (!login) {
@@ -114,7 +84,7 @@ export const useComments = () => {
 
     if (newComment.length > 150) {
       Modal.error({
-        title: '댓글은 150자 이내로 작성해주세요.',
+        title: '리뷰는 150자 이내로 작성해주세요.',
       });
       return;
     }
@@ -137,13 +107,12 @@ export const useComments = () => {
 
     // 데이터베이스에 댓글 저장
     try {
-      // const commentsRef = collection(db, 'all', postId, 'comment');
       const commentsRef = collection(db, 'comment');
 
       const docRef = await addDoc(commentsRef, newCommentObj);
       success();
       setNewComment('');
-
+      setNewRating(0);
       setComments((prevComments) =>
         prevComments.map((comment) =>
           //@ts-ignore
@@ -158,19 +127,12 @@ export const useComments = () => {
     }
   };
 
-  // const deleteComment = async (commentId: any) => {
-  //   const comments = doc(db, 'all', postId, 'comment', commentId);
-  //   await deleteDoc(comments);
-  //   deletemodal();
-  // };
-
   const deleteComment = async (commentId: string) => {
     // 먼저 UI에서 댓글을 제거
-    // setComments(comments.filter((comment) => comment.id !== commentId));
+
     setComments((prevComments) => prevComments.filter((comment) => comment.id !== commentId));
     try {
       // 데이터베이스에서 댓글 삭제
-      // const commentDoc = doc(db, 'all', postId, 'comment', commentId);
       const commentDoc = doc(db, 'comment', commentId);
 
       await deleteDoc(commentDoc);
@@ -190,25 +152,6 @@ export const useComments = () => {
 
   const [averageRating, setAverageRating]: any = useState(0);
 
-  // let avg: number;
-  // let count: number;
-  // const updateRate = async () => {
-  //   const board = doc(db, 'all', postId);
-  //   await updateDoc(board, {
-  //     rate: avg,
-  //     commentscount: count,
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   if (comments.length > 0) {
-  //     const totalRating = comments.reduce((acc, comment) => acc + (comment.rating || 0), 0);
-  //     avg = totalRating / comments.length;
-  //     setAverageRating(avg);
-  //     count = comments.length;
-  //     updateRate();
-  //   }
-  // }, [comments]); // comments 배열이 변경될 때마다 실행
   useEffect(() => {
     if (comments.length > 0) {
       // 평균 평점 계산
@@ -235,6 +178,46 @@ export const useComments = () => {
       commentscount: commentCount,
     });
   };
+
+  const updateComment = async (commentId: string, updatedText: string, updatedRating: number) => {
+    if (updatedRating === 0) {
+      Modal.error({
+        title: '별점은 필수항목입니다.',
+      });
+      return;
+    }
+
+    if (updatedText.length > 150) {
+      Modal.error({
+        title: '리뷰는 150자 이내로 작성해주세요.',
+      });
+      return;
+    }
+
+    try {
+      const commentRef = doc(db, 'comment', commentId);
+      await updateDoc(commentRef, {
+        text: updatedText,
+        rating: updatedRating,
+        // 이 부분에 필요한 다른 필드 업데이트를 추가할 수 있습니다.
+      });
+      // 로컬 상태 업데이트
+      setComments((prevComments) =>
+        prevComments.map((comment) =>
+          comment.id === commentId ? { ...comment, text: updatedText, rating: updatedRating } : comment
+        )
+      );
+      Modal.success({
+        content: '리뷰가 수정되었습니다!',
+      });
+    } catch (error) {
+      console.error('Error updating comment:', error);
+      Modal.error({
+        title: '리뷰 수정에 실패했습니다.',
+      });
+    }
+  };
+
   useEffect(() => {
     if (postId) {
       getComments();
@@ -250,5 +233,6 @@ export const useComments = () => {
     addComment,
     deleteComment,
     averageRating,
+    updateComment,
   };
 };
