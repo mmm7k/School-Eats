@@ -21,8 +21,8 @@ export default function SignupPage(): JSX.Element {
         </Link>
       </S.HomeButtonWrapper>
       <S.CouponDiv>
-        <S.CouponImg>🎁</S.CouponImg>
-        회원 가입시 <S.ColorText>&nbsp;&nbsp;제휴 맛집 쿠폰&nbsp;&nbsp;</S.ColorText> 즉시 지급
+        <S.CouponImg>🤸</S.CouponImg>
+        회원 가입하고 <S.ColorText>&nbsp;&nbsp;School Eats&nbsp;</S.ColorText>를 마음껏 즐겨보세요!
       </S.CouponDiv>
       <S.kakaoText>간편 회원가입</S.kakaoText>
       <S.Button onClick={kakaoLogin}>
