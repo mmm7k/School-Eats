@@ -85,5 +85,5 @@ export const useWriteBoardPost = () => {
     router.push('/boards');
   };
 
-  return { register, handleSubmit, errors, onSubmit, onImageChange, uploading };
+  return { register, handleSubmit, errors, onSubmit, onImageChange, uploading, isSubmitting };
 };

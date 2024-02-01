@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useWriteBoardPost } from '../../../hooks/useWriteBoardPost';
 
 export default function BoardWrite() {
-  const { register, handleSubmit, errors, onSubmit, onImageChange, uploading } = useWriteBoardPost();
+  const { register, handleSubmit, errors, onSubmit, onImageChange, isSubmitting } = useWriteBoardPost();
   const [selectedFile, setSelectedFile] = useState('');
   const router = useRouter();
   const goBack = () => {
@@ -42,7 +42,9 @@ export default function BoardWrite() {
 
           <S.UploadLabel htmlFor="file-upload">{selectedFile || '사진 선택'}</S.UploadLabel>
           <S.HiddenFileInput id="file-upload" type="file" accept=".jpg,.png" onChange={handleFileChange} />
-          <S.SubmitButton type="submit">등록하기</S.SubmitButton>
+          <S.SubmitButton type="submit" disabled={isSubmitting}>
+            등록하기
+          </S.SubmitButton>
         </S.form>
       </S.Wrapper>
     </>
