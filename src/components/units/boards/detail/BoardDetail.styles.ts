@@ -305,6 +305,6 @@ export const ImgModalWrapper = styled.div`
 
 export const ImgModal = styled.div`
   position: relative;
-  width: 50vw;
-  height: 50vh;
+  width: 70vw;
+  height: 70vh;
 `;
