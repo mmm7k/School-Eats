@@ -2,11 +2,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
-import { db, storage } from '../../../pages/_app';
+import { db, storage } from '../../pages/_app';
 import { doc, updateDoc } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilValue } from 'recoil';
-import { userEmail } from '../../commons/globalstate/globalstate';
+import { userEmail } from '../commons/globalstate/globalstate';
 import { useEffect, useState } from 'react';
 import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { useGetDetailBoardPost } from './useGetDetailBoardPost';
@@ -22,6 +22,7 @@ export const useEditBoardPost = (postId: string) => {
   const router = useRouter();
   const email = useRecoilValue(userEmail);
   const { post } = useGetDetailBoardPost();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
@@ -77,6 +78,8 @@ export const useEditBoardPost = (postId: string) => {
   };
 
   const onSubmit = async (data: any) => {
+    if (isSubmitting) return; // 이미 제출 중이면 추가 제출 방지
+    setIsSubmitting(true); // 제출 상태로 변경
     const imageUrl = await uploadImage();
     const boardDoc = doc(db, 'board', postId);
 
@@ -95,8 +98,9 @@ export const useEditBoardPost = (postId: string) => {
     }
 
     success();
+    setIsSubmitting(false); // 제출 상태 해제
     router.push('/boards');
   };
 
-  return { register, handleSubmit, errors, onSubmit, onImageChange, uploading };
+  return { register, handleSubmit, errors, onSubmit, onImageChange, uploading, isSubmitting };
 };

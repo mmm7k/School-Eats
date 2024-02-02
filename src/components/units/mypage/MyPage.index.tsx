@@ -2,8 +2,8 @@ import Link from 'next/link';
 import * as S from './MyPage.styles';
 import { useRecoilValue } from 'recoil';
 import { KakaoLoggedIn, layoutEmail } from '../../../commons/globalstate/globalstate';
-import { useKakaoLogin } from '../../hooks/useKakoLogin';
-import { useLogin } from '../../hooks/useLogin';
+import { useKakaoLogin } from '../../../hooks/useKakoLogin';
+import { useLogin } from '../../../hooks/useLogin';
 import { useRouter } from 'next/router';
 import {
   CommentOutlined,
@@ -22,7 +22,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar } from 'antd';
-import { useMoveToPage } from '../../hooks/useMoveToPage';
+import { useMoveToPage } from '../../../hooks/useMoveToPage';
 
 export default function MyPage(): JSX.Element {
   const user = useRecoilValue(layoutEmail);

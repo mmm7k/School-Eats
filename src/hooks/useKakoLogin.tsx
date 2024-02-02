@@ -1,5 +1,5 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { KakaoLoggedIn, autoLogin, isLoggedIn, layoutEmail, userEmail } from '../../commons/globalstate/globalstate';
+import { useRecoilState } from 'recoil';
+import { KakaoLoggedIn, isLoggedIn, layoutEmail, userEmail } from '../commons/globalstate/globalstate';
 import { useRouter } from 'next/router';
 
 export const useKakaoLogin = () => {

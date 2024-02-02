@@ -1,23 +1,11 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useMoveToPage } from './useMoveToPage';
+import { useEffect, useState } from 'react';
+
 import { useRouter } from 'next/router';
-import { authInstance, db, firebaseapp } from '../../../pages/_app';
-import {
-  DocumentData,
-  QueryDocumentSnapshot,
-  addDoc,
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  getFirestore,
-  query,
-  updateDoc,
-  where,
-} from 'firebase/firestore';
+import { db } from '../../pages/_app';
+import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 interface Like {
   id: string;
   text?: string;

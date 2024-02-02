@@ -1,22 +1,11 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useMoveToPage } from './useMoveToPage';
+import { useEffect, useState } from 'react';
+
 import { useRouter } from 'next/router';
-import { authInstance, db, firebaseapp } from '../../../pages/_app';
-import {
-  DocumentData,
-  QueryDocumentSnapshot,
-  addDoc,
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  getFirestore,
-  query,
-  where,
-} from 'firebase/firestore';
+import { db } from '../../pages/_app';
+import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 interface Scrap {
   id: string;
   text?: string;
@@ -35,7 +24,6 @@ export const useScrap = () => {
   const getScrap = async () => {
     let q;
 
-    // q = query(collection(db, 'board', postId, 'scrap'));
     q = query(collection(db, 'boardscrap'), where('boardId', '==', postId));
 
     const snapshot = await getDocs(q);
@@ -46,22 +34,6 @@ export const useScrap = () => {
 
     setScrap(scrapArr);
   };
-
-  // const addScrap = async () => {
-  //   if (login) {
-  //     // const scrapRef = collection(db, 'board', postId, 'scrap');
-  //     const scrapRef = collection(db, 'boardscrap');
-
-  //     await addDoc(scrapRef, {
-  //       placeId: postId,
-  //       email,
-  //     });
-  //   } else {
-  //     Modal.error({
-  //       title: '로그인이 필요합니다!',
-  //     });
-  //   }
-  // };
 
   const addScrap = async () => {
     if (!login) {
@@ -98,12 +70,6 @@ export const useScrap = () => {
     }
   };
 
-  // const deleteScrap = async (scrapId: any) => {
-  //   // const deletescrap: any = doc(db, 'board', postId, 'scrap', scrapId);
-  //   const deletescrap: any = doc(db, 'boardscrap', scrapId);
-
-  //   await deleteDoc(deletescrap);
-  // };
   const deleteScrap = async (scrapId: string) => {
     // UI에서 '좋아요' 제거
     setScrap(scrap.filter((l) => l.id !== scrapId));
@@ -127,17 +93,6 @@ export const useScrap = () => {
 
   const [isScraped, setIsScraped] = useState(false);
 
-  // const handleScrap = async () => {
-  //   if (isScraped) {
-  //     const scrapId = scrap.find((b) => b.email === email)?.id;
-  //     if (scrapId) await deleteScrap(scrapId);
-  //   } else {
-  //     await addScrap();
-  //   }
-  //   await getScrap();
-  //   setIsScraped(!isScraped);
-  // };
-
   const handleScrap = async () => {
     const currentscrap = scrap.find((b) => b.email === email);
     if (currentscrap) {
@@ -146,15 +101,6 @@ export const useScrap = () => {
       await addScrap();
     }
   };
-
-  // useEffect(() => {
-  //   (async () => {
-  //     if (postId) {
-  //       await getScrap();
-  //       setIsScraped(scrap.some((b) => b.email === email));
-  //     }
-  //   })();
-  // }, [postId, scrap]);
 
   useEffect(() => {
     if (postId) {

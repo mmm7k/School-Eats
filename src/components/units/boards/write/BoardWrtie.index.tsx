@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './BoardWrite.styles';
 import { useRouter } from 'next/router';
-import { useWriteBoardPost } from '../../../hooks/useWriteBoardPost';
+import { useWriteBoardPost } from '../../../../hooks/useWriteBoardPost';
 
 export default function BoardWrite() {
   const { register, handleSubmit, errors, onSubmit, onImageChange, isSubmitting } = useWriteBoardPost();

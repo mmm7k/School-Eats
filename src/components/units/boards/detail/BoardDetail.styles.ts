@@ -269,3 +269,42 @@ export const CommentsTimestamp = styled.span`
   font-size: 12px;
   font-weight: 500;
 `;
+
+export const ImgWrapper = styled.div`
+  height: 160px;
+  width: 150px;
+  cursor: pointer;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 1%;
+  position: relative;
+  &:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* 마우스 오버 시 어둡게 처리 */
+    z-index: 2;
+  }
+`;
+
+export const ImgModalWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1100;
+`;
+
+export const ImgModal = styled.div`
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+`;

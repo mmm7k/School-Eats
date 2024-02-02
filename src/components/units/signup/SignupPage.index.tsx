@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { useSignup } from '../../hooks/useSignup';
+import { useSignup } from '../../../hooks/useSignup';
 import * as S from './SignupPage.styles';
 import { useRouter } from 'next/router';
-import { useKakaoLogin } from '../../hooks/useKakoLogin';
+import { useKakaoLogin } from '../../../hooks/useKakoLogin';
 
 export default function SignupPage(): JSX.Element {
   const { kakaoLogin, kakaoLogout } = useKakaoLogin();

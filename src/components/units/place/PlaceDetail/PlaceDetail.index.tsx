@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import { useGetDetailPost } from '../../../hooks/useGetDetailPost';
+import { useGetDetailPost } from '../../../../hooks/useGetDetailPost';
 import * as S from './PlaceDetail.styles';
 import { useRouter } from 'next/router';
-import { useComments } from '../../../hooks/useComments';
+import { useComments } from '../../../../hooks/useComments';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
-import { useBookmark } from '../../../hooks/useBookmark';
+import { useBookmark } from '../../../../hooks/useBookmark';
 import {
   ClockCircleOutlined,
   DeleteOutlined,

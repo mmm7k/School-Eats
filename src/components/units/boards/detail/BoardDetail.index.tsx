@@ -12,12 +12,12 @@ import {
   StarOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Image } from 'antd';
-import { useGetDetailBoardPost } from '../../../hooks/useGetDetailBoardPost';
-import { useBoardComments } from '../../../hooks/useBoardComments';
-import { useScrap } from '../../../hooks/useScrap';
-import { useLike } from '../../../hooks/useLike';
+import { useGetDetailBoardPost } from '../../../../hooks/useGetDetailBoardPost';
+import { useBoardComments } from '../../../../hooks/useBoardComments';
+import { useScrap } from '../../../../hooks/useScrap';
+import { useLike } from '../../../../hooks/useLike';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function BoardDetail(): JSX.Element {
   const { comments, newComment, updateComment, setNewComment, addComment, deleteComment } = useBoardComments();
@@ -68,6 +68,13 @@ export default function BoardDetail(): JSX.Element {
       cancelEditing();
     }
   };
+  ////
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // 모달을 열고 닫는 함수
+  const showModal = () => setIsModalVisible(true);
+  const closeModal = () => setIsModalVisible(false);
+
   return (
     <>
       <S.HeaderWrapper>
@@ -110,7 +117,29 @@ export default function BoardDetail(): JSX.Element {
         <S.ContentsWrapper>
           <S.ContentsTitle>{post?.title}</S.ContentsTitle>
           <S.Contents>{post?.contents}</S.Contents>
-          {post?.img && <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post.img} />}
+          {/* {post?.img && <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post.img} />} */}
+          {post?.img && (
+            <S.ImgWrapper onClick={showModal}>
+              <Image
+                src={post.img}
+                alt="Post Image"
+                width={150}
+                height={160}
+                objectFit="cover"
+                layout="responsive"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+              />
+            </S.ImgWrapper>
+          )}
+
+          {isModalVisible && (
+            <S.ImgModalWrapper onClick={closeModal}>
+              <S.ImgModal onClick={(e) => e.stopPropagation()}>
+                <Image src={post?.img} alt="Post Image Large" layout="fill" objectFit="contain" />
+              </S.ImgModal>
+            </S.ImgModalWrapper>
+          )}
         </S.ContentsWrapper>
         <S.LikeCommentCount>
           <S.LikeCount>
@@ -141,36 +170,6 @@ export default function BoardDetail(): JSX.Element {
         <S.SubmitWrapper>
           <S.SubmitButton onClick={addComment}>등록</S.SubmitButton>
         </S.SubmitWrapper>
-
-        {/* 
-        {comments.map((comment) => (
-          <S.CommentsWrapper key={comment.id}>
-            <S.CommentsUser>
-              <S.CommentsUserEmail>
-                <Avatar
-                  size="small"
-                  shape="square"
-                  style={{ marginRight: '2%' }}
-                  icon={<UserOutlined rev={undefined} />}
-                />
-                {comment.email?.split('@')[0]}
-              </S.CommentsUserEmail>
-              {comment.email === email && (
-                <>
-                  <EditOutlined rev={undefined} style={{ fontSize: '15px', marginRight: '1%' }} />
-                  <DeleteOutlined
-                    onClick={() => deleteComment(comment.id)}
-                    rev={undefined}
-                    style={{ fontSize: '15px' }}
-                  />
-                </>
-              )}
-            </S.CommentsUser>
-            <S.Comments>{comment.text}</S.Comments>
-            <S.CommentsTimestamp>{comment.timestamp}</S.CommentsTimestamp>
-          </S.CommentsWrapper>
-        ))} */}
-
         {comments.map((comment) => (
           <S.CommentsWrapper key={comment.id}>
             {/* 편집 상태에 따라 댓글 표시 또는 편집 필드 표시 */}

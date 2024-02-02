@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as S from '../CsPage.styles';
-import { useWritePost } from '../../../../hooks/useWritePost';
+import { useWritePost } from '../../../../../hooks/useWritePost';
 import { useRouter } from 'next/router';
 
 export default function Request() {

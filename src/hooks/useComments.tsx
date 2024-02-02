@@ -13,9 +13,9 @@ import {
 } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { db } from '../../../pages/_app';
+import { db } from '../../pages/_app';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 import { Modal } from 'antd';
 
 interface Comment {

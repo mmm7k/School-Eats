@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import * as S from './Place.styles';
-import { useGetPosts } from '../../hooks/useGetPosts';
+import { useGetPosts } from '../../../hooks/useGetPosts';
 import { Select, Skeleton, Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';

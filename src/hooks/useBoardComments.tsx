@@ -13,9 +13,9 @@ import {
 } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { db } from '../../../pages/_app';
+import { db } from '../../pages/_app';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 import { Modal } from 'antd';
 
 interface Comment {
@@ -206,6 +206,9 @@ export const useBoardComments = () => {
     if (comments.length > 0) {
       const commentCount = comments.length;
       // 백그라운드에서 데이터베이스 업데이트
+      updateCount(commentCount);
+    } else {
+      const commentCount = 0;
       updateCount(commentCount);
     }
   }, [comments]);

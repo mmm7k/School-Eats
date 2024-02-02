@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { useLogin } from '../../hooks/useLogin';
+import { useLogin } from '../../../hooks/useLogin';
 import * as S from './LoginPage.styles';
-import { useKakaoLogin } from '../../hooks/useKakoLogin';
+import { useKakaoLogin } from '../../../hooks/useKakoLogin';
 import { useRouter } from 'next/router';
 import { Checkbox, CheckboxProps } from 'antd';
 import { useRecoilState } from 'recoil';

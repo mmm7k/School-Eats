@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import * as S from '../Place.styles';
-import { useGetPosts } from '../../../hooks/useGetPosts';
+import { useGetPosts } from '../../../../hooks/useGetPosts';
 import { Select, Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useGetCategoryPosts } from '../../../hooks/useGetCategoryPosts';
+import { useGetCategoryPosts } from '../../../../hooks/useGetCategoryPosts';
 import { useState } from 'react';
 import SkeletonPlace from '../Skeleton';
 

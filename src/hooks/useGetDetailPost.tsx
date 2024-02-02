@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { DocumentData, collection, doc, getDoc, query, where } from 'firebase/firestore';
-import { db } from '../../../pages/_app';
+import { db } from '../../pages/_app';
 import { useRouter } from 'next/router';
-import { userEmail } from '../../commons/globalstate/globalstate';
+import { userEmail } from '../commons/globalstate/globalstate';
 import { useRecoilValue } from 'recoil';
 
 interface Post extends DocumentData {

@@ -10,7 +10,7 @@ import {
   getDocs,
   DocumentData,
 } from 'firebase/firestore';
-import { db, firebaseapp } from '../../../pages/_app';
+import { db, firebaseapp } from '../../pages/_app';
 
 interface SearchResult extends DocumentData {
   id: string;

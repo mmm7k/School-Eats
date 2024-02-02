@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { DocumentData, collection, getDocs, getFirestore, limit, orderBy, query, startAfter } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { DocumentData, collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
-import { db, firebaseapp } from '../../../pages/_app';
+import { db } from '../../pages/_app';
 
 interface Post extends DocumentData {
   id: string;

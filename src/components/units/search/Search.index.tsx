@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import * as S from './Search.styles';
 import { SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { usePlaceSearch } from '../../hooks/usePlaceSearch';
+import { usePlaceSearch } from '../../../hooks/usePlaceSearch';
 import Link from 'next/link';
 import Image from 'next/image';
 
