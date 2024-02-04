@@ -55,13 +55,11 @@ export default function token() {
               console.log(res);
               const email = res.data.kakao_account.email;
               const id = res.data.id;
-
               setKakaoId(id);
               setUserEmailState(email);
               setLayoutEmail(email.split('@')[0]);
               setLoggedin(true);
               setKakaoLoggedin(true);
-              alert('로그인');
               router.push('/');
             });
         } else {
