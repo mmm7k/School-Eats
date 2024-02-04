@@ -61,7 +61,7 @@ export default function token() {
               setLayoutEmail(email.split('@')[0]);
               setLoggedin(true);
               setKakaoLoggedin(true);
-
+              alert('로그인');
               router.push('/');
             });
         } else {
