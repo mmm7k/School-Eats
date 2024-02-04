@@ -36,3 +36,9 @@ next-env.d.ts
 
 # api key
 .env.local
+
+# pwa
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.map
