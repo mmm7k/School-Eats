@@ -12,7 +12,7 @@ import {
 import { useRouter } from 'next/router';
 
 const CLIENT_ID = kakaoRestApiKey;
-const REDIRECT_URI = 'http://localhost:3000/auth/kakao';
+const REDIRECT_URI = 'http://schooleats.vercel.app/auth/kakao';
 
 export default function token() {
   const router = useRouter();
