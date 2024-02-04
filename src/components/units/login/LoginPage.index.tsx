@@ -16,8 +16,6 @@ export default function LoginPage(): JSX.Element {
     setCheck(e.target.checked);
   };
 
-  const router = useRouter();
-
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
@@ -29,6 +27,7 @@ export default function LoginPage(): JSX.Element {
         </Link>
       </S.HomeButtonWrapper>
       <S.Title>만나서 반가워요!</S.Title>
+
       <S.KakaoButtonWrapper onClick={kakaoLogin}>
         <S.KakaoLogo src="/kakao.png" />
         카카오로 간편 로그인

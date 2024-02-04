@@ -45,3 +45,9 @@ export const autoLogin = atom<boolean | null>({
   default: null,
   effects_UNSTABLE: [persistAtomEffect],
 });
+
+export const Kakaoid = atom<number | null | undefined>({
+  key: 'Kakaoid',
+  default: null,
+  effects_UNSTABLE: [persistAtomEffect],
+});

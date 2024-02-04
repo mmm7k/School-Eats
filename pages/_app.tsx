@@ -22,11 +22,14 @@ export const firebaseConfig = {
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
-export const kakaoKey = process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY;
+export const kakaoKey = process.env.NEXT_PUBLIC_KAKAO_KEY;
+export const kakaoRestApiKey = process.env.NEXT_PUBLIC_KAKAO_RESTAPIKEY;
+export const kakaoAdminKey = process.env.NEXT_PUBLIC_KAKAO_ADMINKEY;
 export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
 export const storage = getStorage(firebaseapp);
+
 declare global {
   interface Window {
     Kakao: any;
@@ -37,7 +40,7 @@ declare global {
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const kakaoInit = () => {
     // 페이지가 로드되면 실행
-    window.Kakao.init(process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY);
+    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
   };
   useEffect(() => {
     const interval = setInterval(() => {
