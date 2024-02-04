@@ -35,7 +35,7 @@ export default function Banner(): JSX.Element {
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
             />
             <S.Banner1Text>
-              School Eats를 맛있게ㅁㅁzㅁ
+              School Eats를 맛있게
               <br />
               즐기는 방법!
             </S.Banner1Text>
