@@ -62,7 +62,7 @@ export default function token() {
               setLoggedin(true);
               setKakaoLoggedin(true);
 
-              // router.push('/');
+              router.push('/');
             });
         } else {
           alert('다시 로그인 해주세요.');

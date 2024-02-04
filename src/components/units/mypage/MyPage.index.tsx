@@ -43,7 +43,6 @@ export default function MyPage(): JSX.Element {
     }
     localStorage.removeItem('sessionExpiry');
     localStorage.removeItem('recoil-persist');
-    window.location.href = '/';
   };
   return (
     <>
