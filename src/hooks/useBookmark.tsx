@@ -1,7 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { db } from '../../pages/_app';
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
+import {
+  DocumentData,
+  QueryDocumentSnapshot,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
@@ -25,7 +35,7 @@ export const useBookmark = () => {
 
     q = query(collection(db, 'bookmark'), where('placeId', '==', postId));
     const snapshot = await getDocs(q);
-    const bookmarkArr = snapshot.docs.map((doc: any) => ({
+    const bookmarkArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
       ...doc.data(),
       id: doc.id,
     }));
@@ -47,8 +57,8 @@ export const useBookmark = () => {
     }
   };
 
-  const deleteBookmark = async (bookmarkId: any) => {
-    const comments: any = doc(db, 'bookmark', bookmarkId);
+  const deleteBookmark = async (bookmarkId: string) => {
+    const comments = doc(db, 'bookmark', bookmarkId);
 
     await deleteDoc(comments);
   };

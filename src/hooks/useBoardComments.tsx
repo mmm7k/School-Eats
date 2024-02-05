@@ -19,13 +19,18 @@ import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 import { Modal } from 'antd';
 
 interface Comment {
-  likecount: number;
-  id: string;
+  likecount?: number;
+  id?: number | string;
   text?: string;
-  email?: string;
-  timestamp?: string;
+  email?: string | null | undefined;
+  timestamp: string;
 }
 
+interface NewComment extends Omit<Comment, 'likecount' | 'id'> {
+  id: number | string; // 임시 ID
+  email: string | null | undefined; // null 허용
+  timestamp: string;
+}
 export const useBoardComments = () => {
   const router = useRouter();
   const data = JSON.stringify(router.query); // boardId를 추출
@@ -37,7 +42,7 @@ export const useBoardComments = () => {
 
   const email = useRecoilValue(userEmail);
 
-  const formatDate = (date: any) => {
+  const formatDate = (date: Date) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
     const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월 (0부터 시작하므로 1을 더함)
     const day = date.getDate().toString().padStart(2, '0'); // 일
@@ -51,7 +56,7 @@ export const useBoardComments = () => {
     let q;
     q = query(collection(db, 'boardcomment'), orderBy('timestamp', 'desc'), where('boardId', '==', postId));
     const snapshot = await getDocs(q);
-    const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => {
+    const commentsArr: Comment[] = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => {
       const data = doc.data();
       // Firestore 타임스탬프를 Date 객체로 변환
       const date = data.timestamp ? formatDate(data.timestamp.toDate()) : '';
@@ -59,11 +64,10 @@ export const useBoardComments = () => {
       return {
         ...data,
         id: doc.id,
-
         timestamp: date, // 포맷된 날짜 사용
       };
     });
-    //@ts-ignore
+
     setComments(commentsArr);
   };
   const success = () => {
@@ -108,7 +112,7 @@ export const useBoardComments = () => {
     const tempId = Date.now();
 
     // 댓글 객체 생성
-    const newCommentObj = {
+    const newCommentObj: NewComment = {
       id: tempId,
       text: newComment,
       email,
@@ -116,7 +120,6 @@ export const useBoardComments = () => {
     };
 
     // 댓글 UI 즉시 업데이트
-    //@ts-ignore
     setComments([newCommentObj, ...comments]);
 
     // 데이터베이스에 댓글 저장
@@ -133,15 +136,12 @@ export const useBoardComments = () => {
       success();
       setNewComment('');
       setComments((prevComments) =>
-        prevComments.map((comment) =>
-          //@ts-ignore
-          comment.id === tempId ? { ...comment, id: docRef.id } : comment
-        )
+        prevComments.map((comment) => (comment.id === tempId ? { ...comment, id: docRef.id } : comment))
       );
     } catch (error) {
       console.error('Error adding comment:', error);
       // 실패 시 UI에서 댓글 제거
-      //@ts-ignore
+
       setComments(comments.filter((comment) => comment !== newCommentObj));
     }
   };

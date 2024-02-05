@@ -7,7 +7,6 @@ import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 
 interface Like {
   id: string;
-
   email?: string;
   commnetId?: string;
 }
