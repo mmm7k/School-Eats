@@ -52,7 +52,6 @@ export default function token() {
               }
             )
             .then((res) => {
-              console.log(res);
               const email = res.data.kakao_account.email;
               const id = res.data.id;
               setKakaoId(id);
