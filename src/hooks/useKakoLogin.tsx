@@ -77,11 +77,11 @@ import { kakaoAdminKey, kakaoKey, kakaoRestApiKey } from '../../pages/_app';
 
 export const useKakaoLogin = () => {
   const router = useRouter();
-  const [, setLoggedin] = useRecoilState<boolean | null>(isLoggedIn);
-  const [, setKakaoLoggedin] = useRecoilState<boolean | null>(KakaoLoggedIn);
-  const [, setLayoutEmail] = useRecoilState<string | null | undefined>(layoutEmail);
-  const [, setUserEmailState] = useRecoilState<string | null | undefined>(userEmail);
-  const [kakaoId, setKakaoId] = useRecoilState<number | null | undefined>(Kakaoid);
+  // const [, setLoggedin] = useRecoilState<boolean | null>(isLoggedIn);
+  // const [, setKakaoLoggedin] = useRecoilState<boolean | null>(KakaoLoggedIn);
+  // const [, setLayoutEmail] = useRecoilState<string | null | undefined>(layoutEmail);
+  // const [, setUserEmailState] = useRecoilState<string | null | undefined>(userEmail);
+  // const [kakaoId, setKakaoId] = useRecoilState<number | null | undefined>(Kakaoid);
   const kakaoLogin = async () => {
     window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoRestApiKey}&redirect_uri=http://schooleats.vercel.app/auth/kakao&response_type=code`;
   };

@@ -16,7 +16,6 @@ export default function Banner(): JSX.Element {
     autoplay: true,
   };
 
-  const { onClickMoveToPage } = useMoveToPage();
   return (
     <S.Wrapper>
       <Slider {...settings}>

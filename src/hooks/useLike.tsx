@@ -9,7 +9,8 @@ import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 interface Like {
   id: string;
   text?: string;
-  email?: string;
+  email?: string | undefined | null;
+  boardId: string;
 }
 
 export const useLike = () => {
@@ -44,13 +45,13 @@ export const useLike = () => {
     }
 
     // '좋아요' 객체 생성 및 UI 업데이트
-    const newLikeObj = {
+    const newLikeObj: Like = {
       email,
       // 임시 ID 할당
       id: Date.now().toString(),
       boardId: postId,
     };
-    //@ts-ignore
+
     setLike([...like, newLikeObj]);
     setIsLiked(true);
 

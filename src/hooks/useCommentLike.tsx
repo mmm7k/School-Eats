@@ -7,8 +7,8 @@ import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 
 interface Like {
   id: string;
-  email?: string;
-  commnetId?: string;
+  email?: string | undefined | null;
+  commentId?: string;
 }
 
 export const useCommentLike = (commentId: string) => {
@@ -32,13 +32,13 @@ export const useCommentLike = (commentId: string) => {
     }
 
     // '좋아요' 객체 생성 및 UI 업데이트
-    const newLikeObj = {
+    const newLikeObj: Like = {
       email,
       // 임시 ID 할당
       id: Date.now().toString(),
       commentId: commentId,
     };
-    //@ts-ignore
+
     setCommentLike([...commentLike, newLikeObj]);
     setIsCommentLiked(true);
 

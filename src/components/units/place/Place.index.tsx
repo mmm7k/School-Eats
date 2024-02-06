@@ -9,18 +9,18 @@ import { useState } from 'react';
 import SkeletonPlace from './Skeleton';
 
 interface Post {
-  title: string;
+  title?: string;
   id: string;
-  img: string;
-  titlemenu: string;
-  breaktime: string;
-  rate: number;
-  commentscount: number;
+  img?: string;
+  titlemenu?: string;
+  breaktime?: string;
+  rate?: number;
+  commentscount?: number;
 }
 
 export default function Place(): JSX.Element {
-  const [order, setOrder]: any = useState('commentscount');
-  const { posts, loading }: any = useGetPosts('all', order);
+  const [order, setOrder] = useState('commentscount');
+  const { posts, loading } = useGetPosts('all', order);
   const handleChange = (value: string) => {
     setOrder(value);
   };
@@ -65,48 +65,44 @@ export default function Place(): JSX.Element {
           // 로딩 중일 때 스켈레톤 표시
           <SkeletonPlace />
         ) : (
-          posts.map(
-            (
-              post: Post // posts 배열을 map 함수로 순회합니다.
-            ) => (
-              <Link href={`/place/${post.id}`}>
-                <S.ContentsItem key={post.id}>
-                  <S.ContentsImage>
+          posts.map((post: Post) => (
+            <Link href={`/place/${post.id}`}>
+              <S.ContentsItem key={post.id}>
+                <S.ContentsImage>
+                  <Image
+                    src={
+                      post.img ||
+                      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+                    }
+                    alt={post.title}
+                    width={230}
+                    height={240}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                  />
+                </S.ContentsImage>
+                <S.ContentsTitleWrapper>
+                  <S.ContentsTitle>{post.id}</S.ContentsTitle>
+                  <S.RateWrapper>
                     <Image
                       src={
-                        post.img ||
+                        '/rate.png' ||
                         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                       }
                       alt={post.title}
-                      width={230}
-                      height={240}
+                      width={11}
+                      height={11}
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                     />
-                  </S.ContentsImage>
-                  <S.ContentsTitleWrapper>
-                    <S.ContentsTitle>{post.id}</S.ContentsTitle>
-                    <S.RateWrapper>
-                      <Image
-                        src={
-                          '/rate.png' ||
-                          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-                        }
-                        alt={post.title}
-                        width={11}
-                        height={11}
-                        placeholder="blur"
-                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                      />
-                      {post.rate.toFixed(1)}({post.commentscount})
-                    </S.RateWrapper>
-                  </S.ContentsTitleWrapper>
-                  <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
-                  <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
-                </S.ContentsItem>
-              </Link>
-            )
-          )
+                    {post.rate?.toFixed(1)}({post.commentscount})
+                  </S.RateWrapper>
+                </S.ContentsTitleWrapper>
+                <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>
+                <S.ContentsMenu>{post.titlemenu}</S.ContentsMenu>
+              </S.ContentsItem>
+            </Link>
+          ))
         )}
       </S.ContentsWrapper>
     </S.Wrapper>

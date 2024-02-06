@@ -41,7 +41,7 @@ export default function Bookmark() {
     setLoading(true);
     const q = query(collection(db, 'bookmark'), where('email', '==', email));
     const snapshot = await getDocs(q);
-    const bookmarkArr = snapshot.docs.map((doc: any) => ({
+    const bookmarkArr = snapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
     }));

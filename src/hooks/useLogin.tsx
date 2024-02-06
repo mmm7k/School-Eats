@@ -30,7 +30,7 @@ export const useLogin = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: { email: string; password: string }) => {
     const { email, password } = data;
 
     signInWithEmailAndPassword(authInstance, email, password)

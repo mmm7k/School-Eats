@@ -19,7 +19,7 @@ export const useGetDetailBoardPost = () => {
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.boardid;
 
-  const formatDate = (date: any) => {
+  const formatDate = (date: Date) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
     const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월 (0부터 시작하므로 1을 더함)
     const day = date.getDate().toString().padStart(2, '0'); // 일

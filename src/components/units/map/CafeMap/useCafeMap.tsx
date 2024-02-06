@@ -56,6 +56,22 @@ export default function useCafeMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14926498612606, 126.9243487535859),
             route: '/place/플로리다',
           },
+
+          {
+            name: '사보르커피',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14501647357641, 126.9304568138993),
+            route: '/place/사보르커피',
+          },
+
+          {
+            name: '카페도심',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14576697464869, 126.93066193452695),
+            route: '/place/카페도심',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore

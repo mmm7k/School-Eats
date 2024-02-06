@@ -1,7 +1,4 @@
-import { ChangeEvent, useState } from 'react';
-
 import * as S from '../Map.styled';
-
 import Link from 'next/link';
 import useKoreanMap from './useKoreanMap';
 

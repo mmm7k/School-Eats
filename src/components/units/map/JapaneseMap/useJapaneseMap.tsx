@@ -42,6 +42,13 @@ export default function useJapaneseMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14523238403192, 126.92973510658162),
             route: '/place/통큰돈까스',
           },
+          {
+            name: '돈까스틱',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14480684564143, 126.93034999876991),
+            route: '/place/돈까스틱',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore

@@ -26,8 +26,7 @@ export const useSignup = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data: any) => {
-    console.log('aaa');
+  const onSubmit = async (data: { email: string; password: string }) => {
     const { email, password } = data;
     try {
       await createUserWithEmailAndPassword(authInstance, email, password);

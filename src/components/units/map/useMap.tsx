@@ -49,6 +49,29 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14441879083262, 126.9295382804047),
             route: '/place/무진장떡볶이',
           },
+
+          {
+            name: '보해식당',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14555366799371, 126.9281107099927),
+            route: '/place/보해식당',
+          },
+
+          {
+            name: '마당쇠',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145157288258524, 126.92848142205447),
+            route: '/place/마당쇠',
+          },
+          {
+            name: '벼락',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.144790779038544, 126.9298424795479),
+            route: '/place/벼락',
+          },
           //중식
           {
             name: '백두산',
@@ -64,6 +87,23 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14708066821672, 126.92312443151344),
             route: '/place/열도지',
           },
+
+          {
+            name: '일품',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14556586537565, 126.92969641170197),
+            route: '/place/일품',
+          },
+
+          {
+            name: '옌타이',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
+            route: '/place/옌타이',
+          },
+
           //일식
           {
             name: '달곰식당',
@@ -86,6 +126,14 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14523238403192, 126.92973510658162),
             route: '/place/통큰돈까스',
           },
+
+          {
+            name: '돈까스틱',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14480684564143, 126.93034999876991),
+            route: '/place/돈까스틱',
+          },
           //양식
           {
             name: '부엌간',
@@ -101,6 +149,22 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
             route: '/place/행복경양식',
           },
+
+          {
+            name: '피렌체',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145592898249774, 126.92968267121469),
+            route: '/place/피렌체',
+          },
+          {
+            name: '헝그리브라더스',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14606589092191, 126.9293009228942),
+            route: '/place/헝그리브라더스',
+          },
+
           //카페~
           {
             name: '소맥베이커리',
@@ -136,6 +200,22 @@ export default function useMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14926498612606, 126.9243487535859),
             route: '/place/플로리다',
+          },
+
+          {
+            name: '사보르커피',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14501647357641, 126.9304568138993),
+            route: '/place/사보르커피',
+          },
+
+          {
+            name: '카페도심',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14576697464869, 126.93066193452695),
+            route: '/place/카페도심',
           },
         ];
         locations.map((location, index) => {

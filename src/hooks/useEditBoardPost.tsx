@@ -49,7 +49,7 @@ export const useEditBoardPost = (postId: string) => {
     });
   };
 
-  const [image, setImage]: any = useState(null);
+  const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
 
   const onImageChange = (event: any) => {
@@ -77,7 +77,7 @@ export const useEditBoardPost = (postId: string) => {
     return null;
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: { title: string; contents: string }) => {
     if (isSubmitting) return; // 이미 제출 중이면 추가 제출 방지
     setIsSubmitting(true); // 제출 상태로 변경
     const imageUrl = await uploadImage();

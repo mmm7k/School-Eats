@@ -35,6 +35,20 @@ export default function useWesternMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
             route: '/place/행복경양식',
           },
+          {
+            name: '피렌체',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145592898249774, 126.92968267121469),
+            route: '/place/피렌체',
+          },
+          {
+            name: '헝그리브라더스',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14606589092191, 126.9293009228942),
+            route: '/place/헝그리브라더스',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore

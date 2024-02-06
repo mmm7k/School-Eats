@@ -28,6 +28,16 @@ interface Comment {
   timestamp?: string;
 }
 
+interface Post {
+  id: string;
+  img?: string;
+  title: string;
+  contents: string;
+  likecount: number;
+  commentscount: number;
+  email: string;
+  timestamp: Date;
+}
 export default function Comment() {
   const email = useRecoilValue(userEmail);
   const [comments, setComments] = useState<Comment[]>([]);
@@ -39,7 +49,7 @@ export default function Comment() {
     router.back();
   };
 
-  const formatDate = (date: any) => {
+  const formatDate = (date: Date) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
     const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월 (0부터 시작하므로 1을 더함)
     const day = date.getDate().toString().padStart(2, '0'); // 일
@@ -103,7 +113,7 @@ export default function Comment() {
       getCommentBoard();
     }
   }, [comments]);
-  console.log();
+
   return (
     <>
       <S.TitleWrapper>
@@ -118,7 +128,7 @@ export default function Comment() {
         {loading ? (
           <S.StyledSkeleton active /> // 로딩 중 스켈레톤 표시
         ) : (
-          commentBoard.map((post: any) => (
+          commentBoard.map((post: Post) => (
             <Link href={`/boards/${post.id}`}>
               <S.ContentsWrapper key={post.id} id={post.id}>
                 {post.img && (

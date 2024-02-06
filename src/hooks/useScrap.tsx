@@ -27,7 +27,7 @@ export const useScrap = () => {
     q = query(collection(db, 'boardscrap'), where('boardId', '==', postId));
 
     const snapshot = await getDocs(q);
-    const scrapArr = snapshot.docs.map((doc: any) => ({
+    const scrapArr = snapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
     }));

@@ -19,10 +19,12 @@ import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 import { Modal } from 'antd';
 
 interface Comment {
-  id: string;
+  id: string | number;
   text?: string;
-  email?: string;
+  email?: string | undefined | null;
   rating?: number;
+  timestamp?: Date;
+  placeId?: string;
 }
 
 export const useComments = () => {
@@ -39,7 +41,6 @@ export const useComments = () => {
   const getComments = async () => {
     let q;
 
-    //@ts-ignore
     q = query(collection(db, 'comment'), orderBy('timestamp', 'desc'), where('placeId', '==', postId));
     const snapshot = await getDocs(q);
     const commentsArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
@@ -92,7 +93,7 @@ export const useComments = () => {
     const tempId = Date.now();
 
     // 댓글 객체 생성
-    const newCommentObj = {
+    const newCommentObj: Comment = {
       id: tempId,
       text: newComment,
       email,
@@ -102,7 +103,7 @@ export const useComments = () => {
     };
 
     // 댓글 UI 즉시 업데이트
-    //@ts-ignore
+
     setComments([newCommentObj, ...comments]);
 
     // 데이터베이스에 댓글 저장
@@ -127,7 +128,7 @@ export const useComments = () => {
     }
   };
 
-  const deleteComment = async (commentId: string) => {
+  const deleteComment = async (commentId: any) => {
     // 먼저 UI에서 댓글을 제거
 
     setComments((prevComments) => prevComments.filter((comment) => comment.id !== commentId));

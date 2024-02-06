@@ -9,19 +9,18 @@ import { useState } from 'react';
 import SkeletonPlace from '../Skeleton';
 
 interface Post {
-  title: string;
-  loc: string;
+  title?: string;
   id: string;
-  img: string;
-  titlemenu: string;
-  breaktime: string;
-  rate: number;
-  commentscount: number;
+  img?: string;
+  titlemenu?: string;
+  breaktime?: string;
+  rate?: number;
+  commentscount?: number;
 }
 
 export default function CafePlace(): JSX.Element {
-  const [order, setOrder]: any = useState('commentscount');
-  const { posts, loading }: any = useGetCategoryPosts('all', '카페', order);
+  const [order, setOrder] = useState('commentscount');
+  const { posts, loading } = useGetCategoryPosts('all', '카페', order);
   const handleChange = (value: string) => {
     setOrder(value);
   };
@@ -97,7 +96,7 @@ export default function CafePlace(): JSX.Element {
                         placeholder="blur"
                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                       />
-                      {post.rate.toFixed(1)}({post.commentscount})
+                      {post.rate?.toFixed(1)}({post.commentscount})
                     </S.RateWrapper>
                   </S.ContentsTitleWrapper>
                   <S.ContentsBreakTime>브레이크 타임 : {post.breaktime}</S.ContentsBreakTime>

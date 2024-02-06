@@ -146,7 +146,7 @@ export const useBoardComments = () => {
     }
   };
 
-  const deleteComment = async (commentId: string) => {
+  const deleteComment = async (commentId: any) => {
     // 먼저 UI에서 댓글을 제거
 
     setComments((prevComments) => prevComments.filter((comment) => comment.id !== commentId));

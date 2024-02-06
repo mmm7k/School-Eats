@@ -18,7 +18,7 @@ const postSchema = yup
   .required();
 
 export const useWriteBoardPost = () => {
-  const [image, setImage]: any = useState(null);
+  const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
@@ -38,7 +38,7 @@ export const useWriteBoardPost = () => {
     });
   };
 
-  const onImageChange = (event: any) => {
+  const onImageChange = (event: { target: { files: File[] } }) => {
     if (event.target.files[0]) {
       const file = event.target.files[0];
 
@@ -66,7 +66,7 @@ export const useWriteBoardPost = () => {
     return null;
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: { title: string; contents: string }) => {
     if (isSubmitting) return; // 이미 제출 중이면 추가 제출 방지
     setIsSubmitting(true); // 제출 상태로 변경
     const imageUrl = await uploadImage();
