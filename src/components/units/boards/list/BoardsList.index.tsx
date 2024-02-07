@@ -30,7 +30,6 @@ export default function BoardsList() {
     setSearchTerm(newSearchTerm);
   };
 
-  console.log(posts);
   return (
     <S.Wrapper>
       <WriteButton />
