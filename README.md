@@ -18,7 +18,8 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 - 모바일 사용자를 위해 일정 스크롤을 내릴 시 scroll top button 이 디스플레이 되어 버튼 클릭시 화면 상단으로 바로 이동합니다.
 
 
-Uploading 97da96d1-cc89-4c17-9a67-cc9f58f99dc9.mp4…
+https://github.com/computerkingminsu/School-Eats/assets/129649787/4668caca-e220-4565-9195-92e73bc1c3bc
+
 
 
 ### ⭐️ SEARCH
