@@ -17,17 +17,20 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 - 모바일 사용자를 위해 일정 스크롤을 내릴 시 scroll top button 이 디스플레이 되어 버튼 클릭시 화면 상단으로 바로 이동합니다.
 
-![24deb949-d1c5-410d-831d-32f0b4b010dc-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e)
-
+![8358c9a2-f3f4-491c-bb97-487fcdbb5aad-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/435ef711-197a-4faa-99dd-f8f62c4df662)
 
 ### ⭐️ SEARCH
 
 - 맛집의 이름 또는 메뉴로 맛집을 검색 할 수 있습니다. 검색한 맛집을 클릭시 해당 맛집의 상세페이지로 이동합니다.
+  
+![c45b3217-4a87-43ce-9309-2032bf1b0640-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/7b6b2fe0-b368-417a-8ed7-bb5797f2d33e)
 
 ### ⭐️ BOOKMARK
 
 - 맛집 상세페이지에서 북마크 버튼을 누르면 마이페이지 또는 상단의 북마크 버튼을 통해 북마크한 맛집들을 한눈에 볼 수 있습니다.
   
+![34e3aadc-0981-4c80-a539-96e847229df5-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/dfb39a08-c9f0-40e8-b153-06ef6197d234)
+
 ### ⭐️ 맛집 지도
 
 - 카카오 맵 API를 통해 맛집들의 위치를 지도상의 마커로 카테고리별로 구현하였습니다. 마커 클릭 시 해당 맛집의 상세 페이지로 이동합니다.
