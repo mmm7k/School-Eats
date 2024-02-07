@@ -53,7 +53,8 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 - 맛집들의 상세정보를 확인 할 수 있습니다. 로그인 한 유저는 북마크 기능을 이용 할 수 있으며 별점과 리뷰를 남길 수 있습니다.<br/>
 사용자가 남긴 리뷰는 실시간으로 별점에 반영됩니다.
 
- <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/76408f68-f7e3-41b1-bc1d-e198516d8c43" width="25%" height="25%"/>
+ <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/11c0de61-42a0-428f-b912-1c8ff68d104f" width="25%" height="25%"/>
+
 
 
 ### ⭐️ 커뮤니티 CRUD
