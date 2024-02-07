@@ -17,11 +17,11 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 - 모바일 사용자를 위해 일정 스크롤을 내릴 시 scroll top button 이 디스플레이 되어 버튼 클릭시 화면 상단으로 바로 이동합니다.
 
-<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/435ef711-197a-4faa-99dd-f8f62c4df662" styled="height:200px"></img>
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/435ef711-197a-4faa-99dd-f8f62c4df662" styled="height:50px"></img>
 
-![8358c9a2-f3f4-491c-bb97-487fcdbb5aad-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/435ef711-197a-4faa-99dd-f8f62c4df662)
+
 ### ⭐️ SEARCH
-
+![8358c9a2-f3f4-491c-bb97-487fcdbb5aad-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/435ef711-197a-4faa-99dd-f8f62c4df662)
 - 맛집의 이름 또는 메뉴로 맛집을 검색 할 수 있습니다. 검색한 맛집을 클릭시 해당 맛집의 상세페이지로 이동합니다.
   
 ![c45b3217-4a87-43ce-9309-2032bf1b0640-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/7b6b2fe0-b368-417a-8ed7-bb5797f2d33e)
