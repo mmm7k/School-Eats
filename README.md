@@ -38,23 +38,38 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 - 카카오 맵 API를 통해 맛집들의 위치를 지도상의 마커로 카테고리별로 구현하였습니다. 마커 클릭 시 해당 맛집의 상세 페이지로 이동합니다.
 
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/02809496-5be6-46eb-9528-44e3a6c2f65f" width="25%" height="25%"/>
+
+
 ### ⭐️ 맛집 투어
 
 - 맛집들을 한눈에 볼 수 있으며 필터 기능을 통해 리뷰많은순, 별점높은순으로 맛집들을 확인 할 수 있으며 <br/>
 카테고리를 통해 맛집들을 상세 분류 하였습니다.
 
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/e18a6f3c-7297-4b01-9376-1d20bf04194f" width="25%" height="25%"/>
+
 ### ⭐️ 맛집 상세 페이지
 
 - 맛집들의 상세정보를 확인 할 수 있습니다. 로그인 한 유저는 북마크 기능을 이용 할 수 있으며 별점과 리뷰를 남길 수 있습니다.<br/>
 사용자가 남긴 리뷰는 실시간으로 별점에 반영됩니다.
- 
+
+ <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/76408f68-f7e3-41b1-bc1d-e198516d8c43" width="25%" height="25%"/>
+
+
 ### ⭐️ 커뮤니티 CRUD
 
 - CRUD, 좋아요, 스크랩 기능을 제공합니다. 
 
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/c6c36dcf-464a-43e5-9fb6-2a9b10739f16" width="25%" height="25%"/>
+
+
+ 
 ### ⭐️ 마이페이지
 
-- 사용자의 활동 기록을 한눈에 확인 할 수 있습니다.
+- 사용자의 활동 기록을 한눈에 확인 할 수 있으며 고객센터를 이용 할 수 있습니다.
+
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/bee29c6e-a3c3-4624-8632-79d106241567" width="25%" height="25%"/>
+
 
 ---
 
