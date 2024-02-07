@@ -91,7 +91,7 @@ recoil을 이용해 로그인 상태관리를 하였습니다.
 
 ###  데스크톱 뷰
 
-<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e" width="25%" height="25%"/>
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e" width="40%" height="40%"/>
 
 
 ###  모바일 뷰
