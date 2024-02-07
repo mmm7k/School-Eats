@@ -33,24 +33,30 @@ export const SelectButton = styled.button`
   border-radius: 17px;
   border: none;
   color: white;
-  width: 56px;
+  /* width: 56px; */
+  min-width: 56px;
   height: 34px;
   background-color: #f6786f;
   font-weight: 600;
   font-size: 13px;
   margin-right: 1.5%;
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  text-align: center; /* 텍스트 중앙 정렬 */
 `;
 
 export const Button = styled.button`
   border-radius: 17px;
   border: 1px solid #bdbdbd;
   color: #2f2f2f;
-  width: 56px;
+  min-width: 56px;
   height: 34px;
   background-color: white;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   margin-right: 1.5%;
+  cursor: pointer;
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  text-align: center; /* 텍스트 중앙 정렬 */
 `;
 
 export const ContentsWrapper = styled.div`
