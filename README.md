@@ -54,11 +54,10 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 ## 화면 구성 📺
 
-|                       메인 페이지                        |                     지역별 마커 페이지                      |
-| :------------------------------------------------------: | :---------------------------------------------------------: |
-| <img width="329" src="https://i.ibb.co/W0WYGWw/1.png"/>  | <img width="329" src="https://i.ibb.co/jb26VNx/image.png"/> |
-|                      PT 상품 페이지                      |                       커뮤니티 페이지                       |
-| <img width="329" src="https://i.ibb.co/VL6JWDF/PT.png"/> | <img width="329" src="https://i.ibb.co/X8MjjfL/image.png"/> |
+###  메인페이지
+
+![24deb949-d1c5-410d-831d-32f0b4b010dc-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e) | <img width="329" src="https://i.ibb.co/jb26VNx/image.png"/> 
+
 
 ---
 
