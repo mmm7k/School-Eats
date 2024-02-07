@@ -113,7 +113,7 @@ For building and running the application you need:
 ### Installation
 
 ```bash
-$ git clone https://github.com/computerkingminsu/imcoach.git
+$ git clone https://github.com/computerkingminsu/School-Eats.git
 $ yarn install
 $ yarn dev
 ```
