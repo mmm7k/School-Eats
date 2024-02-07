@@ -46,7 +46,8 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 - 맛집들을 한눈에 볼 수 있으며 필터 기능을 통해 리뷰많은순, 별점높은순으로 맛집들을 확인 할 수 있으며 <br/>
 카테고리를 통해 맛집들을 상세 분류 하였습니다.
 
-<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/e18a6f3c-7297-4b01-9376-1d20bf04194f" width="25%" height="25%"/>
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/b2bc1cf4-1d86-42fb-a20c-9e17b24562b0" width="25%" height="25%"/>
+
 
 ### ⭐️ 맛집 상세 페이지
 
