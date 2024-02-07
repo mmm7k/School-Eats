@@ -77,9 +77,14 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 ## 화면 구성 📺
 
-###  메인페이지
+###  데스크톱 뷰
 
-![24deb949-d1c5-410d-831d-32f0b4b010dc-ezgif com-video-to-gif-converter](https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e) 
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/60909f83-1139-4721-b2d6-7845c7abc59e" width="25%" height="25%"/>
+
+
+###  모바일 뷰
+
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/918466d9-2ac3-4fce-a1cf-f451a9b64cc1" width="25%" height="25%"/>
 
 
 ---
@@ -101,7 +106,7 @@ $ yarn install
 $ yarn dev
 ```
 
-### 게시판 글쓰기와 결제기능 사용을 위한 샘플계정 ID/PW
+### 로그인이 필요한 기능 이용 시 샘플계정 ID/PW
 
 - ID : sample@sample.com
 - PW : 123456
@@ -124,6 +129,7 @@ $ yarn dev
 - React
 - Next.js 12
 - react-slick
+- embla-carousel-react
 - antd design
 - recoil
 - emotion/styled
