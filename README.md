@@ -72,6 +72,18 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/bee29c6e-a3c3-4624-8632-79d106241567" width="25%" height="25%"/>
 
+### ⭐️ 이메일 로그인 및 카카오 로그인
+
+- 이메일 로그인과 카카오 로그인을 지원합니다. <br/>
+recoil을 이용해 로그인 상태관리를 하였습니다.
+
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/2f4bfdc0-2217-4bc6-8fe8-fac16b0cc522" width="25%" height="25%"/>
+
+### ⭐️ PWA
+
+- 안드로이드 설치 : https://schooleats.vercel.app 링크 복사 > 구글 크롬 검색창에 입력 > 페이지 접속 > 우측 상단 공유하기 아이콘(점3개) 클릭 > "앱 설치" 버튼 클릭을 하면 홈 화면에 추가됩니다.
+- 아이폰 설치 : https://schooleats.vercel.app 링크 복사 > 구글 크롬 검색창에 입력 > 페이지 접속 > 우측 상단 공유하기 아이콘 클릭 > "홈 화면에 추가" 클릭> "추가" 버튼을 클릭하면 홈 화면에 추가됩니다.
+  
 
 ---
 
