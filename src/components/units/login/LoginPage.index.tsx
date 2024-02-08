@@ -11,6 +11,11 @@ export default function LoginPage(): JSX.Element {
   const { register, handleSubmit, errors } = useLogin();
   const [, setCheck] = useRecoilState(autoLogin);
   const { kakaoLogin } = useKakaoLogin();
+  const router = useRouter();
+
+  const goBack = () => {
+    router.back();
+  };
 
   const onChange: CheckboxProps['onChange'] = (e) => {
     setCheck(e.target.checked);
@@ -19,9 +24,7 @@ export default function LoginPage(): JSX.Element {
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
-        <Link href="/">
-          <S.BackButton />
-        </Link>
+        <S.BackButton onClick={goBack} />
         <Link href="/">
           <S.HomeButton />
         </Link>
