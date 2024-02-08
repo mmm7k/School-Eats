@@ -82,6 +82,9 @@ export const ContentsItem = styled.div`
 export const ContentsImage = styled.div`
   border-radius: 10px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ContentsTitleWrapper = styled.div`

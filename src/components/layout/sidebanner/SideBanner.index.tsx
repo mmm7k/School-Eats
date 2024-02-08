@@ -32,8 +32,8 @@ export default function SideBanner(): JSX.Element {
       />
       <S.TagWrapper>
         <S.TagLine>
-          <S.Tag>&nbsp;&nbsp;# 스쿨잇츠스토리&nbsp;&nbsp;</S.Tag>
-          <S.Tag>&nbsp;&nbsp;# 스쿨잇츠미식회&nbsp;&nbsp;</S.Tag>
+          <S.Tag>&nbsp;&nbsp;# 스쿨잇츠&nbsp;&nbsp;</S.Tag>
+          <S.Tag>&nbsp;&nbsp;# 미식회&nbsp;&nbsp;</S.Tag>
         </S.TagLine>
         <S.TagLine>
           <S.Tag>&nbsp;&nbsp;# 맛토크&nbsp;&nbsp;</S.Tag>

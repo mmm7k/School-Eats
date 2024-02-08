@@ -75,4 +75,7 @@ export const Tag = styled.div`
   font-weight: 500;
   padding: 8px;
   margin-right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
