@@ -67,7 +67,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   useEffect(() => {
     const handleRouteChange = (url: any) => {
-      //@ts-ignore
       gtag.pageview(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
