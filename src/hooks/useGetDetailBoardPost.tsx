@@ -48,6 +48,7 @@ export const useGetDetailBoardPost = () => {
           }
         } else {
           alert('다시 페이지에 접속 해주세요.');
+          router.push('/boards');
           setPost(null); // 게시물이 없을 경우 null로 설정하거나 다른 처리를 수행합니다.
         }
       };
