@@ -25,6 +25,7 @@ export const firebaseConfig = {
 export const kakaoKey = process.env.NEXT_PUBLIC_KAKAO_KEY;
 export const kakaoRestApiKey = process.env.NEXT_PUBLIC_KAKAO_RESTAPIKEY;
 export const kakaoAdminKey = process.env.NEXT_PUBLIC_KAKAO_ADMINKEY;
+export const gaKey = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
@@ -75,6 +76,21 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       ></Script>
       <Script src="https://developers.kakao.com/sdk/js/kakao.js" onLoad={kakaoInit}></Script>
 
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaKey}`} />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaKey}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       <Head>
         <title>School Eats!</title>
         <meta name="description" content="대학생들의 점심 고민을 해결해줄 School Eats!" />
