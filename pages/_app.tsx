@@ -14,7 +14,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { getStorage } from 'firebase/storage';
 import { useRouter } from 'next/router';
-import * as gtag from '../lib/gtags';
+import * as gtag from '../lib/gtag';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
