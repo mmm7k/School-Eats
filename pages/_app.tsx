@@ -41,11 +41,19 @@ declare global {
 }
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
-  }
-
   const router = useRouter();
+  if (gtag.GA_TRACKING_ID) {
+    ReactGA.initialize(gtag.GA_TRACKING_ID);
+  }
+  useEffect(() => {
+    ReactGA.initialize(`${gtag.GA_TRACKING_ID}`);
+  }, []);
+
+  ReactGA.send({
+    hitType: 'pageview',
+    page: router.pathname, // useRouter를 사용하여, pathname값을 가져옵니다.
+  });
+
   const kakaoInit = () => {
     // 페이지가 로드되면 실행
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
