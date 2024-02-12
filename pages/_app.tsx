@@ -15,6 +15,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { getStorage } from 'firebase/storage';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
+import ReactGA from 'react-ga4';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -40,6 +41,10 @@ declare global {
 }
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
+  }
+
   const router = useRouter();
   const kakaoInit = () => {
     // 페이지가 로드되면 실행
