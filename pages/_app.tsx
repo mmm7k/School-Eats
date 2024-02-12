@@ -13,6 +13,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { getStorage } from 'firebase/storage';
+import { useRouter } from 'next/router';
+import * as gtag from '../lib/gtags';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -25,7 +27,6 @@ export const firebaseConfig = {
 export const kakaoKey = process.env.NEXT_PUBLIC_KAKAO_KEY;
 export const kakaoRestApiKey = process.env.NEXT_PUBLIC_KAKAO_RESTAPIKEY;
 export const kakaoAdminKey = process.env.NEXT_PUBLIC_KAKAO_ADMINKEY;
-export const gaKey = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
@@ -39,6 +40,7 @@ declare global {
 }
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
   const kakaoInit = () => {
     // 페이지가 로드되면 실행
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
@@ -63,6 +65,18 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 정지
   }, []);
 
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      //@ts-ignore
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <>
       {/* <Script
@@ -76,7 +90,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       ></Script>
       <Script src="https://developers.kakao.com/sdk/js/kakao.js" onLoad={kakaoInit}></Script>
 
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaKey}`} />
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -85,7 +99,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaKey}', {
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
           `,
