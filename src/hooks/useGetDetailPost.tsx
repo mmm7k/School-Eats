@@ -35,7 +35,7 @@ export const useGetDetailPost = () => {
       };
       getPost();
     }
-  }, [router.isReady, logEmail]);
+  }, [router.isReady]);
 
   return { post, usermatch };
 };

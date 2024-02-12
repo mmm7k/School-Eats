@@ -36,7 +36,6 @@ export const useGetDetailBoardPost = () => {
         const postDoc = await getDoc(postRef);
 
         if (postDoc.exists()) {
-          // setPost(postDoc.data());
           const postData = postDoc.data();
           // Firestore Timestamp를 Date 객체로 변환
           const timestamp = postData.timestamp ? postData.timestamp.toDate() : '';
@@ -48,12 +47,13 @@ export const useGetDetailBoardPost = () => {
             setUserMatch(true);
           }
         } else {
+          alert('다시 페이지에 접속 해주세요.');
           setPost(null); // 게시물이 없을 경우 null로 설정하거나 다른 처리를 수행합니다.
         }
       };
       getPost();
     }
-  }, [router.isReady, logEmail]);
+  }, [router.isReady]);
 
   const onClickDeletePost = async () => {
     try {

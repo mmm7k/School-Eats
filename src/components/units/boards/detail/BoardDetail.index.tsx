@@ -47,8 +47,6 @@ export default function BoardDetail(): JSX.Element {
     }
   };
 
-  ///
-
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
   const [editingCommentText, setEditingCommentText] = useState('');
 
