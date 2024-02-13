@@ -242,6 +242,7 @@ export const BookmarkIcon = styled.div`
   background-size: cover;
   margin-left: 10%;
   cursor: pointer;
+  margin-top: 10%;
 `;
 
 export const ColorBookmarkIcon = styled.div`
@@ -251,8 +252,11 @@ export const ColorBookmarkIcon = styled.div`
   background-size: cover;
   margin-left: 10%;
   cursor: pointer;
+  margin-top: 10%;
 `;
 
 export const BookmarkWrapper = styled.div`
   display: flex;
+
+  align-items: center;
 `;
