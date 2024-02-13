@@ -34,7 +34,6 @@ export const useGetDetailBoardPost = () => {
       const getPost = async () => {
         const postRef = doc(db, 'board', postId); // menu와 boardId를 사용하여 문서에 접근
         const postDoc = await getDoc(postRef);
-
         if (postDoc.exists()) {
           const postData = postDoc.data();
           // Firestore Timestamp를 Date 객체로 변환

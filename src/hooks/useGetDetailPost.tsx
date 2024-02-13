@@ -10,9 +10,7 @@ interface Post extends DocumentData {
 }
 
 export const useGetDetailPost = () => {
-  const logEmail = useRecoilValue(userEmail);
   const [post, setPost] = useState<Post | null>(null);
-  const [usermatch, setUserMatch] = useState(false);
   const router = useRouter();
   const data = JSON.stringify(router.query); // boardId를 추출
   const jsonObject = JSON.parse(data);
@@ -23,12 +21,8 @@ export const useGetDetailPost = () => {
       const getPost = async () => {
         const postRef = doc(db, 'all', postId); // menu와 boardId를 사용하여 문서에 접근
         const postDoc = await getDoc(postRef);
-
         if (postDoc.exists()) {
           setPost(postDoc.data());
-          if (logEmail === postDoc.data().email) {
-            setUserMatch(true);
-          }
         } else {
           alert('서버 오류입니다. 다시 페이지에 접속 해주세요.');
           router.push('/place');
@@ -39,5 +33,5 @@ export const useGetDetailPost = () => {
     }
   }, [router.isReady]);
 
-  return { post, usermatch };
+  return { post };
 };
