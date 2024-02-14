@@ -72,6 +72,23 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.144790779038544, 126.9298424795479),
             route: '/place/벼락',
           },
+
+          {
+            name: '동대문엽기떡볶이',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.146016400812464, 126.92944636919275),
+            route: '/place/동대문엽기떡볶이',
+          },
+
+          {
+            name: '신전떡볶이',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.146160415210275, 126.92909782458489),
+            route: '/place/신전떡볶이',
+          },
+
           //중식
           {
             name: '백두산',
@@ -102,6 +119,30 @@ export default function useMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
             route: '/place/옌타이',
+          },
+
+          {
+            name: '피슈마라홍탕',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14700929266037, 126.9279859726431),
+            route: '/place/피슈마라홍탕',
+          },
+
+          {
+            name: '탕화쿵푸마라탕',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.144405108979605, 126.92926120797044),
+            route: '/place/탕화쿵푸마라탕',
+          },
+
+          {
+            name: '마라클럽',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14647573716354, 126.92883417725054),
+            route: '/place/마라클럽',
           },
 
           //일식
@@ -165,7 +206,29 @@ export default function useMap(): JSX.Element {
             route: '/place/헝그리브라더스',
           },
 
-          //카페~
+          {
+            name: '프랭크버거',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14575312478092, 126.93008856450622),
+            route: '/place/프랭크버거',
+          },
+          {
+            name: '노브랜드버거',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145176528117496, 126.93056641511407),
+            route: '/place/노브랜드버거',
+          },
+          {
+            name: '맘스터치',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145428957946486, 126.93065124744335),
+            route: '/place/맘스터치',
+          },
+
+          //카페
           {
             name: '소맥베이커리',
             imageSrc: '/logo.png',

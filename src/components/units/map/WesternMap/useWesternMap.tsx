@@ -49,6 +49,27 @@ export default function useWesternMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14606589092191, 126.9293009228942),
             route: '/place/헝그리브라더스',
           },
+          {
+            name: '프랭크버거',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14575312478092, 126.93008856450622),
+            route: '/place/프랭크버거',
+          },
+          {
+            name: '노브랜드버거',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145176528117496, 126.93056641511407),
+            route: '/place/노브랜드버거',
+          },
+          {
+            name: '맘스터치',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145428957946486, 126.93065124744335),
+            route: '/place/맘스터치',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore

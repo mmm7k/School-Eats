@@ -50,6 +50,30 @@ export default function useChineseMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
             route: '/place/옌타이',
           },
+
+          {
+            name: '피슈마라홍탕',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14700929266037, 126.9279859726431),
+            route: '/place/피슈마라홍탕',
+          },
+
+          {
+            name: '탕화쿵푸마라탕',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.144405108979605, 126.92926120797044),
+            route: '/place/탕화쿵푸마라탕',
+          },
+
+          {
+            name: '마라클럽',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14647573716354, 126.92883417725054),
+            route: '/place/마라클럽',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore
