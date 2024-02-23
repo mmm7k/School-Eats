@@ -21,6 +21,7 @@ export const useGetDetailPost = () => {
       const getPost = async () => {
         const postRef = doc(db, 'all', postId); // menu와 boardId를 사용하여 문서에 접근
         const postDoc = await getDoc(postRef);
+
         if (postDoc.exists()) {
           setPost(postDoc.data());
         } else {

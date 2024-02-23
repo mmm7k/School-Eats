@@ -32,6 +32,7 @@ export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
 export const storage = getStorage(firebaseapp);
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 declare global {
   interface Window {
@@ -40,6 +41,7 @@ declare global {
   const kakao: any;
 }
 
+const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
   if (gtag.GA_TRACKING_ID) {
@@ -139,7 +141,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       <RecoilRoot>
         <Global styles={globalStyles} />
         <Layout>
-          <Component {...pageProps} />
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+          </QueryClientProvider>
         </Layout>
         <Analytics />
       </RecoilRoot>

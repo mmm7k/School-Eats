@@ -18,21 +18,29 @@ import { useScrap } from '../../../../hooks/useScrap';
 import { useLike } from '../../../../hooks/useLike';
 import { useState } from 'react';
 import Image from 'next/image';
+import { testhook } from '../../../../hooks/testhook';
+import { deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { db, storage } from '../../../../../pages/_app';
+import { deleteObject, ref } from 'firebase/storage';
 
 export default function BoardDetail(): JSX.Element {
   const { comments, newComment, updateComment, setNewComment, addComment, deleteComment } = useBoardComments();
-  const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
+  // const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
+
   const { handleScrap, isScraped } = useScrap();
   const { handleLike, isLiked, like } = useLike();
 
   const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
-
   const router = useRouter();
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.boardid;
 
+  const logEmail = useRecoilValue(userEmail);
+
+  const { data: post } = testhook(postId);
+  const usermatch = post?.email === logEmail;
   const goBack = () => {
     router.back();
   };
@@ -72,6 +80,25 @@ export default function BoardDetail(): JSX.Element {
   // 모달을 열고 닫는 함수
   const showModal = () => setIsModalVisible(true);
   const closeModal = () => setIsModalVisible(false);
+
+  const onClickDeletePost = async () => {
+    try {
+      const postRef = doc(db, 'board', postId);
+      const postData = (await getDoc(postRef)).data();
+
+      await deleteDoc(postRef);
+
+      // 게시물에 이미지가 있는 경우, Firebase Storage에서 이미지 삭제
+      if (postData?.img) {
+        const imageRef = ref(storage, postData.img);
+        await deleteObject(imageRef);
+      }
+
+      router.push('/boards');
+    } catch (error) {
+      console.error('게시물 삭제 중 오류 발생:', error);
+    }
+  };
 
   return (
     <>
@@ -115,7 +142,7 @@ export default function BoardDetail(): JSX.Element {
         <S.ContentsWrapper>
           <S.ContentsTitle>{post?.title}</S.ContentsTitle>
           <S.Contents>{post?.contents}</S.Contents>
-          {/* {post?.img && <Image style={{ marginTop: '10%', borderRadius: '7px' }} width={150} src={post.img} />} */}
+
           {post?.img && (
             <S.ImgWrapper onClick={showModal}>
               <Image
