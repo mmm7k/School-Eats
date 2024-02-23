@@ -21,7 +21,7 @@ const postSchema = yup
 export const useEditBoardPost = (postId: string) => {
   const router = useRouter();
   const email = useRecoilValue(userEmail);
-  const { post } = useGetDetailBoardPost();
+  const { data: post } = useGetDetailBoardPost(postId);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
