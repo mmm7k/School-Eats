@@ -5,7 +5,7 @@ import { Select, Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useGetCategoryPosts } from '../../../../hooks/useGetCategoryPosts';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SkeletonPlace from '../Skeleton';
 
 interface Post {
@@ -17,13 +17,23 @@ interface Post {
   rate?: number;
   commentscount?: number;
 }
+type OrdKey = 'rate' | 'commentscount';
 
 export default function JapanesePlace(): JSX.Element {
-  const [order, setOrder] = useState('commentscount');
+  const router = useRouter();
+  const [order, setOrder] = useState<OrdKey>((router.query.sort as OrdKey) || 'commentscount');
   const { posts, loading } = useGetCategoryPosts('all', '일식', order);
-  const handleChange = (value: string) => {
+  const handleChange = (value: OrdKey) => {
     setOrder(value);
+    // 선택한 정렬 기준을 URL 쿼리 파라미터로 추가합니다.
+    router.push(`${router.pathname}?sort=${value}`, undefined, { shallow: true });
   };
+  useEffect(() => {
+    if (router.query.sort) {
+      setOrder(router.query.sort as OrdKey);
+    }
+  }, [router.query.sort]);
+
   return (
     <S.Wrapper>
       <S.Title>테마별 맛집🍚</S.Title>
@@ -50,7 +60,7 @@ export default function JapanesePlace(): JSX.Element {
       <hr style={{ width: '100%', height: '1px', backgroundColor: '#848484' }} />
       <S.SelectDiv>
         <Select
-          defaultValue="리뷰많은순"
+          defaultValue={order}
           style={{ width: 120 }}
           onChange={handleChange}
           options={[
