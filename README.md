@@ -144,6 +144,7 @@ $ yarn dev
 - embla-carousel-react
 - antd design
 - recoil
+- react-query
 - emotion/styled
 
 ---
