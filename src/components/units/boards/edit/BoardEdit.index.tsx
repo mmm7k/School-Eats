@@ -11,7 +11,7 @@ export default function BoardEdit() {
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.boardid;
   const { register, handleSubmit, errors, onSubmit, onImageChange, isSubmitting } = useEditBoardPost(postId);
-  const { post } = useGetDetailBoardPost();
+  const { data: post } = useGetDetailBoardPost(postId);
 
   const goBack = () => {
     router.back();
