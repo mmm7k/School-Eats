@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import * as S from './Search.styles';
 import { SearchOutlined } from '@ant-design/icons';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { usePlaceSearch } from '../../../hooks/usePlaceSearch';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ export default function Search() {
   const [searchTerm, setSearchTerm] = useState(''); // 사용자 입력을 추적하는 상태
   const searchResults = usePlaceSearch('all', searchTerm); // 훅 사용
 
-  const handleSearchInputChange = (e: { target: { value: SetStateAction<string> } }) => {
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value); // 입력 변경 시 searchTerm 업데이트
   };
 

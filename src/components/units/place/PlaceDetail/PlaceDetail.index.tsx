@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { useGetDetailPost } from '../../../../hooks/useGetDetailPost';
+
 import * as S from './PlaceDetail.styles';
 import { useRouter } from 'next/router';
 import { useComments } from '../../../../hooks/useComments';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { useBookmark } from '../../../../hooks/useBookmark';
@@ -18,9 +18,11 @@ import {
 } from '@ant-design/icons';
 import Link from 'next/link';
 import { Modal } from 'antd';
+import { useGetDetailPost } from '../../../../hooks/useGetDetailPost';
 
 export default function PlaceDetail(): JSX.Element {
-  const { post } = useGetDetailPost();
+  // const { post } = useGetDetailPost();
+
   const {
     averageRating,
     comments,
@@ -33,13 +35,14 @@ export default function PlaceDetail(): JSX.Element {
     setNewRating,
   } = useComments();
   const { handleBookmark, isBookmarked } = useBookmark();
-  // const [isBookmarked, setIsBookmarked] = useState(false);
   const router = useRouter();
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
   const postId = jsonObject.placeid;
   const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
+
+  const { data: post } = useGetDetailPost(postId);
 
   const goBack = () => {
     router.back();

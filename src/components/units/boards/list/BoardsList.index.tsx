@@ -21,13 +21,11 @@ interface Post {
 
 export default function BoardsList() {
   const { posts, hasMore, loading } = useGetBoardPosts();
-
   const [searchTerm, setSearchTerm] = useState('');
   const searchResults = useBoardSearch('board', searchTerm);
 
-  const handleSearchChange = (event: any) => {
-    const newSearchTerm = event.target.value;
-    setSearchTerm(newSearchTerm);
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
   };
 
   return (

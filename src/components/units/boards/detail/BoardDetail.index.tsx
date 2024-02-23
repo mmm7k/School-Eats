@@ -12,13 +12,12 @@ import {
   StarOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { useGetDetailBoardPost } from '../../../../hooks/useGetDetailBoardPost';
 import { useBoardComments } from '../../../../hooks/useBoardComments';
 import { useScrap } from '../../../../hooks/useScrap';
 import { useLike } from '../../../../hooks/useLike';
 import { useState } from 'react';
 import Image from 'next/image';
-import { testhook } from '../../../../hooks/testhook';
+import { useGetDetailBoardPost } from '../../../../hooks/useGetDetailBoardPost';
 import { deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { db, storage } from '../../../../../pages/_app';
 import { deleteObject, ref } from 'firebase/storage';
@@ -39,7 +38,8 @@ export default function BoardDetail(): JSX.Element {
 
   const logEmail = useRecoilValue(userEmail);
 
-  const { data: post } = testhook(postId);
+  const { data: post } = useGetDetailBoardPost(postId);
+
   const usermatch = post?.email === logEmail;
   const goBack = () => {
     router.back();
