@@ -74,7 +74,14 @@ export const useBookmark = () => {
     };
   }, [postId]); // `bookmark` 의존성을 제거하고 `email`을 추가
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const handleBookmark = async () => {
+    if (isProcessing) {
+      return;
+    }
+    setIsProcessing(true);
+
     if (isBookmarked) {
       // 북마크 존재 시 삭제
       const bookmarkId = bookmark.find((b) => b.email === email)?.id;
@@ -88,6 +95,7 @@ export const useBookmark = () => {
     const fetchedBookmarks: Bookmark[] = await getBookmark();
     setBookmark(fetchedBookmarks);
     setIsBookmarked(fetchedBookmarks.some((b) => b.email === email));
+    setIsProcessing(false);
   };
 
   const addBookmark = async () => {
