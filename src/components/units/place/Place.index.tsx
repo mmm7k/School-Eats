@@ -106,8 +106,6 @@ export default function Place(): JSX.Element {
                       alt={post.title}
                       width={11}
                       height={11}
-                      placeholder="blur"
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                     />
                     {post.rate?.toFixed(1)}({post.commentscount})
                   </S.RateWrapper>
