@@ -141,10 +141,13 @@ $ yarn dev
 - React
 - Next.js 12
 - react-slick
-- embla-carousel-react
-- antd design
 - recoil
 - react-query
 - emotion/styled
+- react-hook-form
+- yup
+- embla-carousel-react
+- antd design
+
 
 ---
