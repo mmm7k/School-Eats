@@ -21,13 +21,7 @@ export default function useKoreanMap(): JSX.Element {
 
         const locations = [
           //한식
-          {
-            name: '미미원',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.146898076214555, 126.92665273360377),
-            route: '/place/미미원',
-          },
+
           {
             name: '고기오닭갈비',
             imageSrc: '/logo.png',
@@ -86,6 +80,60 @@ export default function useKoreanMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.146160415210275, 126.92909782458489),
             route: '/place/신전떡볶이',
+          },
+          {
+            name: '돈웅',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14440312056813, 126.92971661543767),
+            route: '/place/돈웅',
+          },
+
+          {
+            name: '옴서감서',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14441011875619, 126.93012812067502),
+            route: '/place/옴서감서',
+          },
+
+          {
+            name: '송죽',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14463504728581, 126.92941738372326),
+            route: '/place/송죽',
+          },
+
+          {
+            name: '동궁찜닭',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.145482896482356, 126.93040154825137),
+            route: '/place/동궁찜닭',
+          },
+
+          {
+            name: '이조감자탕',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14507882521611, 126.9291728352491),
+            route: '/place/이조감자탕',
+          },
+
+          {
+            name: '밤실골국밥',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.148201575336635, 126.93229776026321),
+            route: '/place/밤실골국밥',
+          },
+          {
+            name: '박대감집',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14534900362218, 126.9287802892827),
+            route: '/place/박대감집',
           },
         ];
         locations.map((location, index) => {

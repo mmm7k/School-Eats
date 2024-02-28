@@ -49,6 +49,21 @@ export default function useJapaneseMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14480684564143, 126.93034999876991),
             route: '/place/돈까스틱',
           },
+          {
+            name: '라멘티스트',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14516003902124, 126.92932914059989),
+            route: '/place/라멘티스트',
+          },
+
+          {
+            name: '교다이',
+            imageSrc: '/logo.png',
+            //@ts-ignore
+            position: new kakao.maps.LatLng(35.14502759073875, 126.93019617867957),
+            route: '/place/교다이',
+          },
         ];
         locations.map((location, index) => {
           //@ts-ignore
