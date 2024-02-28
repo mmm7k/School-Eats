@@ -13,7 +13,7 @@ export default function useCafeMap(): JSX.Element {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
           mapOption = {
             //@ts-ignore
-            center: new kakao.maps.LatLng(35.146777765504034, 126.9252125104924), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(35.14637162707166, 126.92806609511922), // 지도의 중심좌표
             level: 4, // 지도의 확대 레벨
           };
         //@ts-ignore

@@ -23,7 +23,6 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['i.ibb.co'],
     domains: ['firebasestorage.googleapis.com'],
   },
 };
