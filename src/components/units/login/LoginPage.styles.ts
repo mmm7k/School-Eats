@@ -100,6 +100,18 @@ export const IdInput = styled.input`
   }
 `;
 
+export const FindPassword = styled.span`
+  font-size: 14px;
+  color: #6e6e6e;
+  font-weight: 400;
+  width: 100%;
+  height: auto;
+  margin-top: 5%;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
 export const PwInput = styled.input`
   width: 100%;
   border-radius: 5px;

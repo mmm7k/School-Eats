@@ -58,6 +58,7 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const isSearchPage = router.pathname === '/search';
   const isFeedbackPage = router.pathname === '/feedback';
   const isRequestPage = router.pathname === '/request';
+  const isResetPasswordPage = router.pathname === '/resetpassword';
   const isPlaceDetailPage =
     router.pathname !== '/place/koreanplace' &&
     router.pathname !== '/place/chineseplace' &&
@@ -82,6 +83,7 @@ export default function Layout(props: ILayoutProps): JSX.Element {
           !isSearchPage &&
           !isFeedbackPage &&
           !isPlaceDetailPage &&
+          !isResetPasswordPage &&
           !isRequestPage && <LayoutHeader />}
 
         <Body>{props.children}</Body>

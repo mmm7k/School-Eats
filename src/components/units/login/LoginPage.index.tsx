@@ -46,10 +46,14 @@ export default function LoginPage(): JSX.Element {
         <S.PwInput {...register('password')} type="password" placeholder="비밀번호" />
         {errors.password && <S.error>{errors.password.message}</S.error>}
         <Checkbox onChange={onChange}>자동로그인</Checkbox>
+
         <S.LoginButton type="submit">로그인</S.LoginButton>
       </S.form>
-      <Link href="signup">
+      <Link href="/signup">
         <S.SignUpText>회원가입</S.SignUpText>
+      </Link>
+      <Link href="/resetpassword">
+        <S.FindPassword>비밀번호 찾기</S.FindPassword>
       </Link>
       <S.CouponDiv>
         <S.CouponImg>🤸</S.CouponImg>
