@@ -104,7 +104,6 @@ export const FindPassword = styled.span`
   font-size: 14px;
   color: #6e6e6e;
   font-weight: 400;
-  width: 100%;
   height: auto;
   margin-top: 5%;
   text-align: center;
@@ -151,7 +150,6 @@ export const SignUpText = styled.a`
   font-size: 14px;
   color: #6e6e6e;
   font-weight: 400;
-  width: 100%;
   height: auto;
   margin-top: 5%;
   text-align: center;
