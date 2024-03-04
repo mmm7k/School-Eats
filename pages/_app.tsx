@@ -51,11 +51,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     ReactGA.initialize(`${gtag.GA_TRACKING_ID}`);
   }, []);
 
-  // ReactGA.send({
-  //   hitType: 'pageview',
-  //   page: router.pathname, // useRouter를 사용하여, pathname값을 가져옵니다.
-  // });
-
   const kakaoInit = () => {
     // 페이지가 로드되면 실행
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
@@ -68,7 +63,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         if (now > parseInt(sessionExpiry, 10)) {
           authInstance.signOut();
           alert('로그인 세션이 만료되었습니다. 다시 로그인 해주세요.');
-          // clearInterval(interval); // 인터벌 정지
           localStorage.removeItem('sessionExpiry');
           localStorage.removeItem('recoil-persist');
           window.location.href = '/';
@@ -93,10 +87,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   }, [router.events]);
   return (
     <>
-      {/* <Script
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_FIREBASE_KAKAO_KEY}&autoload=false`}
-        strategy="beforeInteractive"
-      /> */}
       <Script
         type="text/javascript"
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_KEY}&autoload=false&libraries=services,clusterer,drawing`}

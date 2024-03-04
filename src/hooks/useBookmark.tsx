@@ -30,19 +30,6 @@ export const useBookmark = () => {
   const postId = jsonObject.placeid;
   const [bookmark, setBookmark] = useState<Bookmark[]>([]);
 
-  // const getBookmark = async () => {
-  //   let q;
-
-  //   q = query(collection(db, 'bookmark'), where('placeId', '==', postId));
-  //   const snapshot = await getDocs(q);
-  //   const bookmarkArr = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
-  //     ...doc.data(),
-  //     id: doc.id,
-  //   }));
-
-  //   setBookmark(bookmarkArr);
-  // };
-
   const getBookmark = async () => {
     let q = query(collection(db, 'bookmark'), where('placeId', '==', postId));
     const snapshot = await getDocs(q);
@@ -50,7 +37,6 @@ export const useBookmark = () => {
       ...doc.data(),
       id: doc.id,
     }));
-    // 상태를 직접 설정하는 대신에, fetchedBookmarks를 반환합니다.
     return bookmarkArr;
   };
 
@@ -72,7 +58,7 @@ export const useBookmark = () => {
     return () => {
       isMounted = false;
     };
-  }, [postId]); // `bookmark` 의존성을 제거하고 `email`을 추가
+  }, [postId]);
 
   const [isProcessing, setIsProcessing] = useState(false);
 

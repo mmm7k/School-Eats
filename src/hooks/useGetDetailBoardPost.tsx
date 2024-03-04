@@ -4,7 +4,7 @@ import { db } from '../../pages/_app';
 import { useQuery } from 'react-query';
 
 interface Post {
-  timestamp: string; // 또는 Date 타입으로 정의할 수도 있습니다.
+  timestamp: string;
   email: string;
   title: string;
   contents: string;

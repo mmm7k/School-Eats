@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useState } from 'react';
-import { useMoveToPage } from './useMoveToPage';
+import { ChangeEvent, useState } from 'react';
+
 import { useRouter } from 'next/router';
-import { authInstance, db, firebaseapp } from '../../pages/_app';
-import { addDoc, collection, doc, getFirestore, updateDoc } from 'firebase/firestore';
+import { db } from '../../pages/_app';
+import { doc, updateDoc } from 'firebase/firestore';
 
 export const useEditPost = () => {
   const [title, setTitle] = useState('');

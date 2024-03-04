@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { authInstance, db } from '../../pages/_app';
+import { db } from '../../pages/_app';
 import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';

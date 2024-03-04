@@ -1,15 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  getFirestore,
-  collection,
-  query,
-  where,
-  orderBy,
-  startAt,
-  endAt,
-  getDocs,
-  DocumentData,
-} from 'firebase/firestore';
+import { collection, getDocs, DocumentData } from 'firebase/firestore';
 import { db } from '../../pages/_app';
 
 interface SearchResult extends DocumentData {

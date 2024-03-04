@@ -200,7 +200,6 @@ export const useComments = () => {
       await updateDoc(commentRef, {
         text: updatedText,
         rating: updatedRating,
-        // 이 부분에 필요한 다른 필드 업데이트를 추가할 수 있습니다.
       });
       // 로컬 상태 업데이트
       setComments((prevComments) =>

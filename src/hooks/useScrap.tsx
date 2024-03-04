@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import { useRouter } from 'next/router';
 import { db } from '../../pages/_app';
 import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
@@ -56,10 +55,8 @@ export const useScrap = () => {
 
     // 데이터베이스에 '좋아요' 추가
     try {
-      // const likeRef = collection(db, 'board', postId, 'like');
       const scrapRef = collection(db, 'boardscrap');
 
-      // await addDoc(likeRef, { email });
       await addDoc(scrapRef, { email, boardId: postId });
 
       getScrap(); // 최신 '좋아요' 상태를 다시 불러옴

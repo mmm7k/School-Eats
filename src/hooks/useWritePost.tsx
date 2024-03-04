@@ -45,6 +45,5 @@ export const useWritePost = (menu: string, modaltext: string, routerpath: string
     router.push(routerpath);
   };
 
-  // return the necessary methods and objects for your form
   return { register, handleSubmit, errors, onSubmit };
 };

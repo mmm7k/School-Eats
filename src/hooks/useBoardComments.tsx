@@ -27,8 +27,8 @@ interface Comment {
 }
 
 interface NewComment extends Omit<Comment, 'likecount' | 'id'> {
-  id: number | string; // 임시 ID
-  email: string | null | undefined; // null 허용
+  id: number | string;
+  email: string | null | undefined;
   timestamp: string;
 }
 export const useBoardComments = () => {
