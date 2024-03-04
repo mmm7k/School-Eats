@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import Image from 'next/image';
-import { Skeleton } from 'antd';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 
@@ -23,7 +22,6 @@ interface Place {
   breaktime?: string;
   titlemenu?: string;
   commentscount?: number;
-  // 다른 필요한 필드들...
 }
 
 export default function Bookmark() {
@@ -70,34 +68,6 @@ export default function Bookmark() {
       getBookmarkPlace();
     }
   }, [bookmark]);
-
-  // const getBookmarkPlace = async () => {
-  //   setLoading(true);
-  //   const bookmarkArr = [];
-
-  //   // 'all' 컬렉션에서 식당 문서를 가져옵니다.
-  //   const placesSnapshot = await getDocs(collection(db, 'all'));
-  //   const placesData = placesSnapshot.docs.map((doc) => ({
-  //     id: doc.id,
-  //     ...doc.data(),
-  //   }));
-
-  //   // 각 식당 문서 내의 'bookmark' 컬렉션에서 사용자의 이메일과 일치하는 북마크를 찾습니다.
-  //   for (const place of placesData) {
-  //     const bookmarksSnapshot = await getDocs(collection(db, `all/${place.id}/bookmark`));
-  //     bookmarksSnapshot.forEach((bookmarkDoc) => {
-  //       if (bookmarkDoc.data().email === email) {
-  //         bookmarkArr.push(place);
-  //       }
-  //     });
-  //   }
-
-  //   setBookmarkplace(bookmarkArr);
-  //   setLoading(false);
-  // };
-  // useEffect(() => {
-  //   getBookmarkPlace();
-  // }, [email]); // email 값이 바뀔 때마다 함수를 호출합니다.
 
   return (
     <>
