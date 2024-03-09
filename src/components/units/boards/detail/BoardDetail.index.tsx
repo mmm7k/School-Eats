@@ -38,7 +38,7 @@ export default function BoardDetail(): JSX.Element {
 
   const logEmail = useRecoilValue(userEmail);
 
-  const { data: post } = useGetDetailBoardPost(postId);
+  const { data: post, isLoading } = useGetDetailBoardPost(postId);
 
   const usermatch = post?.email === logEmail;
   const goBack = () => {
@@ -115,57 +115,63 @@ export default function BoardDetail(): JSX.Element {
         </S.IconWrapper>
       </S.HeaderWrapper>
       <S.Wrapper>
-        <S.Infor>
-          <Avatar
-            size="large"
-            shape="square"
-            style={{ backgroundColor: '#f6786f', marginRight: '2%' }}
-            icon={<UserOutlined rev={undefined} />}
-          />
-          <S.InforUser>
-            <S.UserEmail>
-              {post?.email?.split('@')[0]}
-              <S.EditButton>
-                {usermatch && (
-                  <Link href={`/boards/${postId}/edit`}>
-                    <EditOutlined rev={undefined} style={{ fontSize: '18px', marginRight: '15%' }} />
-                  </Link>
-                )}
-                {usermatch && (
-                  <DeleteOutlined onClick={onClickDeletePost} rev={undefined} style={{ fontSize: '18px' }} />
-                )}
-              </S.EditButton>
-            </S.UserEmail>
-            <S.Timestamp>{post?.timestamp}</S.Timestamp>
-          </S.InforUser>
-        </S.Infor>
-        <S.ContentsWrapper>
-          <S.ContentsTitle>{post?.title}</S.ContentsTitle>
-          <S.Contents>{post?.contents}</S.Contents>
-
-          {post?.img && (
-            <S.ImgWrapper onClick={showModal}>
-              <Image
-                src={post.img}
-                alt="Post Image"
-                width={150}
-                height={160}
-                objectFit="cover"
-                layout="responsive"
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+        {isLoading ? (
+          <S.StyledSkeleton active />
+        ) : (
+          <>
+            <S.Infor>
+              <Avatar
+                size="large"
+                shape="square"
+                style={{ backgroundColor: '#f6786f', marginRight: '2%' }}
+                icon={<UserOutlined rev={undefined} />}
               />
-            </S.ImgWrapper>
-          )}
+              <S.InforUser>
+                <S.UserEmail>
+                  {post?.email?.split('@')[0]}
+                  <S.EditButton>
+                    {usermatch && (
+                      <Link href={`/boards/${postId}/edit`}>
+                        <EditOutlined rev={undefined} style={{ fontSize: '18px', marginRight: '15%' }} />
+                      </Link>
+                    )}
+                    {usermatch && (
+                      <DeleteOutlined onClick={onClickDeletePost} rev={undefined} style={{ fontSize: '18px' }} />
+                    )}
+                  </S.EditButton>
+                </S.UserEmail>
+                <S.Timestamp>{post?.timestamp}</S.Timestamp>
+              </S.InforUser>
+            </S.Infor>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>{post?.title}</S.ContentsTitle>
+              <S.Contents>{post?.contents}</S.Contents>
 
-          {isModalVisible && (
-            <S.ImgModalWrapper onClick={closeModal}>
-              <S.ImgModal onClick={(e) => e.stopPropagation()}>
-                <Image src={post?.img} alt="Post Image Large" layout="fill" objectFit="contain" />
-              </S.ImgModal>
-            </S.ImgModalWrapper>
-          )}
-        </S.ContentsWrapper>
+              {post?.img && (
+                <S.ImgWrapper onClick={showModal}>
+                  <Image
+                    src={post.img}
+                    alt="Post Image"
+                    width={150}
+                    height={160}
+                    objectFit="cover"
+                    layout="responsive"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                  />
+                </S.ImgWrapper>
+              )}
+
+              {isModalVisible && (
+                <S.ImgModalWrapper onClick={closeModal}>
+                  <S.ImgModal onClick={(e) => e.stopPropagation()}>
+                    <Image src={post?.img} alt="Post Image Large" layout="fill" objectFit="contain" />
+                  </S.ImgModal>
+                </S.ImgModalWrapper>
+              )}
+            </S.ContentsWrapper>
+          </>
+        )}
         <S.LikeCommentCount>
           <S.LikeCount>
             <LikeOutlined style={{ color: '#f6786f', marginRight: '15%' }} rev={undefined} />

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Rate } from 'antd';
+
+import { Skeleton } from 'antd';
 
 export const HeaderWrapper = styled.div`
   height: 64px;
@@ -307,4 +308,8 @@ export const ImgModal = styled.div`
   position: relative;
   width: 70vw;
   height: 70vh;
+`;
+
+export const StyledSkeleton = styled(Skeleton)`
+  margin-top: 10%;
 `;
