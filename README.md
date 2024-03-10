@@ -10,7 +10,8 @@
 
 School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티 웹입니다.<br/>
 모바일 환경을 주로 사용하는 학생들을 고려하여 모바일 퍼스트로 구현하였으며 PWA를 적용하였습니다.
-
+배포 첫날 일일 사용자 약 870명을 기록하였습니다.
+<img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/4f2c03a9-ff9d-47a1-8030-bda52e75174f" width="25%" height="25%"/>
 ## 주요 기능 📦
 
 ### ⭐️ SCROll TOP BUTTON
