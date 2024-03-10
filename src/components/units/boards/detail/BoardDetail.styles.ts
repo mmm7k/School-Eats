@@ -310,6 +310,9 @@ export const ImgModal = styled.div`
   height: 70vh;
 `;
 
-export const StyledSkeleton = styled(Skeleton)`
+export const StyledSkeleton = styled.div`
+  height: 400px; /* 세로 크기 조절 */
+  margin-left: 3%; /* 왼쪽 마진 추가 */
+  margin-right: 3%;
   margin-top: 10%;
 `;
