@@ -13,6 +13,7 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 배포 첫날 일일 사용자 약 870명을 기록하였습니다.
 
 <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/4f2c03a9-ff9d-47a1-8030-bda52e75174f" width="50%" height="40%"/>
+
 ## 주요 기능 📦
 
 ### ⭐️ SCROll TOP BUTTON
