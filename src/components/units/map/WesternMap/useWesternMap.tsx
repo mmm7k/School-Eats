@@ -21,20 +21,7 @@ export default function useWesternMap(): JSX.Element {
 
         const locations = [
           //양식
-          {
-            name: '부엌간',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14922179431202, 126.92741610454412),
-            route: '/place/부엌간',
-          },
-          {
-            name: '행복경양식',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
-            route: '/place/행복경양식',
-          },
+
           {
             name: '피렌체',
             imageSrc: '/logo.png',
@@ -62,13 +49,6 @@ export default function useWesternMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145176528117496, 126.93056641511407),
             route: '/place/노브랜드버거',
-          },
-          {
-            name: '맘스터치',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.145428957946486, 126.93065124744335),
-            route: '/place/맘스터치',
           },
         ];
         locations.map((location, index) => {

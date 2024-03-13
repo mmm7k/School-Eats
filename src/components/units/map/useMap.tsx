@@ -68,22 +68,6 @@ export default function useMap(): JSX.Element {
           },
 
           {
-            name: '동대문엽기떡볶이',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.146016400812464, 126.92944636919275),
-            route: '/place/동대문엽기떡볶이',
-          },
-
-          {
-            name: '신전떡볶이',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.146160415210275, 126.92909782458489),
-            route: '/place/신전떡볶이',
-          },
-
-          {
             name: '돈웅',
             imageSrc: '/logo.png',
             //@ts-ignore
@@ -146,13 +130,6 @@ export default function useMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14359797325633, 126.92482585917169),
             route: '/place/백두산',
           },
-          {
-            name: '열도지',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14708066821672, 126.92312443151344),
-            route: '/place/열도지',
-          },
 
           {
             name: '일품',
@@ -168,14 +145,6 @@ export default function useMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
             route: '/place/옌타이',
-          },
-
-          {
-            name: '피슈마라홍탕',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14700929266037, 126.9279859726431),
-            route: '/place/피슈마라홍탕',
           },
 
           {
@@ -195,13 +164,7 @@ export default function useMap(): JSX.Element {
           },
 
           //일식
-          {
-            name: '달곰식당',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.148389608485296, 126.92628924778579),
-            route: '/place/달곰식당',
-          },
+
           {
             name: '소보쿠',
             imageSrc: '/logo.png',
@@ -242,20 +205,6 @@ export default function useMap(): JSX.Element {
           },
 
           //양식
-          {
-            name: '부엌간',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14922179431202, 126.92741610454412),
-            route: '/place/부엌간',
-          },
-          {
-            name: '행복경양식',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.149083012350346, 126.92523783708435),
-            route: '/place/행복경양식',
-          },
 
           {
             name: '피렌체',
@@ -285,13 +234,6 @@ export default function useMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145176528117496, 126.93056641511407),
             route: '/place/노브랜드버거',
-          },
-          {
-            name: '맘스터치',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.145428957946486, 126.93065124744335),
-            route: '/place/맘스터치',
           },
 
           //카페

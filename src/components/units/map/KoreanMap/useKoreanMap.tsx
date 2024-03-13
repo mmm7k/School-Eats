@@ -67,21 +67,6 @@ export default function useKoreanMap(): JSX.Element {
           },
 
           {
-            name: '동대문엽기떡볶이',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.146016400812464, 126.92944636919275),
-            route: '/place/동대문엽기떡볶이',
-          },
-
-          {
-            name: '신전떡볶이',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.146160415210275, 126.92909782458489),
-            route: '/place/신전떡볶이',
-          },
-          {
             name: '돈웅',
             imageSrc: '/logo.png',
             //@ts-ignore

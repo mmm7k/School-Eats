@@ -28,13 +28,7 @@ export default function useChineseMap(): JSX.Element {
             position: new kakao.maps.LatLng(35.14359797325633, 126.92482585917169),
             route: '/place/백두산',
           },
-          {
-            name: '열도지',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14708066821672, 126.92312443151344),
-            route: '/place/열도지',
-          },
+
           {
             name: '일품',
             imageSrc: '/logo.png',
@@ -49,14 +43,6 @@ export default function useChineseMap(): JSX.Element {
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
             route: '/place/옌타이',
-          },
-
-          {
-            name: '피슈마라홍탕',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.14700929266037, 126.9279859726431),
-            route: '/place/피슈마라홍탕',
           },
 
           {

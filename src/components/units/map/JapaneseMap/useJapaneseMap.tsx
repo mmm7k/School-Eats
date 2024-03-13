@@ -21,13 +21,7 @@ export default function useJapaneseMap(): JSX.Element {
 
         const locations = [
           //일식
-          {
-            name: '달곰식당',
-            imageSrc: '/logo.png',
-            //@ts-ignore
-            position: new kakao.maps.LatLng(35.148389608485296, 126.92628924778579),
-            route: '/place/달곰식당',
-          },
+
           {
             name: '소보쿠',
             imageSrc: '/logo.png',
