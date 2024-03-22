@@ -20,7 +20,9 @@ interface Post {
 }
 
 export default function BoardsList() {
-  const { posts, hasMore, loading } = useGetBoardPosts();
+  // const { posts, hasMore, loading } = useGetBoardPosts();
+  const { posts, hasNextPage, isFetchingNextPage } = useGetBoardPosts();
+
   const [searchTerm, setSearchTerm] = useState('');
   const searchResults = useBoardSearch('board', searchTerm);
 
@@ -40,7 +42,7 @@ export default function BoardsList() {
       {!searchResults || searchResults.length === 0
         ? // 검색 결과가 없거나 searchResults가 null일 때
           posts.map((post: Post) => (
-            <Link href={`/boards/${post.id}`}>
+            <Link href={`/boards/${post.id}`} key={post.id}>
               <S.ContentsWrapper id={post.id}>
                 {post.img && (
                   <S.Image>
@@ -78,7 +80,7 @@ export default function BoardsList() {
           ))
         : // 검색 결과가 있을 때
           searchResults.map((post: Post) => (
-            <Link href={`/boards/${post.id}`}>
+            <Link href={`/boards/${post.id}`} key={post.id}>
               <S.ContentsWrapper id={post.id}>
                 {post.img && (
                   <S.Image>
@@ -112,7 +114,8 @@ export default function BoardsList() {
               </S.ContentsWrapper>
             </Link>
           ))}
-      <S.SpinDiv>{hasMore && loading && <Spin size="large" />}</S.SpinDiv>
+      {/* <S.SpinDiv>{hasMore && loading && <Spin size="large" />}</S.SpinDiv> */}
+      <S.SpinDiv>{hasNextPage && isFetchingNextPage && <Spin size="large" />}</S.SpinDiv>
     </S.Wrapper>
   );
 }
