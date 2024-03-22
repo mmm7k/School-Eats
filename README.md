@@ -4,7 +4,7 @@
 
 ## 배포 주소
 
-> **개발 버전** : [https://schooleats.vercel.app/](https://schooleats.vercel.app/)
+>  [https://schooleats.vercel.app/](https://schooleats.vercel.app/)
 
 ## 프로젝트 소개
 
