@@ -316,3 +316,14 @@ export const StyledSkeleton = styled.div`
   margin-right: 3%;
   margin-top: 10%;
 `;
+
+export const CloseButton = styled.span`
+  position: fixed;
+  top: 5px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 27px;
+  font-weight: 400;
+  color: white;
+`;

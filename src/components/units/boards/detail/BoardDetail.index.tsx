@@ -168,6 +168,7 @@ export default function BoardDetail(): JSX.Element {
                 <S.ImgModal onClick={(e) => e.stopPropagation()}>
                   <Image src={post?.img} alt="Post Image Large" layout="fill" objectFit="contain" />
                 </S.ImgModal>
+                <S.CloseButton>x</S.CloseButton>
               </S.ImgModalWrapper>
             )}
           </S.ContentsWrapper>
