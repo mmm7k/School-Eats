@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { SearchOutlined } from '@ant-design/icons';
 export const Wrapper = styled.div`
   width: 100%;

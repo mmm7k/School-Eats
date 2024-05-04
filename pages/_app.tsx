@@ -1,4 +1,5 @@
-import { GlobalStyles } from '../src/commons/styles/globalStyles';
+import { Global } from '@emotion/react';
+import { globalStyles } from '../src/commons/styles/globalStyles';
 import { AppProps } from 'next/app';
 import Layout from '../src/components/layout';
 import { initializeApp } from 'firebase/app';
@@ -128,7 +129,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         />
       </Head>
       <RecoilRoot>
-        <GlobalStyles />
+        <Global styles={globalStyles} />
         <Layout>
           <QueryClientProvider client={queryClient}>
             <Component {...pageProps} />

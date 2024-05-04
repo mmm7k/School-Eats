@@ -145,7 +145,7 @@ $ yarn dev
 - Next.js 12
 - recoil
 - react-query
-- styled-components
+- emotion/styled
 - react-hook-form
 - yup
 
