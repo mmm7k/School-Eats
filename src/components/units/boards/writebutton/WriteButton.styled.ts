@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div<{ isScrolled: boolean }>`
   height: 67px;
@@ -20,7 +20,6 @@ export const Button = styled.div`
   height: 50px;
   border-radius: 50%;
   background-color: #f6786f;
-  /* color: gray; */
   border: none;
   cursor: pointer;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);

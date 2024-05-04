@@ -4,7 +4,7 @@
 
 ## 배포 주소
 
->  [https://schooleats.vercel.app/](https://schooleats.vercel.app/)
+> [https://schooleats.vercel.app/](https://schooleats.vercel.app/)
 
 ## 프로젝트 소개
 
@@ -145,7 +145,7 @@ $ yarn dev
 - Next.js 12
 - recoil
 - react-query
-- emotion/styled
+- styled-components
 - react-hook-form
 - yup
 

@@ -1,21 +1,17 @@
 import Link from 'next/link';
-import { useLogin } from '../../../hooks/useLogin';
 import * as S from './LoginPage.styles';
-import { useKakaoLogin } from '../../../hooks/useKakoLogin';
-import { useRouter } from 'next/router';
 import { Checkbox, CheckboxProps } from 'antd';
 import { useRecoilState } from 'recoil';
 import { autoLogin } from '../../../commons/globalstate/globalstate';
+import { useKakaoLogin } from '../../../services/login/useKakoLogin';
+import { useLogin } from '../../../services/login/useLogin';
+import { useBackToPage } from '../../../hooks/useBackToPage';
 
 export default function LoginPage(): JSX.Element {
   const { register, handleSubmit, errors } = useLogin();
   const [, setCheck] = useRecoilState(autoLogin);
   const { kakaoLogin } = useKakaoLogin();
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const onChange: CheckboxProps['onChange'] = (e) => {
     setCheck(e.target.checked);
@@ -24,7 +20,7 @@ export default function LoginPage(): JSX.Element {
   return (
     <S.Wrapper>
       <S.HomeButtonWrapper>
-        <S.BackButton onClick={goBack} />
+        <S.BackButton onClick={onClickBackToPage} />
         <Link href="/">
           <S.HomeButton />
         </Link>

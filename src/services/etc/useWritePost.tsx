@@ -2,12 +2,16 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
-import { db } from '../../pages/_app';
 import { addDoc, collection } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilValue } from 'recoil';
-import { userEmail } from '../commons/globalstate/globalstate';
+import { userEmail } from '../../commons/globalstate/globalstate';
+import { db } from '../../../pages/_app';
 
+interface WritePost {
+  title: string;
+  contents: string;
+}
 const postSchema = yup
   .object({
     title: yup.string().required('제목이 필요합니다.').max(100, '제목은 100자 이하 입니다.'),
@@ -33,7 +37,7 @@ export const useWritePost = (menu: string, modaltext: string, routerpath: string
     });
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: WritePost) => {
     const board = collection(db, menu);
     await addDoc(board, {
       title: data.title,

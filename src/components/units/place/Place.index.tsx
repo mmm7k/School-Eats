@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import SkeletonPlace from './Skeleton';
-import { useGetPosts } from '../../../hooks/useGetPosts';
+import { useGetPosts } from '../../../services/place/useGetPosts';
 
 interface Post {
   title?: string;

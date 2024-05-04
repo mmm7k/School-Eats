@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const { default: styled } = require('styled-components');
+
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,

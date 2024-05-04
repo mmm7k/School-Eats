@@ -1,6 +1,6 @@
+import useChineseMap from '../../../../services/map/useChineseMap';
 import * as S from '../Map.styled';
 import Link from 'next/link';
-import useChineseMap from './useChineseMap';
 
 export default function ChineseMap(): JSX.Element {
   useChineseMap();

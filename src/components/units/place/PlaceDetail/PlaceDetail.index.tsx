@@ -1,12 +1,9 @@
 import Image from 'next/image';
-
 import * as S from './PlaceDetail.styles';
 import { useRouter } from 'next/router';
-import { useComments } from '../../../../hooks/useComments';
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
-import { useBookmark } from '../../../../hooks/useBookmark';
 import {
   ClockCircleOutlined,
   DeleteOutlined,
@@ -18,11 +15,12 @@ import {
 } from '@ant-design/icons';
 import Link from 'next/link';
 import { Modal } from 'antd';
-import { useGetDetailPost } from '../../../../hooks/useGetDetailPost';
+import { useComments } from '../../../../services/place/useComments';
+import { useBookmark } from '../../../../services/etc/useBookmark';
+import { useGetDetailPost } from '../../../../services/place/useGetDetailPost';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 export default function PlaceDetail(): JSX.Element {
-  // const { post } = useGetDetailPost();
-
   const {
     averageRating,
     comments,
@@ -35,6 +33,7 @@ export default function PlaceDetail(): JSX.Element {
     setNewRating,
   } = useComments();
   const { handleBookmark, isBookmarked } = useBookmark();
+  const { onClickBackToPage } = useBackToPage();
   const router = useRouter();
   const data = JSON.stringify(router.query);
   const jsonObject = JSON.parse(data);
@@ -43,10 +42,6 @@ export default function PlaceDetail(): JSX.Element {
   const email = useRecoilValue(userEmail);
 
   const { data: post } = useGetDetailPost(postId);
-
-  const goBack = () => {
-    router.back();
-  };
 
   const handleRatingChange = (value: number) => {
     setNewRating(value); // 사용자가 선택한 별점을 상태에 저장
@@ -93,7 +88,7 @@ export default function PlaceDetail(): JSX.Element {
     <>
       <S.HeaderWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.HeaderText>맛집투어</S.HeaderText>
         <S.IconWrapper>
@@ -228,27 +223,6 @@ export default function PlaceDetail(): JSX.Element {
               )}
             </div>
           ))}
-
-          {/* {comments.map((comment) => (
-            <S.ReviewWrapper key={comment.id}>
-              <S.ReviewText>{comment.text}</S.ReviewText>
-              <S.ReviewTitle>
-                {comment.email?.split('@')[0]}
-                <S.ReviewRate allowHalf disabled value={comment.rating} />
-                {comment.email === email && (
-                  <>
-                    <EditOutlined
-                      onClick={() => startEditing(comment)}
-                      rev={undefined}
-                      style={{ fontSize: '15px', marginRight: '1%' }}
-                    />
-                    //////
-                    <DeleteOutlined onClick={() => deleteComment(comment.id)} rev={undefined} />
-                  </>
-                )}
-              </S.ReviewTitle>
-            </S.ReviewWrapper>
-          ))} */}
         </S.InforWrapper>
       </S.Wrapper>
     </>

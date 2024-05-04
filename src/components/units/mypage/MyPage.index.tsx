@@ -2,8 +2,6 @@ import Link from 'next/link';
 import * as S from './MyPage.styles';
 import { useRecoilValue } from 'recoil';
 import { KakaoLoggedIn, layoutEmail } from '../../../commons/globalstate/globalstate';
-import { useKakaoLogin } from '../../../hooks/useKakoLogin';
-import { useLogin } from '../../../hooks/useLogin';
 import { useRouter } from 'next/router';
 import {
   CommentOutlined,
@@ -14,15 +12,16 @@ import {
   HighlightOutlined,
   InfoCircleOutlined,
   LikeOutlined,
-  MoreOutlined,
   NotificationOutlined,
-  QuestionOutlined,
   SmileOutlined,
   StarOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { useMoveToPage } from '../../../hooks/useMoveToPage';
+import { useKakaoLogin } from '../../../services/login/useKakoLogin';
+import { useLogin } from '../../../services/login/useLogin';
+import { useBackToPage } from '../../../hooks/useBackToPage';
 
 export default function MyPage(): JSX.Element {
   const user = useRecoilValue(layoutEmail);
@@ -30,10 +29,7 @@ export default function MyPage(): JSX.Element {
   const { kakaoLogout } = useKakaoLogin();
   const { onClickLogout } = useLogin();
   const { onClickMoveToPage } = useMoveToPage();
-  const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const logout = () => {
     if (kakaoLogin) {
@@ -48,7 +44,7 @@ export default function MyPage(): JSX.Element {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>마이페이지</S.Title>
         <S.IconWrapper>

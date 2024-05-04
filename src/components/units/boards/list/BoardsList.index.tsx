@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import * as S from './BoardsList.styles';
 import WriteButton from '../writebutton/WriteButton.index';
-import { useGetBoardPosts } from '../../../../hooks/useGetBoardPosts';
 import { Spin } from 'antd';
 import { useState } from 'react';
-import { useBoardSearch } from '../../../../hooks/useBoardSearch';
 import Image from 'next/image';
 import { CommentOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { useGetBoardPosts } from '../../../../services/board/useGetBoardPosts';
+import { useBoardSearch } from '../../../../services/board/useBoardSearch';
 
 interface Post {
   title?: string;
@@ -20,9 +20,7 @@ interface Post {
 }
 
 export default function BoardsList() {
-  // const { posts, hasMore, loading } = useGetBoardPosts();
   const { posts, hasNextPage, isFetchingNextPage } = useGetBoardPosts();
-
   const [searchTerm, setSearchTerm] = useState('');
   const searchResults = useBoardSearch('board', searchTerm);
 

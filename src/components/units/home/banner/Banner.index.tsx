@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import * as S from './Banner.styles';
 import React from 'react';
 import Link from 'next/link';
-import { useMoveToPage } from '../../../../hooks/useMoveToPage';
 import Image from 'next/image';
 export default function Banner(): JSX.Element {
   const settings = {

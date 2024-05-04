@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { db } from '../../pages/_app';
 import {
   DocumentData,
   QueryDocumentSnapshot,
@@ -14,11 +13,13 @@ import {
 } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
+import { db } from '../../../pages/_app';
+import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+
 interface Bookmark {
   id: string;
   placeId?: string;
-  email?: any;
+  email?: string;
 }
 
 export const useBookmark = () => {
@@ -105,27 +106,6 @@ export const useBookmark = () => {
   };
 
   const [isBookmarked, setIsBookmarked] = useState(false);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     if (postId) {
-  //       await getBookmark();
-  //       setIsBookmarked(bookmark.some((b) => b.email === email));
-  //       console.log('a');
-  //     }
-  //   })();
-  // }, [postId, bookmark]);
-
-  // const handleBookmark = async () => {
-  //   if (isBookmarked) {
-  //     const bookmarkId = bookmark.find((b) => b.email === email)?.id;
-  //     if (bookmarkId) await deleteBookmark(bookmarkId);
-  //   } else {
-  //     await addBookmark();
-  //   }
-  //   await getBookmark();
-  //   setIsBookmarked(!isBookmarked);
-  // };
 
   return { addBookmark, deleteBookmark, getBookmark, bookmark, handleBookmark, isBookmarked };
 };

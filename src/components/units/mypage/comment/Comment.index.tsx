@@ -14,10 +14,10 @@ import {
   where,
 } from 'firebase/firestore';
 import Image from 'next/image';
-import { Skeleton } from 'antd';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Comment {
   id: string;
@@ -42,11 +42,7 @@ export default function Comment() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentBoard, setCommentBoard] = useState([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const formatDate = (date: Date) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
@@ -117,7 +113,7 @@ export default function Comment() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>내가 쓴 댓글</S.Title>
       </S.TitleWrapper>

@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router';
 import * as S from '../Place.styles';
-import { useGetPosts } from '../../../../hooks/useGetPosts';
-import { Select, Spin } from 'antd';
+import { Select } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useGetCategoryPosts } from '../../../../hooks/useGetCategoryPosts';
 import SkeletonPlace from '../Skeleton';
 import { useEffect, useState } from 'react';
+import { useGetCategoryPosts } from '../../../../services/place/useGetCategoryPosts';
 
 interface Post {
   title?: string;

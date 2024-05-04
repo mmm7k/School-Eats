@@ -1,22 +1,17 @@
 import React from 'react';
-import Link from 'next/link';
 import * as S from '../CsPage.styles';
-import { useWritePost } from '../../../../../hooks/useWritePost';
-import { useRouter } from 'next/router';
+import { useWritePost } from '../../../../../services/etc/useWritePost';
+import { useBackToPage } from '../../../../../hooks/useBackToPage';
 
 export default function Request() {
   const { register, handleSubmit, errors, onSubmit } = useWritePost('request', '맛집 추가 요청이 등록되었습니다.', '/');
-
-  const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   return (
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.TitleText>맛집 추가 요청</S.TitleText>
       </S.TitleWrapper>

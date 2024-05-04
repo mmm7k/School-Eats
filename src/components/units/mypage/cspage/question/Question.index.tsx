@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as S from '../CsPage.styles';
-import { useWritePost } from '../../../../../hooks/useWritePost';
+import { useWritePost } from '../../../../../services/etc/useWritePost';
 
 export default function Question() {
   const { register, handleSubmit, errors, onSubmit } = useWritePost(

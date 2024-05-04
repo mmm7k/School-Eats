@@ -10,15 +10,14 @@ import {
   doc,
   getDoc,
   getDocs,
-  orderBy,
   query,
   where,
 } from 'firebase/firestore';
 import Image from 'next/image';
-import { Skeleton } from 'antd';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Scrap {
   id: string;
@@ -33,11 +32,7 @@ export default function Scrap() {
   const [scrap, setScrap] = useState<Scrap[]>([]);
   const [scrapBoard, setScrapBoard] = useState([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const formatDate = (date: any) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
@@ -108,7 +103,7 @@ export default function Scrap() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>좋아요</S.Title>
       </S.TitleWrapper>

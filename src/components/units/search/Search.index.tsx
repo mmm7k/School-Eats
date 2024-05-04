@@ -1,17 +1,13 @@
-import { useRouter } from 'next/router';
 import * as S from './Search.styles';
 import { SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { usePlaceSearch } from '../../../hooks/usePlaceSearch';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePlaceSearch } from '../../../services/etc/usePlaceSearch';
+import { useBackToPage } from '../../../hooks/useBackToPage';
 
 export default function Search() {
-  const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
-
+  const { onClickBackToPage } = useBackToPage();
   const [searchTerm, setSearchTerm] = useState(''); // 사용자 입력을 추적하는 상태
   const searchResults = usePlaceSearch('all', searchTerm); // 훅 사용
 
@@ -23,7 +19,7 @@ export default function Search() {
     <>
       <S.SearchWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.SearchDiv>
           <SearchOutlined style={{ color: '#848484' }} rev={undefined} />

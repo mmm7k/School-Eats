@@ -1,10 +1,9 @@
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../pages/_app';
-
 import { useQuery } from 'react-query';
+import { db } from '../../../pages/_app';
 
 interface Post {
-  img: any;
+  img: string;
   loc: string;
   time: string;
   breaktime: string;

@@ -2,9 +2,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { authInstance } from '../../pages/_app';
 import { Modal } from 'antd';
 import { useRouter } from 'next/router';
+import { authInstance } from '../../../pages/_app';
 
 // 유효성 검사 스키마 설정
 const schema = yup

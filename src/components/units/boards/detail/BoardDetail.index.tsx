@@ -12,23 +12,22 @@ import {
   StarOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { useBoardComments } from '../../../../hooks/useBoardComments';
-import { useScrap } from '../../../../hooks/useScrap';
-import { useLike } from '../../../../hooks/useLike';
 import { useState } from 'react';
 import Image from 'next/image';
-import { useGetDetailBoardPost } from '../../../../hooks/useGetDetailBoardPost';
 import { deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { db, storage } from '../../../../../pages/_app';
 import { deleteObject, ref } from 'firebase/storage';
+import { useScrap } from '../../../../services/etc/useScrap';
+import { useBoardComments } from '../../../../services/board/useBoardComments';
+import { useLike } from '../../../../services/etc/useLike';
+import { useGetDetailBoardPost } from '../../../../services/board/useGetDetailBoardPost';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 export default function BoardDetail(): JSX.Element {
   const { comments, newComment, updateComment, setNewComment, addComment, deleteComment } = useBoardComments();
-  // const { post, usermatch, onClickDeletePost } = useGetDetailBoardPost();
-
   const { handleScrap, isScraped } = useScrap();
   const { handleLike, isLiked, like } = useLike();
-
+  const { onClickBackToPage } = useBackToPage();
   const login = useRecoilValue(isLoggedIn);
   const email = useRecoilValue(userEmail);
   const router = useRouter();
@@ -41,9 +40,6 @@ export default function BoardDetail(): JSX.Element {
   const { data: post, isLoading } = useGetDetailBoardPost(postId);
 
   const usermatch = post?.email === logEmail;
-  const goBack = () => {
-    router.back();
-  };
 
   const goBookmark = () => {
     if (!login) {
@@ -104,7 +100,7 @@ export default function BoardDetail(): JSX.Element {
     <>
       <S.HeaderWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.HeaderText>커뮤니티</S.HeaderText>
         <S.IconWrapper>

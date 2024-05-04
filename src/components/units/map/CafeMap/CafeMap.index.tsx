@@ -1,6 +1,6 @@
+import useCafeMap from '../../../../services/map/useCafeMap';
 import * as S from '../Map.styled';
 import Link from 'next/link';
-import useCafeMap from './useCafeMap';
 
 export default function CafeMap(): JSX.Element {
   useCafeMap();

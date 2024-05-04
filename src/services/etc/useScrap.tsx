@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { db } from '../../pages/_app';
+
 import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { db } from '../../../pages/_app';
+
 interface Scrap {
   id: string;
   text?: string;

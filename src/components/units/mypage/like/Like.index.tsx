@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Like {
   id: string;
@@ -31,11 +32,7 @@ export default function Like() {
   const [like, setLike] = useState<Like[]>([]);
   const [likeBoard, setLikeBoard] = useState([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const formatDate = (date: any) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
@@ -106,7 +103,7 @@ export default function Like() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>좋아요</S.Title>
       </S.TitleWrapper>

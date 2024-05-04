@@ -22,6 +22,7 @@ import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { LikeOutlined, StarOutlined } from '@ant-design/icons';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Post extends DocumentData {
   id: string;
@@ -31,13 +32,7 @@ export default function MyBoard() {
   const email = useRecoilValue(userEmail);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(false);
-  const [lastVisible, setLastVisible] = useState<any>(null);
-  const [hasMore, setHasMore] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const formatDate = (date: any) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출
@@ -50,7 +45,7 @@ export default function MyBoard() {
   };
 
   const getNextPosts = async () => {
-    if (loading || !hasMore) return;
+    if (loading) return;
 
     setLoading(true);
 
@@ -58,7 +53,6 @@ export default function MyBoard() {
       let q;
       q = query(collection(db, 'board'), where('email', '==', email), orderBy('timestamp', 'desc'), limit(10));
       const snapshot = await getDocs(q);
-      //   const postArr = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       const postArr = snapshot.docs.map((doc) => {
         const data = doc.data();
         // Firestore 타임스탬프를 JavaScript Date 객체로 변환
@@ -81,7 +75,7 @@ export default function MyBoard() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>내가 쓴 게시물</S.Title>
       </S.TitleWrapper>

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Rate } from 'antd';
 
 export const HeaderWrapper = styled.div`

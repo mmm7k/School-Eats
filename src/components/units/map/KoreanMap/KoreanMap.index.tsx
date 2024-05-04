@@ -1,6 +1,6 @@
+import useKoreanMap from '../../../../services/map/useKoreanMap';
 import * as S from '../Map.styled';
 import Link from 'next/link';
-import useKoreanMap from './useKoreanMap';
 
 export default function KoreanMap(): JSX.Element {
   useKoreanMap();

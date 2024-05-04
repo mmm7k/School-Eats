@@ -1,18 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 import * as S from './Notice.styles';
-import { useRouter } from 'next/router';
+import { useBackToPage } from '../../../hooks/useBackToPage';
 
 export default function Notice() {
-  const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
-
+  const { onClickBackToPage } = useBackToPage();
   return (
     <>
       <S.TitleWrapper>
-        <S.IconWrapper onClick={goBack}>
+        <S.IconWrapper onClick={onClickBackToPage}>
           <S.BackButton />
         </S.IconWrapper>
         <S.Title>공지사항</S.Title>

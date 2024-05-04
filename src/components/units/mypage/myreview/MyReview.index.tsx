@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import * as S from './MyReview.styles';
-import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import Image from 'next/image';
-import { Skeleton } from 'antd';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Review {
   id: string;
@@ -20,13 +19,8 @@ interface Review {
 export default function MyReview() {
   const email = useRecoilValue(userEmail);
   const [reviews, setReviews] = useState<Review[]>([]);
-
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const getReview = async () => {
     setLoading(true);
@@ -48,7 +42,7 @@ export default function MyReview() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>나의 리뷰</S.Title>
       </S.TitleWrapper>

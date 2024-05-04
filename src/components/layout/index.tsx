@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import LayoutHeader from './header/LayoutHeader.index';
 import LayoutFooter from './footer/LayoutFooter.index';
 import SideBanner from './sidebanner/SideBanner.index';
@@ -17,10 +17,8 @@ const Body = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-
   width: 100vw;
   min-height: 100vh;
-  /* height: 3000px; */
   @media only screen and (max-width: 500px) {
   }
 `;
@@ -48,7 +46,6 @@ const RightWrapper = styled.div`
 `;
 
 export default function Layout(props: ILayoutProps): JSX.Element {
-  // useAuth();
   const router = useRouter();
   const isLoginPage = router.pathname === '/login';
   const isSignupPage = router.pathname === '/signup';

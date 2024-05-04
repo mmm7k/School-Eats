@@ -1,6 +1,4 @@
-import styled from '@emotion/styled';
-
-import { Skeleton } from 'antd';
+import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
   height: 64px;
@@ -49,7 +47,6 @@ export const TitleBookmarkIcon = styled.div`
   height: 29px;
   background-image: url('/bookmark.png');
   background-size: cover;
-  /* margin-bottom: 1px; */
   margin-top: 3%;
   margin-left: 7px;
   cursor: pointer;
@@ -85,7 +82,6 @@ export const UserEmail = styled.div`
 `;
 
 export const EditButton = styled.div`
-  /* background-color: red; */
   position: absolute;
   display: flex;
   justify-content: space-between;

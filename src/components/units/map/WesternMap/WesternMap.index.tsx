@@ -1,9 +1,6 @@
-import { ChangeEvent, useState } from 'react';
-
+import useWesternMap from '../../../../services/map/useWesternMap';
 import * as S from '../Map.styled';
-
 import Link from 'next/link';
-import useWesternMap from './useWesternMap';
 
 export default function WesternMap(): JSX.Element {
   useWesternMap();

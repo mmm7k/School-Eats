@@ -1,9 +1,6 @@
-import { ChangeEvent, useState } from 'react';
-
+import useJapaneseMap from '../../../../services/map/useJapaneseMap';
 import * as S from '../Map.styled';
-
 import Link from 'next/link';
-import useJapaneseMap from './useJapaneseMap';
 
 export default function JapaneseMap(): JSX.Element {
   useJapaneseMap();

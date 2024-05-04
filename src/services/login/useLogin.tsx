@@ -5,8 +5,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import { Modal } from 'antd';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { autoLogin, isLoggedIn, layoutEmail, userEmail } from '../commons/globalstate/globalstate';
-import { authInstance } from '../../pages/_app';
+import { authInstance } from '../../../pages/_app';
+import { autoLogin, isLoggedIn, layoutEmail, userEmail } from '../../commons/globalstate/globalstate';
 
 // 유효성 검사 스키마
 const schema = yup

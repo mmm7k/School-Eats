@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import * as S from './BoardWrite.styles';
-import { useRouter } from 'next/router';
-import { useWriteBoardPost } from '../../../../hooks/useWriteBoardPost';
+import { useWriteBoardPost } from '../../../../services/board/useWriteBoardPost';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 export default function BoardWrite() {
   const { register, handleSubmit, errors, onSubmit, onImageChange, isSubmitting } = useWriteBoardPost();
   const [selectedFile, setSelectedFile] = useState('');
-  const router = useRouter();
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
@@ -25,7 +22,7 @@ export default function BoardWrite() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.TitleText>글쓰기</S.TitleText>
       </S.TitleWrapper>

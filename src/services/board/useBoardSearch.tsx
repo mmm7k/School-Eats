@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { collection, getDocs, DocumentData } from 'firebase/firestore';
-import { db } from '../../pages/_app'; // DB 설정을 가져옴
+import { db } from '../../../pages/_app';
 
 interface SearchResult extends DocumentData {
   id: string;

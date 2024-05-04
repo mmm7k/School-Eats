@@ -1,7 +1,7 @@
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../pages/_app';
 
 import { useQuery } from 'react-query';
+import { db } from '../../../pages/_app';
 
 interface Post {
   timestamp: string;

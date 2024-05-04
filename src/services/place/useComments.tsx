@@ -13,10 +13,10 @@ import {
 } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { db } from '../../pages/_app';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isLoggedIn, userEmail } from '../commons/globalstate/globalstate';
 import { Modal } from 'antd';
+import { isLoggedIn, userEmail } from '../../commons/globalstate/globalstate';
+import { db } from '../../../pages/_app';
 
 interface Comment {
   id: string | number;

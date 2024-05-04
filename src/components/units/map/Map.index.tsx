@@ -1,6 +1,6 @@
+import useMap from '../../../services/map/useMap';
 import * as S from './Map.styled';
 import Link from 'next/link';
-import useMap from './useMap';
 
 export default function Map(): JSX.Element {
   useMap();

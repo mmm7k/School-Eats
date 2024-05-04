@@ -7,6 +7,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import Image from 'next/image';
 import { userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 interface Bookmark {
   id: string;
@@ -29,11 +30,7 @@ export default function Bookmark() {
   const [bookmark, setBookmark] = useState<Bookmark[]>([]);
   const [bookmarkplace, setBoomarkplace] = useState<Place[]>([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const getBookmark = async () => {
     setLoading(true);
@@ -73,7 +70,7 @@ export default function Bookmark() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.Title>찜한 맛집</S.Title>
       </S.TitleWrapper>

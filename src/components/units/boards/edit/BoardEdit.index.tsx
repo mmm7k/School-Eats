@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './BoardEdit.styles';
 import { useRouter } from 'next/router';
-import { useEditBoardPost } from '../../../../hooks/useEditBoardPost';
-import { useGetDetailBoardPost } from '../../../../hooks/useGetDetailBoardPost';
+import { useGetDetailBoardPost } from '../../../../services/board/useGetDetailBoardPost';
+import { useEditBoardPost } from '../../../../services/board/useEditBoardPost';
+import { useBackToPage } from '../../../../hooks/useBackToPage';
 
 export default function BoardEdit() {
   const [selectedFile, setSelectedFile] = useState('');
@@ -12,10 +13,7 @@ export default function BoardEdit() {
   const postId = jsonObject.boardid;
   const { register, handleSubmit, errors, onSubmit, onImageChange, isSubmitting } = useEditBoardPost(postId);
   const { data: post } = useGetDetailBoardPost(postId);
-
-  const goBack = () => {
-    router.back();
-  };
+  const { onClickBackToPage } = useBackToPage();
 
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
@@ -57,7 +55,7 @@ export default function BoardEdit() {
     <>
       <S.TitleWrapper>
         <S.IconWrapper>
-          <S.BackButton onClick={goBack} />
+          <S.BackButton onClick={onClickBackToPage} />
         </S.IconWrapper>
         <S.TitleText>수정하기</S.TitleText>
       </S.TitleWrapper>

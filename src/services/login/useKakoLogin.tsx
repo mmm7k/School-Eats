@@ -1,4 +1,4 @@
-import { kakaoRestApiKey } from '../../pages/_app';
+import { kakaoRestApiKey } from '../../../pages/_app';
 
 export const useKakaoLogin = () => {
   const kakaoLogin = async () => {
