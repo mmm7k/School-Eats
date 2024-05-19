@@ -51,3 +51,9 @@ export const Kakaoid = atom<number | null | undefined>({
   default: null,
   effects_UNSTABLE: [persistAtomEffect],
 });
+
+export const imagesState = atom({
+  key: 'imagesState',
+  default: [],
+  effects_UNSTABLE: [persistAtomEffect],
+});
