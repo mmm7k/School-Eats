@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import * as S from './Like.styles';
+import * as S from '../../../src/styles/mypage/Like.styles';
 import { useRecoilValue } from 'recoil';
 import {
   DocumentData,

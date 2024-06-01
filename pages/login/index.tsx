@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as S from './Login.styles';
+import * as S from '../../src/styles/login/Login.styles';
 import { Checkbox, CheckboxProps } from 'antd';
 import { useRecoilState } from 'recoil';
 import { useLogin } from '../../src/services/login/useLogin';

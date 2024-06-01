@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as S from './PlaceDetail.styles';
+import * as S from '../../../src/styles/place/PlaceDetail.styles';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';

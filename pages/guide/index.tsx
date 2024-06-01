@@ -1,5 +1,5 @@
 import { useBackToPage } from '../../src/hooks/useBackToPage';
-import * as S from './Guide.styles';
+import * as S from '../../src/styles/guide/Guide.styles';
 
 export default function Guide() {
   const { onClickBackToPage } = useBackToPage();

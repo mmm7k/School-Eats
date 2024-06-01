@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import * as S from './BoardEdit.styles';
+import * as S from '../../../../src/styles/board/BoardEdit.styles';
 import { useRouter } from 'next/router';
 import { useEditBoardPost } from '../../../../src/services/board/useEditBoardPost';
 import { useGetDetailBoardPost } from '../../../../src/services/board/useGetDetailBoardPost';

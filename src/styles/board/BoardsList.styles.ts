@@ -132,3 +132,10 @@ export const Button = styled.div`
   align-items: center;
   font-size: 20px;
 `;
+
+export const StyledSkeleton = styled.div`
+  height: 400px; /* 세로 크기 조절 */
+  margin-left: 3%; /* 왼쪽 마진 추가 */
+  margin-right: 3%;
+  margin-top: 10%;
+`;

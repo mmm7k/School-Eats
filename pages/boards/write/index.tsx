@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as S from './BoardWrite.styles';
+import * as S from '../../../src/styles/board/BoardWrite.styles';
 import { useBackToPage } from '../../../src/hooks/useBackToPage';
 import { useWriteBoardPost } from '../../../src/services/board/useWriteBoardPost';
 

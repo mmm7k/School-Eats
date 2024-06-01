@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as S from './MyPage.styles';
+import * as S from '../../src/styles/mypage/MyPage.styles';
 import { useRecoilValue } from 'recoil';
 import { KakaoLoggedIn, isLoggedIn, layoutEmail } from '../../src/commons/globalstate/globalstate';
 import {

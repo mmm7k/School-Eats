@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as S from './BoardsList.styles';
+import * as S from '../../src/styles/board/BoardsList.styles';
 import { useState } from 'react';
 import Image from 'next/image';
 import { CommentOutlined, EditOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
@@ -7,7 +7,7 @@ import { fetchPosts, useGetBoardPosts } from '../../src/services/board/useGetBoa
 import { useBoardSearch } from '../../src/services/board/useBoardSearch';
 import { GetServerSideProps } from 'next';
 import { QueryClient, dehydrate } from 'react-query';
-import { StyledSkeleton } from './[boardid]/BoardDetail.styles';
+
 import { useRecoilValue } from 'recoil';
 import { isLoggedIn } from '../../src/commons/globalstate/globalstate';
 import { Modal, Skeleton } from 'antd';
@@ -34,9 +34,9 @@ export default function BoardsList() {
 
   if (isLoading) {
     return (
-      <StyledSkeleton>
+      <S.StyledSkeleton>
         <Skeleton active />
-      </StyledSkeleton>
+      </S.StyledSkeleton>
     );
   }
 

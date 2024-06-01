@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as S from './ResetPassword.styles';
+import * as S from '../../src/styles/resetpassword/ResetPassword.styles';
 import React from 'react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import * as S from './Comment.styles';
-import { useRouter } from 'next/router';
+import * as S from '../../../src/styles/mypage/Comment.styles';
 import { useRecoilValue } from 'recoil';
 import {
   DocumentData,

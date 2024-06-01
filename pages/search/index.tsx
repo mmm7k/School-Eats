@@ -1,4 +1,4 @@
-import * as S from './Search.styles';
+import * as S from '../../src/styles/search/Search.styles';
 import { SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import Link from 'next/link';

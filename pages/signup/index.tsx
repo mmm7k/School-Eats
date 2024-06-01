@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as S from './SignupPage.styles';
+import * as S from '../../src/styles/signup/Signup.styles';
 import { useKakaoLogin } from '../../src/services/login/useKakoLogin';
 import { useSignup } from '../../src/services/login/useSignup';
 

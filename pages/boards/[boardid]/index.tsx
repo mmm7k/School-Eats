@@ -1,4 +1,4 @@
-import * as S from './BoardDetail.styles';
+import * as S from '../../../src/styles/board/BoardDetail.styles';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useRecoilValue } from 'recoil';

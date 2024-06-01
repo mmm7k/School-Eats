@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import * as S from './MyBoard.styles';
+import * as S from '../../../src/styles/mypage/MyBoard.styles';
 import { useRecoilValue } from 'recoil';
 import { DocumentData, collection, getDocs, limit, orderBy, query, where } from 'firebase/firestore';
 import Image from 'next/image';

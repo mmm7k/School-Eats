@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './Notice.styles';
+import * as S from '../../src/styles/notice/Notice.styles';
 import { useBackToPage } from '../../src/hooks/useBackToPage';
 
 export default function Notice() {

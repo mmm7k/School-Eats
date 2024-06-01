@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import * as S from './Bookmark.styles';
+import * as S from '../../../src/styles/mypage/Bookmark.styles';
 import { useRecoilValue } from 'recoil';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import Image from 'next/image';
