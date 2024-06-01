@@ -22,7 +22,7 @@ type OrdKey = 'rate' | 'commentscount';
 export default function WesternPlace(): JSX.Element {
   const router = useRouter();
   const [order, setOrder] = useState<OrdKey>((router.query.sort as OrdKey) || 'commentscount');
-  const { posts, loading } = useGetCategoryPosts('all', '양식', order);
+  const { posts, loading } = useGetCategoryPosts('양식', order);
   const handleChange = (value: OrdKey) => {
     setOrder(value);
     // 선택한 정렬 기준을 URL 쿼리 파라미터로 추가합니다.
