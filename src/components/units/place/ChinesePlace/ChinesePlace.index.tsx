@@ -22,7 +22,7 @@ type OrdKey = 'rate' | 'commentscount';
 export default function ChinesePlace(): JSX.Element {
   const router = useRouter();
   const [order, setOrder] = useState<OrdKey>((router.query.sort as OrdKey) || 'commentscount');
-  const { posts, loading } = useGetCategoryPosts('all', '중식', order);
+  const { posts, loading } = useGetCategoryPosts('중식', order);
 
   const handleChange = (value: OrdKey) => {
     setOrder(value);

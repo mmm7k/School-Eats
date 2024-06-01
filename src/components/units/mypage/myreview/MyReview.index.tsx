@@ -4,9 +4,11 @@ import * as S from './MyReview.styles';
 import { useRecoilValue } from 'recoil';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import Image from 'next/image';
-import { userEmail } from '../../../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { useBackToPage } from '../../../../hooks/useBackToPage';
+import { useMoveToPage } from '../../../../hooks/useMoveToPage';
+import { Modal } from 'antd';
 
 interface Review {
   id: string;
@@ -21,6 +23,21 @@ export default function MyReview() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const { onClickBackToPage } = useBackToPage();
+  const { onClickMoveToPage } = useMoveToPage();
+
+  const login = useRecoilValue(isLoggedIn);
+  const alert = () => {
+    Modal.error({
+      title: '로그인이 필요합니다!',
+    });
+  };
+
+  useEffect(() => {
+    if (login === null) {
+      alert();
+      onClickMoveToPage('/login')();
+    }
+  }, []);
 
   const getReview = async () => {
     setLoading(true);

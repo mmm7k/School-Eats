@@ -22,7 +22,7 @@ type OrdKey = 'rate' | 'commentscount';
 export default function CafePlace(): JSX.Element {
   const router = useRouter();
   const [order, setOrder] = useState<OrdKey>((router.query.sort as OrdKey) || 'commentscount');
-  const { posts, loading } = useGetCategoryPosts('all', '카페', order);
+  const { posts, loading } = useGetCategoryPosts('카페', order);
 
   const handleChange = (value: OrdKey) => {
     setOrder(value);

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import * as S from './MyPage.styles';
 import { useRecoilValue } from 'recoil';
-import { KakaoLoggedIn, layoutEmail } from '../../../commons/globalstate/globalstate';
+import { KakaoLoggedIn, isLoggedIn, layoutEmail } from '../../../commons/globalstate/globalstate';
 import { useRouter } from 'next/router';
 import {
   CommentOutlined,
@@ -22,14 +22,31 @@ import { useMoveToPage } from '../../../hooks/useMoveToPage';
 import { useKakaoLogin } from '../../../services/login/useKakoLogin';
 import { useLogin } from '../../../services/login/useLogin';
 import { useBackToPage } from '../../../hooks/useBackToPage';
+import { useEffect } from 'react';
+import { Modal } from 'antd';
 
 export default function MyPage(): JSX.Element {
   const user = useRecoilValue(layoutEmail);
   const kakaoLogin = useRecoilValue(KakaoLoggedIn);
+
   const { kakaoLogout } = useKakaoLogin();
   const { onClickLogout } = useLogin();
   const { onClickMoveToPage } = useMoveToPage();
   const { onClickBackToPage } = useBackToPage();
+
+  const login = useRecoilValue(isLoggedIn);
+  const alert = () => {
+    Modal.error({
+      title: '로그인이 필요합니다!',
+    });
+  };
+
+  useEffect(() => {
+    if (login === null) {
+      alert();
+      onClickMoveToPage('/login')();
+    }
+  }, []);
 
   const logout = () => {
     if (kakaoLogin) {

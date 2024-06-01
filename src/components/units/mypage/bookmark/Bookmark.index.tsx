@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import * as S from './Bookmark.styles';
-import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import Image from 'next/image';
-import { userEmail } from '../../../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { useBackToPage } from '../../../../hooks/useBackToPage';
+import { Modal } from 'antd';
+import { useMoveToPage } from '../../../../hooks/useMoveToPage';
 
 interface Bookmark {
   id: string;
@@ -31,6 +32,21 @@ export default function Bookmark() {
   const [bookmarkplace, setBoomarkplace] = useState<Place[]>([]);
   const [loading, setLoading] = useState(true);
   const { onClickBackToPage } = useBackToPage();
+  const { onClickMoveToPage } = useMoveToPage();
+
+  const login = useRecoilValue(isLoggedIn);
+  const alert = () => {
+    Modal.error({
+      title: '로그인이 필요합니다!',
+    });
+  };
+
+  useEffect(() => {
+    if (login === null) {
+      alert();
+      onClickMoveToPage('/login')();
+    }
+  }, []);
 
   const getBookmark = async () => {
     setLoading(true);

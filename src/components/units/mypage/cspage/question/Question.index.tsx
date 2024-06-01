@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import * as S from '../CsPage.styles';
 import { useWritePost } from '../../../../../services/etc/useWritePost';
+import { useMoveToPage } from '../../../../../hooks/useMoveToPage';
+import { useRecoilValue } from 'recoil';
+import { isLoggedIn } from '../../../../../commons/globalstate/globalstate';
+import { Modal } from 'antd';
 
 export default function Question() {
   const { register, handleSubmit, errors, onSubmit } = useWritePost(
@@ -9,6 +13,23 @@ export default function Question() {
     '1:1 문의가 등록되었습니다.',
     '/mypage'
   );
+
+  const { onClickMoveToPage } = useMoveToPage();
+
+  const login = useRecoilValue(isLoggedIn);
+  const alert = () => {
+    Modal.error({
+      title: '로그인이 필요합니다!',
+    });
+  };
+
+  useEffect(() => {
+    if (login === null) {
+      alert();
+      onClickMoveToPage('/login')();
+    }
+  }, []);
+
   return (
     <>
       <S.TitleWrapper>

@@ -22,11 +22,7 @@ type OrdKey = 'rate' | 'commentscount';
 export default function Place(): JSX.Element {
   const router = useRouter();
   const [order, setOrder] = useState<OrdKey>((router.query.sort as OrdKey) || 'commentscount');
-  const { posts, loading } = useGetPosts('all', order);
-  // const { posts, loading } = useGetPosts('all', order);
-  // const handleChange = (value: OrdKey) => {
-  //   setOrder(value);
-  // };
+  const { posts, loading } = useGetPosts(order);
 
   const handleChange = (value: OrdKey) => {
     setOrder(value);

@@ -22,7 +22,7 @@ export default function Banner(): JSX.Element {
           <S.SliderImage>
             <Image
               src={
-                '/banner1.png' ||
+                '/banner1.webp' ||
                 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
               }
               alt={'배너'}
@@ -45,7 +45,7 @@ export default function Banner(): JSX.Element {
           <S.SliderImage>
             <Image
               src={
-                '/banner2.png' ||
+                '/banner2.webp' ||
                 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
               }
               alt={'배너'}
@@ -67,7 +67,7 @@ export default function Banner(): JSX.Element {
           <S.SliderImage>
             <Image
               src={
-                '/banner3.png' ||
+                '/banner3.webp' ||
                 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
               }
               alt={'배너'}

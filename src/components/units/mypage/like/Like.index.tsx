@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import * as S from './Like.styles';
-import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import {
   DocumentData,
@@ -14,10 +13,12 @@ import {
   where,
 } from 'firebase/firestore';
 import Image from 'next/image';
-import { userEmail } from '../../../../commons/globalstate/globalstate';
+import { isLoggedIn, userEmail } from '../../../../commons/globalstate/globalstate';
 import { db } from '../../../../../pages/_app';
 import { LikeOutlined, StarOutlined } from '@ant-design/icons';
 import { useBackToPage } from '../../../../hooks/useBackToPage';
+import { useMoveToPage } from '../../../../hooks/useMoveToPage';
+import { Modal } from 'antd';
 
 interface Like {
   id: string;
@@ -33,6 +34,20 @@ export default function Like() {
   const [likeBoard, setLikeBoard] = useState([]);
   const [loading, setLoading] = useState(true);
   const { onClickBackToPage } = useBackToPage();
+  const { onClickMoveToPage } = useMoveToPage();
+  const login = useRecoilValue(isLoggedIn);
+  const alert = () => {
+    Modal.error({
+      title: '로그인이 필요합니다!',
+    });
+  };
+
+  useEffect(() => {
+    if (login === null) {
+      alert();
+      onClickMoveToPage('/login')();
+    }
+  }, []);
 
   const formatDate = (date: any) => {
     const year = date.getFullYear().toString().slice(-2); // 뒤의 두 자리 숫자만 추출

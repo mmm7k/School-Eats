@@ -32,7 +32,7 @@ export const firebaseapp = initializeApp(firebaseConfig);
 export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
 export const storage = getStorage(firebaseapp);
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 
 declare global {
   interface Window {
@@ -132,7 +132,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <Global styles={globalStyles} />
         <Layout>
           <QueryClientProvider client={queryClient}>
-            <Component {...pageProps} />
+            <Hydrate state={pageProps.dehydratedState}>
+              <Component {...pageProps} />
+            </Hydrate>
           </QueryClientProvider>
         </Layout>
         <Analytics />
