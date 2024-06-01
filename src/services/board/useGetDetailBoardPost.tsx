@@ -20,7 +20,7 @@ const formatDate = (date: Date) => {
   return `${year}/${month}/${day} ${hours}:${minutes}`;
 };
 
-const fetchPost = async (postId: string): Promise<Post> => {
+export const fetchPost = async (postId: string): Promise<Post> => {
   const postRef = doc(db, 'board', postId);
   const postDoc = await getDoc(postRef);
   const postData = postDoc.data();

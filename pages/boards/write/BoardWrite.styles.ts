@@ -70,7 +70,6 @@ export const Input = styled.input`
   width: 100%;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  /* background-color: red; */
   height: 52px;
   margin-bottom: 3%;
   padding-left: 3%;

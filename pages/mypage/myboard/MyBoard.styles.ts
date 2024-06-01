@@ -43,7 +43,6 @@ export const Wrapper = styled.div`
   min-height: 430px;
 `;
 
-//
 export const Notice = styled.div`
   font-size: 16px;
   font-weight: 700;

@@ -33,7 +33,6 @@ export const SelectButton = styled.button`
   border-radius: 17px;
   border: none;
   color: white;
-  /* width: 56px; */
   min-width: 56px;
   height: 34px;
   background-color: #f6786f;

@@ -1,11 +1,5 @@
-// import Place from '../../src/components/units/place/Place.index';
-
-// export default function place() {
-//   return <Place />;
-// }
-
 import { useRouter } from 'next/router';
-import * as S from '../../src/components/units/place/Place.styles';
+import * as S from '../../src/styles/place/Place.styles';
 import { Select } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -11,7 +11,7 @@ interface Post {
 type OrdKey = 'rate' | 'commentscount';
 
 // 게시물을 불러오는 함수
-const fetchPosts = async (category: string, ord: OrdKey): Promise<Post[]> => {
+export const fetchPosts = async (category: string, ord: OrdKey): Promise<Post[]> => {
   const q = query(collection(db, 'all'), where('category', '==', category));
   const snapshot = await getDocs(q);
   const postsArray = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id } as Post));
