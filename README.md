@@ -140,13 +140,10 @@ $ yarn dev
 
 ### Development
 
-- JavaScript
-- React
 - Next.js 12
+- Typescript
 - recoil
 - react-query
 - emotion/styled
-- react-hook-form
-- yup
 
 ---
