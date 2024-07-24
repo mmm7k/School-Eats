@@ -113,11 +113,11 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 - 서버 사이드 렌더링(SSR)을 도입하여 문제를 해결했습니다. SSR을 통해 서버에서 초기 HTML을 생성하고, 클라이언트 측에서 최소한의 자바스크립트 작업만으로 페이지를 렌더링할 수 있도록 했습니다. 이를 통해 초기 페이지 로딩 시간이 대폭 단축되었습니다.
 
 ### 이전 코드와 비교
-![ssr 적용 전](https://github.com/user-attachments/assets/965ac0c9-259c-40d3-8f53-7d8b76e637da)
 
+<img src="https://github.com/user-attachments/assets/965ac0c9-259c-40d3-8f53-7d8b76e637da" width="40%" height="40%"/>
 - 이전 코드 (CSR): 클라이언트에서 모든 렌더링 작업이 이루어졌고, 페이지 로딩 시간은 평균 9.649초였습니다.
-![ssr 적용 후](https://github.com/user-attachments/assets/74ac6d88-f0ef-42d4-a21b-c7797a97de83)
 
+<img src="https://github.com/user-attachments/assets/74ac6d88-f0ef-42d4-a21b-c7797a97de83" width="40%" height="40%"/>
 - SSR 도입 후: 서버에서 HTML을 미리 렌더링해 클라이언트에 전달하여 로딩 시간을 2.319초로 줄였습니다.
 
 ### 배우게 된 점
