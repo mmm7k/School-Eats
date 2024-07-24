@@ -114,11 +114,13 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 ### 이전 코드와 비교
 
-<img src="https://github.com/user-attachments/assets/965ac0c9-259c-40d3-8f53-7d8b76e637da" width="40%" height="40%"/>
-- 이전 코드 (CSR): 클라이언트에서 모든 렌더링 작업이 이루어졌고, 페이지 로딩 시간은 평균 9.649초였습니다.
+<img src="https://github.com/user-attachments/assets/965ac0c9-259c-40d3-8f53-7d8b76e637da" width="55%" height="55%"/>
+<br/>
+- 이전 코드 (CSR): 클라이언트에서 모든 렌더링 작업이 이루어졌고, 페이지 로딩 시간은 평균 9.649초였습니다.<br/>
 
-<img src="https://github.com/user-attachments/assets/74ac6d88-f0ef-42d4-a21b-c7797a97de83" width="40%" height="40%"/>
-- SSR 도입 후: 서버에서 HTML을 미리 렌더링해 클라이언트에 전달하여 로딩 시간을 2.319초로 줄였습니다.
+<img src="https://github.com/user-attachments/assets/74ac6d88-f0ef-42d4-a21b-c7797a97de83" width="55%" height="55%"/>
+<br/>
+- SSR 도입 후: 서버에서 HTML을 미리 렌더링해 클라이언트에 전달하여 로딩 시간을 2.319초로 줄였습니다.<br/>
 
 ### 배우게 된 점
 SSR 도입을 통해 다수의 이미지와 데이터를 효율적으로 처리할 수 있음을 깨달았습니다. 이를 통해 사용자 경험이 크게 향상되었으며, SSR의 중요성을 다시 한번 확인할 수 있었습니다. 이러한 성능 최적화는 웹 애플리케이션의 전반적인 품질을 높이는 데 중요한 요소임을 배웠습니다.
