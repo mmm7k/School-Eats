@@ -16,6 +16,7 @@ import { getStorage } from 'firebase/storage';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
 import ReactGA from 'react-ga4';
+import NextNProgress from 'nextjs-progressbar';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -133,6 +134,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <Layout>
           <QueryClientProvider client={queryClient}>
             <Hydrate state={pageProps.dehydratedState}>
+              <NextNProgress
+                color="#f6786f" // 로딩 바의 색상을 설정합니다.
+                startPosition={0.3} // 로딩 바가 시작될 위치를 설정합니다 (0.3은 30%에서 시작).
+                stopDelayMs={200} // 로딩이 완료된 후 로딩 바가 사라지기 전까지 지연 시간을 설정합니다.
+                height={3} // 로딩 바의 높이를 설정합니다.
+                showOnShallow={true} // shallow routing에서도 progress bar를 보여줄지 여부를 설정합니다.
+              />
               <Component {...pageProps} />
             </Hydrate>
           </QueryClientProvider>
