@@ -118,7 +118,7 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 <br/>
 - 이전 코드 (CSR): 클라이언트에서 모든 렌더링 작업이 이루어졌고, 페이지 로딩 시간은 평균 9.649초였습니다.<br/>
 
-<img src="https://github.com/user-attachments/assets/ae7399ed-3e0c-40b1-aa24-4b757c5879c8" width="55%" height="55%"/>
+<img src="https://github.com/user-attachments/assets/ae7399ed-3e0c-40b1-aa24-4b757c5879c8" width="30%" height="30%"/>
 <br/>
 - SSR 도입 후: 서버에서 HTML을 미리 렌더링해 클라이언트에 전달하여 로딩 시간을 약 3.5초 감소시켰습니다.<br/>
 
