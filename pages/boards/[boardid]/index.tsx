@@ -73,7 +73,7 @@ export default function BoardDetail(): JSX.Element {
       cancelEditing();
     }
   };
-  ////
+
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   // 모달을 열고 닫는 함수
