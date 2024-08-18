@@ -274,6 +274,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       initialPosts,
     },
-    revalidate: 10, // 페이지가 10초마다 갱신됨
+    revalidate: 1, // 페이지가 1초마다 갱신됨
   };
 };

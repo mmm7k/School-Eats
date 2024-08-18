@@ -22,14 +22,14 @@ export const fetchPosts = async (ord: OrdKey): Promise<Post[]> => {
   return postsArray;
 };
 
-export const useGetPosts = (ord: OrdKey) => {
-  const {
-    data: posts,
-    isLoading: loading,
-    error,
-  } = useQuery(['posts', 'all', ord], () => fetchPosts(ord), {
-    keepPreviousData: true,
-  });
+// export const useGetPosts = (ord: OrdKey) => {
+//   const {
+//     data: posts,
+//     isLoading: loading,
+//     error,
+//   } = useQuery(['posts', 'all', ord], () => fetchPosts(ord), {
+//     keepPreviousData: true,
+//   });
 
-  return { posts: posts || [], loading, error };
-};
+//   return { posts: posts || [], loading, error };
+// };
