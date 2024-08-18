@@ -41,7 +41,7 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 - 맛집들을 한눈에 볼 수 있으며 필터 기능을 통해 리뷰많은순, 별점높은순으로 맛집들을 확인 할 수 있으며 <br/>
   카테고리를 통해 맛집들을 상세 분류 하였습니다.
-- 데이터를 캐싱하고, 효율적으로 재사용하기 위해 react-query를 사용하였습니다.
+- 빠른 로딩 속도와 최신 데이터를 제공하기 위해 ISR을 도입했습니다.
   <br/>[코드 바로가기](https://velog.io/@reactmonster/school-eats-%EB%A7%9B%EC%A7%91-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%ED%95%84%ED%84%B0)
 
 <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/b2bc1cf4-1d86-42fb-a20c-9e17b24562b0" width="25%" height="25%"/>
