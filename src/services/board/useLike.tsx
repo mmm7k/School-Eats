@@ -95,7 +95,13 @@ export const useLike = () => {
       await addLike();
     }
   };
+
   const updateLike = async (likeCount: number) => {
+    if (!postId) {
+      console.error('postId is undefined');
+      return; // postId가 undefined인 경우 함수를 종료
+    }
+
     const board = doc(db, 'board', postId);
     await updateDoc(board, {
       likecount: likeCount,

@@ -172,8 +172,12 @@ export const useComments = () => {
   }, [comments]);
 
   const updateRate = async (avgRating: number, commentCount: number) => {
-    const board = doc(db, 'all', postId);
+    if (!postId) {
+      console.error('postId is undefined');
+      return; // postId가 undefined인 경우 함수를 종료
+    }
 
+    const board = doc(db, 'all', postId);
     await updateDoc(board, {
       rate: avgRating,
       commentscount: commentCount,
