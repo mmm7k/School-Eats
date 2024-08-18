@@ -1,6 +1,6 @@
 # School Eats
 
-> **조선대학교 맛집 정보 및 공유 웹** <br/> **개발기간: 2024.01 ~ 2024.02** <br/> **1인 개발** <br/> **데이터베이스: 파이어베이스** <br/> **배포: Vercel**  <br/> **사용 기술 <br/> - Next.Js (ver.12) <br/> - Typescript <br/> - Recoil <br/> - react-query <br/> - emotion/styled**
+> **조선대학교 맛집 정보 및 공유 웹** <br/> **개발기간: 2024.01 ~ 2024.02** <br/> **1인 개발** <br/> **데이터베이스: 파이어베이스** <br/> **배포: Vercel**  <br/> **사용 기술 <br/> - Next.Js (ver.12) <br/> - Typescript <br/> - Recoil <br/> - react-query(v.3) <br/> - emotion/styled**
 
 ## 배포 주소
 
