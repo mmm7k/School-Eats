@@ -36,15 +36,15 @@ export default function LoginPage(): JSX.Element {
         &nbsp;&nbsp;&nbsp;&nbsp;또는 &nbsp;&nbsp;&nbsp;&nbsp;
         <hr style={{ width: '38%', height: '1px', backgroundColor: '#848484' }} />
       </S.Line>
-      <S.form onSubmit={handleSubmit}>
+      <S.Form onSubmit={handleSubmit}>
         <S.IdInput {...register('email')} type="email" placeholder="아이디" />
-        {errors.email && <S.error>{errors.email.message}</S.error>}
+        {errors.email && <S.Error>{errors.email.message}</S.Error>}
         <S.PwInput {...register('password')} type="password" placeholder="비밀번호" />
-        {errors.password && <S.error>{errors.password.message}</S.error>}
+        {errors.password && <S.Error>{errors.password.message}</S.Error>}
         <Checkbox onChange={onChange}>자동로그인</Checkbox>
 
         <S.LoginButton type="submit">로그인</S.LoginButton>
-      </S.form>
+      </S.Form>
       <Link href="/signup">
         <S.SignUpText>회원가입</S.SignUpText>
       </Link>
