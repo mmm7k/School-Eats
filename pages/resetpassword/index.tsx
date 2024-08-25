@@ -56,7 +56,7 @@ export default function ResetPassword(): JSX.Element {
       <S.form onSubmit={handleSubmit(onSubmit)}>
         <S.InputTitle>이메일</S.InputTitle>
         <S.Input {...register('email')} type="email" placeholder="이메일을 입력해주세요." />
-        {errors.email && <S.error>{errors.email.message}</S.error>}
+        {errors.email && <S.Error>{errors.email.message}</S.Error>}
         <S.SignupButton type="submit">비밀번호 재설정</S.SignupButton>
       </S.form>
     </S.Wrapper>
