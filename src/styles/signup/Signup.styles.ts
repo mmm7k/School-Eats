@@ -29,7 +29,7 @@ export const BackButton = styled.a`
 
 export const HomeButton = styled.a`
   background-image: url('/homebutton.svg');
-  background-repeat: no-repeat;
+  background-size: cover;
   height: 1.6875rem;
   width: 1.6875rem;
   cursor: pointer;
