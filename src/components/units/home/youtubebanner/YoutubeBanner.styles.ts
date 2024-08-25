@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 0 3%;
   iframe {
-    border-radius: 15px; // 보더 레디우스 값 설정
+    border-radius: 15px;
   }
-  margin: 10% 0;
+  margin-top: 3rem;
 `;

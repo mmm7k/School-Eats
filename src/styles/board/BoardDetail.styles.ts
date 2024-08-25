@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 export const HeaderWrapper = styled.div`
-  height: 64px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 3%;
   padding-right: 3%;
   width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
 `;
@@ -21,34 +21,35 @@ export const IconWrapper = styled.div`
 `;
 
 export const HeaderText = styled.span`
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   position: absolute;
   left: 42%;
 `;
+
 export const BackButton = styled.a`
   background-image: url('/backarrow.png');
   background-size: cover;
-  height: 26px;
-  width: 26px;
+  height: 1.625rem;
+  width: 1.625rem;
   cursor: pointer;
 `;
 
 export const SearchIcon = styled.div`
-  width: 31px;
-  height: 31px;
+  width: 1.9375rem;
+  height: 1.9375rem;
   background-image: url('/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
 
 export const TitleBookmarkIcon = styled.div`
-  width: 29px;
-  height: 29px;
+  width: 1.8125rem;
+  height: 1.8125rem;
   background-image: url('/bookmark.png');
   background-size: cover;
   margin-top: 3%;
-  margin-left: 7px;
+  margin-left: 0.4375rem;
   cursor: pointer;
 `;
 
@@ -56,9 +57,10 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 0 3%;
 `;
+
 export const Infor = styled.div`
   width: 100%;
-  height: 40px;
+  height: 2.5rem;
   margin-top: 5%;
   display: flex;
   align-items: center;
@@ -74,7 +76,7 @@ export const InforUser = styled.div`
 `;
 
 export const UserEmail = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   width: 100%;
   display: flex;
@@ -88,31 +90,32 @@ export const EditButton = styled.div`
   right: 2.5%;
   top: 0%;
 `;
+
 export const Timestamp = styled.span`
   color: #848484;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 `;
 
 export const ContentsWrapper = styled.div`
   padding: 3% 0;
-  min-height: 50px;
+  min-height: 3.125rem;
   max-width: 100%;
-  white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 필요에 따라 줄바꿈 */
-  overflow-wrap: break-word; /* 긴 단어가 요소의 너비를 넘어갈 때 줄바꿈 */
-  word-break: break-word; /* 긴 단어를 끊어서 줄바꿈 */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
   display: flex;
   flex-direction: column;
 `;
-0;
+
 export const ContentsTitle = styled.span`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
 export const Contents = styled.span`
   margin-top: 4%;
-  font-size: 13px;
+  font-size: 0.8125rem;
 `;
 
 export const LikeCommentCount = styled.div`
@@ -122,14 +125,14 @@ export const LikeCommentCount = styled.div`
 
 export const LikeCount = styled.div`
   color: #f6786f;
-  font-size: 15px;
+  font-size: 0.9375rem;
   display: flex;
   margin-right: 5%;
 `;
 
 export const CommentCount = styled.div`
   color: #2eccfa;
-  font-size: 15px;
+  font-size: 0.9375rem;
   display: flex;
 `;
 
@@ -140,11 +143,11 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const LikeButton = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
-  border-radius: 7px;
-  width: 85px;
-  height: 35px;
+  border-radius: 0.4375rem;
+  width: 5.3125rem;
+  height: 2.1875rem;
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
@@ -153,13 +156,14 @@ export const LikeButton = styled.div`
   color: #848484;
   cursor: pointer;
 `;
+
 export const ScrapButton = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
   border: none;
-  width: 80px;
-  height: 35px;
+  width: 5rem;
+  height: 2.1875rem;
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
@@ -169,17 +173,17 @@ export const ScrapButton = styled.div`
 `;
 
 export const CommentsTitle = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   margin-top: 5%;
 `;
 
 export const CommentsInput = styled.textarea`
-  min-height: 50px;
+  min-height: 3.125rem;
   height: auto;
   max-width: 100%;
   min-width: 100%;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   border: 1px solid #e7e7e7;
   padding-left: 3%;
   margin-top: 3%;
@@ -190,26 +194,27 @@ export const CommentsInput = styled.textarea`
   }
   ::placeholder {
     color: #bdbdbd;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 `;
 
 export const SubmitWrapper = styled.div`
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #bdbdbd;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 2%;
 `;
+
 export const SubmitButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
   color: white;
-  height: 35px;
-  border-radius: 10px;
-  width: 50px;
+  height: 2.1875rem;
+  border-radius: 0.625rem;
+  width: 3.125rem;
   border: none;
   background-color: #f6786f;
   margin-left: 3%;
@@ -221,17 +226,18 @@ export const CancelButton = styled.button`
   align-items: center;
   cursor: pointer;
   color: #f6786f;
-  height: 35px;
-  border-radius: 10px;
-  width: 50px;
+  height: 2.1875rem;
+  border-radius: 0.625rem;
+  width: 3.125rem;
   border: 1px solid #f6786f;
   background-color: white;
   margin-left: 3%;
   margin-bottom: 4%;
 `;
+
 export const CommentsWrapper = styled.div`
   width: 100%;
-  min-height: 85px;
+  min-height: 5.3125rem;
   border-bottom: 1px solid #e0e0e0;
   padding: 1.5% 0;
   display: flex;
@@ -240,7 +246,7 @@ export const CommentsWrapper = styled.div`
 `;
 
 export const CommentsUser = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   width: 100%;
   display: flex;
@@ -248,30 +254,30 @@ export const CommentsUser = styled.div`
 `;
 
 export const CommentsUserEmail = styled.div`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   width: 100%;
 `;
 
 export const Comments = styled.span`
-  font-size: 13px;
+  font-size: 0.8125rem;
   margin-left: 1%;
-  white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 필요에 따라 줄바꿈 */
-  overflow-wrap: break-word; /* 긴 단어가 요소의 너비를 넘어갈 때 줄바꿈 */
-  word-break: break-word; /* 긴 단어를 끊어서 줄바꿈 */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 `;
 
 export const CommentsTimestamp = styled.span`
   color: #848484;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 `;
 
 export const ImgWrapper = styled.div`
-  height: 160px;
-  width: 150px;
+  height: 10rem;
+  width: 9.375rem;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
   overflow: hidden;
   margin-top: 1%;
   position: relative;
@@ -282,7 +288,7 @@ export const ImgWrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* 마우스 오버 시 어둡게 처리 */
+    background: rgba(0, 0, 0, 0.2);
     z-index: 2;
   }
 `;
@@ -307,19 +313,19 @@ export const ImgModal = styled.div`
 `;
 
 export const StyledSkeleton = styled.div`
-  height: 400px; /* 세로 크기 조절 */
-  margin-left: 3%; /* 왼쪽 마진 추가 */
+  height: 25rem;
+  margin-left: 3%;
   margin-right: 3%;
   margin-top: 10%;
 `;
 
 export const CloseButton = styled.span`
   position: fixed;
-  top: 5px;
-  right: 20px;
+  top: 0.3125rem;
+  right: 1.25rem;
   border: none;
   cursor: pointer;
-  font-size: 27px;
+  font-size: 1.6875rem;
   font-weight: 400;
   color: white;
 `;

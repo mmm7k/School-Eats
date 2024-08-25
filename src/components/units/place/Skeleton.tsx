@@ -3,16 +3,16 @@ import { Skeleton } from 'antd';
 import React from 'react';
 
 const SkeletonItem = styled.div`
-  flex: 1 1 49%; // flex-basis를 49%로 설정하여 한 열에 두 개씩 나오도록 합니다.
-  max-width: 49%; // 최대 너비도 49%로 설정합니다.
+  flex: 1 1 49%;
+  max-width: 49%;
   border-radius: 10px;
   margin-top: 4%;
   overflow: hidden;
 `;
 
 const RectangleSkeleton = styled.div`
-  width: 230px;
-  height: 240px;
+  width: 14.375rem;
+  height: 15rem;
   background-color: #ececec;
   border-radius: 10px;
 `;

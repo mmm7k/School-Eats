@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-top: 5%;
   padding-left: 3%;
@@ -13,7 +13,7 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   margin-top: 2%;
   color: #8f8f8f;
@@ -30,33 +30,33 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SelectButton = styled.button`
-  border-radius: 17px;
+  border-radius: 1.0625rem;
   border: none;
   color: white;
-  min-width: 56px;
-  height: 34px;
+  min-width: 3.5rem;
+  height: 2.125rem;
   background-color: #f6786f;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-right: 1.5%;
   cursor: pointer;
-  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-  text-align: center; /* 텍스트 중앙 정렬 */
+  white-space: nowrap;
+  text-align: center;
 `;
 
 export const Button = styled.button`
-  border-radius: 17px;
+  border-radius: 1.0625rem;
   border: 1px solid #bdbdbd;
   color: #2f2f2f;
-  min-width: 56px;
-  height: 34px;
+  min-width: 3.5rem;
+  height: 2.125rem;
   background-color: white;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-right: 1.5%;
   cursor: pointer;
-  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-  text-align: center; /* 텍스트 중앙 정렬 */
+  white-space: nowrap;
+  text-align: center;
 `;
 
 export const Map = styled.div`
@@ -64,6 +64,6 @@ export const Map = styled.div`
   width: 97%;
   margin-top: 6%;
   margin-left: 1.5%;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   border: 1px solid #e6e6e6;
 `;

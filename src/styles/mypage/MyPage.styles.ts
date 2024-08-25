@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 export const TitleWrapper = styled.div`
-  height: 64px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 3%;
   padding-right: 3%;
   width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   position: relative;
 `;
 
@@ -20,35 +20,35 @@ export const IconWrapper = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   position: absolute;
   left: 40%;
 `;
+
 export const BackButton = styled.a`
   background-image: url('/backarrow.png');
   background-size: cover;
-  height: 26px;
-  width: 26px;
+  height: 1.625rem;
+  width: 1.625rem;
   cursor: pointer;
 `;
 
 export const SearchIcon = styled.div`
-  width: 31px;
-  height: 31px;
+  width: 1.9375rem;
+  height: 1.9375rem;
   background-image: url('/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
 
 export const TitleBookmarkIcon = styled.div`
-  width: 29px;
-  height: 29px;
+  width: 1.8125rem;
+  height: 1.8125rem;
   background-image: url('/bookmark.png');
   background-size: cover;
-  /* margin-bottom: 1px; */
   margin-top: 3%;
-  margin-left: 7px;
+  margin-left: 0.4375rem;
   cursor: pointer;
 `;
 
@@ -59,8 +59,8 @@ export const Wrapper = styled.div`
 export const UserWrapper = styled.div`
   margin-top: 8%;
   height: auto;
-  border: 2px solid #e6e6e6;
-  border-radius: 13px;
+  border: 0.125rem solid #e6e6e6;
+  border-radius: 0.8125rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,12 +72,14 @@ export const UserWrapper = styled.div`
 export const User = styled.div`
   width: 70%;
 `;
+
 export const UserEmail = styled.span`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
 `;
+
 export const Logout = styled.span`
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #848484;
   text-decoration: underline;
   cursor: pointer;
@@ -86,8 +88,8 @@ export const Logout = styled.span`
 export const ContentsWrapper = styled.div`
   margin-top: 4%;
   height: auto;
-  border: 2px solid #e6e6e6;
-  border-radius: 13px;
+  border: 0.125rem solid #e6e6e6;
+  border-radius: 0.8125rem;
   display: flex;
   flex-direction: column;
   margin-left: 3%;
@@ -99,15 +101,15 @@ export const Contents = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 3.75rem;
   cursor: pointer;
   &:hover {
     background-color: rgba(0, 0, 0, 0.03); // slightly darken on hover
   }
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); // 희미한 가로선 추가
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); // faint horizontal line
 
   &:last-child {
-    border-bottom: none; // 마지막 아이템에는 선을 표시하지 않음
+    border-bottom: none; // no line on the last item
   }
 `;
 
@@ -116,26 +118,28 @@ export const TextWrapper = styled.div`
   align-items: center;
   width: 50%;
 `;
+
 export const ContentsText = styled.span`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
 `;
+
 export const BookmarkIcon = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   background-image: url('/bookmark.png');
   background-size: cover;
   margin-right: 3%;
 `;
 
 export const ContentsTitle = styled.span`
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
 `;
 
 export const Divine = styled.div`
   background-color: #eaecf4;
-  height: 6px;
+  height: 0.375rem;
   width: 100%;
   margin-top: 6%;
 `;

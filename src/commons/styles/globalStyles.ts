@@ -14,9 +14,21 @@ export const globalStyles = css`
     font-weight: 400;
     font-family: 'Noto Sans KR', 'Pretendard-Regular', sans-serif;
   }
+
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
+  }
+
+  @media (max-width: 450px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 400px) {
+    html {
+      font-size: 13px;
+    }
   }
 `;

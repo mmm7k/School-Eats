@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 export const SearchWrapper = styled.div`
-  height: 64px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 3%;
   padding-right: 3%;
   width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   position: relative;
 `;
 
@@ -21,10 +21,10 @@ export const IconWrapper = styled.div`
 
 export const SearchDiv = styled.div`
   width: 100%;
-  height: 35px;
+  height: 2.1875rem;
   background-color: #e6e6e6;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   padding: 0 4%;
   margin-left: 3%;
   display: flex;
@@ -40,36 +40,38 @@ export const SearchInput = styled.input`
   margin-left: 2%;
   ::placeholder {
     color: #848484;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
   }
 `;
+
 export const BackButton = styled.a`
   background-image: url('/backarrow.png');
   background-size: cover;
-  height: 26px;
-  width: 26px;
+  height: 1.625rem;
+  width: 1.625rem;
   cursor: pointer;
 `;
 
-//검색결과
+// 검색결과
 
-export const Bookmarktitle = styled.div`
-  font-size: 14px;
+export const BookmarkTitle = styled.div`
+  font-size: 0.875rem;
   font-weight: 600;
   display: flex;
   align-items: center;
 `;
+
 export const BookmarkText = styled.span`
-  font-size: 13px;
+  font-size: 0.8125rem;
 `;
 
 export const BookmarkWrapper = styled.div`
   line-height: 1.5;
   margin-top: 4%;
   height: auto;
-  border: 2px solid #e6e6e6;
-  border-radius: 15px;
+  border: 0.125rem solid #e6e6e6;
+  border-radius: 0.9375rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,7 +85,7 @@ export const BookmarkWrapper = styled.div`
 `;
 
 export const RateWrapper = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1px;
 `;

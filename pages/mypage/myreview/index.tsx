@@ -74,7 +74,7 @@ export default function MyReview() {
             <>
               <Link href={`/place/${review.placeId}`}>
                 <S.BookmarkWrapper key={review.id}>
-                  <S.Bookmarktitle>
+                  <S.BookmarkTitle>
                     {review.placeId}&nbsp;&nbsp;&nbsp;
                     <S.RateWrapper>
                       <Image
@@ -90,7 +90,7 @@ export default function MyReview() {
                       />
                       {review.rating?.toFixed(1)}
                     </S.RateWrapper>
-                  </S.Bookmarktitle>
+                  </S.BookmarkTitle>
                   {review.text}
                   <S.BookmarkText></S.BookmarkText>
                 </S.BookmarkWrapper>

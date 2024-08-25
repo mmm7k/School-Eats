@@ -62,7 +62,7 @@ export default function BoardEdit() {
       <S.Wrapper>
         <S.Title>숨겨진 맛집을 공유해주세요!</S.Title>
         <S.SubTitle>여러분만의 맛집을 함께 나눠요!</S.SubTitle>
-        <S.form onSubmit={handleSubmit(onSubmit)}>
+        <S.Form onSubmit={handleSubmit(onSubmit)}>
           <S.InputTitle>제목</S.InputTitle>
           <S.Input {...register('title')} defaultValue={post?.title} placeholder="제목을 입력해주세요." />
           {errors.title && <p>{errors.title.message}</p>}
@@ -74,7 +74,7 @@ export default function BoardEdit() {
           <S.SubmitButton type="submit" disabled={isSubmitting}>
             등록하기
           </S.SubmitButton>
-        </S.form>
+        </S.Form>
       </S.Wrapper>
     </>
   );

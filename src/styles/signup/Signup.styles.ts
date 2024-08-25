@@ -9,10 +9,10 @@ export const Wrapper = styled.div`
   padding-left: 3%;
   padding-right: 3%;
 `;
+
 export const HomeButtonWrapper = styled.div`
   width: 100%;
-  height: 50px;
-
+  height: 3.125rem;
   margin-top: 3%;
   display: flex;
   justify-content: space-between;
@@ -22,28 +22,27 @@ export const HomeButtonWrapper = styled.div`
 export const BackButton = styled.a`
   background-image: url('/backarrow.png');
   background-size: cover;
-  height: 26px;
-  width: 26px;
+  height: 1.625rem;
+  width: 1.625rem;
   cursor: pointer;
 `;
 
 export const HomeButton = styled.a`
   background-image: url('/homebutton.svg');
-  /* background-size: cover; */
   background-repeat: no-repeat;
-  height: 27px;
-  width: 27px;
+  height: 1.6875rem;
+  width: 1.6875rem;
   cursor: pointer;
 `;
 
 export const Title = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
 `;
 
 export const Button = styled.div`
-  width: 50px; /* 버튼의 너비 */
-  height: 50px; /* 버튼의 높이 */
+  width: 3.125rem; /* 버튼의 너비 */
+  height: 3.125rem; /* 버튼의 높이 */
   border-radius: 50%; /* 동그란 모양을 만들기 위한 border-radius */
   background-color: #fee500; /* 버튼의 배경색 */
   color: gray; /* 버튼 내 텍스트 색상 */
@@ -52,7 +51,7 @@ export const Button = styled.div`
   display: flex; /* flexbox를 사용하여 */
   justify-content: center; /* 내용물 가운데 정렬 - 가로 */
   align-items: center; /* 내용물 가운데 정렬 - 세로 */
-  font-size: 20px; /* 글자 크기 */
+  font-size: 1.25rem; /* 글자 크기 */
   margin-top: 5%;
 `;
 
@@ -63,7 +62,7 @@ export const logo = styled.img`
 `;
 
 export const kakaoText = styled.div`
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-align: center;
   width: 100%;
@@ -73,8 +72,9 @@ export const kakaoText = styled.div`
 export const Line = styled.span`
   margin-top: 5%;
 `;
+
 export const InputTitle = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   width: 100%;
   margin-left: 2%;
@@ -84,12 +84,12 @@ export const InputTitle = styled.div`
 export const form = styled.form`
   width: 100%;
 `;
+
 export const Input = styled.input`
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   border: 1px solid #e6e6e6;
-  /* background-color: red; */
-  height: 52px;
+  height: 3.25rem;
   margin-bottom: 3%;
   padding-left: 3%;
   &:focus {
@@ -98,19 +98,19 @@ export const Input = styled.input`
   }
   ::placeholder {
     color: #bdbdbd;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 `;
 
 export const SignupButton = styled.button`
   width: 100%;
-  border-radius: 26px;
+  border-radius: 1.625rem;
   border: none;
   background-color: #f6786f;
-  height: 54px;
+  height: 3.375rem;
   margin-top: 3%;
   color: white;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -120,8 +120,8 @@ export const SignupButton = styled.button`
 
 export const CouponDiv = styled.div`
   width: 106.3%;
-  height: 55px;
-  font-size: 14px;
+  height: 3.4375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   margin-top: 1.5%;
   color: #424242;
@@ -132,17 +132,18 @@ export const CouponDiv = styled.div`
 `;
 
 export const CouponImg = styled.div`
-  font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 1px;
+  font-size: 0.75rem;
+  margin-right: 0.3125rem;
+  margin-bottom: 0.0625rem;
 `;
+
 export const ColorText = styled.span`
   color: #f6786f;
 `;
 
 export const LoginRouter = styled.span`
   margin-top: 12%;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #585858;
   display: flex;
   justify-content: center;
@@ -157,7 +158,7 @@ export const UnderLine = styled.a`
 `;
 
 export const error = styled.p`
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #a4a4a4;
   margin-left: 2%;
   margin-bottom: 2%;

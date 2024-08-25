@@ -34,7 +34,7 @@ export default function Search() {
       {searchResults.map((place) => (
         <Link href={`/place/${place.id}`}>
           <S.BookmarkWrapper key={place.id}>
-            <S.Bookmarktitle>
+            <S.BookmarkTitle>
               {place.title}&nbsp;&nbsp;&nbsp;
               <S.RateWrapper>
                 <Image
@@ -50,7 +50,7 @@ export default function Search() {
                 />
                 {place.rate?.toFixed(1)}({place.commentscount})
               </S.RateWrapper>
-            </S.Bookmarktitle>
+            </S.BookmarkTitle>
             <S.BookmarkText>
               {place.time}&nbsp;브레이크 타임:{place.breaktime}
               <br />
