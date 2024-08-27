@@ -15,7 +15,8 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/4f2c03a9-ff9d-47a1-8030-bda52e75174f" width="50%" height="40%"/>
 
 ## 아키텍처
-![image](https://github.com/user-attachments/assets/6b352f2b-a2c1-441b-b75c-89725762d8e6)
+![image](https://github.com/user-attachments/assets/591f7a60-61d4-4385-8b88-7bc9afbfe2e5)
+
 
 ## 주요 기능 📦
 
