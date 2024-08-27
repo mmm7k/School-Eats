@@ -109,7 +109,7 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 <br/>
 - SSR 도입 후: 서버에서 미리 렌더링된 HTML을 클라이언트로 전달하여 최종 렌더링 시간을 약 3.5초 줄일 수 있었습니다..<br/>
 
-<img src="https://github.com/user-attachments/assets/213be9c9-2850-477f-8dce-a25e9a407ce6" width="30%" height="30%"/>
+<img src="https://github.com/user-attachments/assets/4c11d31c-3f51-48f3-bc7a-77bbc5f5d693" width="30%" height="30%"/>
 <br/>
 - ISR 도입 후: 최종 렌더링시간은 1초로 단축되었고, 주기적인 데이터 갱신을 통해 최신 정보를 사용자에게 제공할 수 있었습니다. 이로 인해 성능 최적화와 사용자 경험이 크게 개선되었습니다..<br/>
 
