@@ -19,6 +19,7 @@ const schema = yup
 export default function ResetPassword(): JSX.Element {
   const router = useRouter();
 
+  // 유효성 검사 스키마 설정
   const {
     register,
     handleSubmit,
