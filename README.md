@@ -14,6 +14,9 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 
 <img src="https://github.com/computerkingminsu/School-Eats/assets/129649787/4f2c03a9-ff9d-47a1-8030-bda52e75174f" width="50%" height="40%"/>
 
+## 아키텍처
+![image](https://github.com/user-attachments/assets/6b352f2b-a2c1-441b-b75c-89725762d8e6)
+
 ## 주요 기능 📦
 
 ### ⭐️ SEARCH
@@ -98,7 +101,7 @@ School Eats는 매일 점심을 고민하는 대학생들을 위한 커뮤니티
 ### 해결 방법
 - 1차 해결: 서버 사이드 렌더링(SSR)을 도입하고, 이미지 파일을 WebP 형식으로 변경하며, Next.js의 Image 컴포넌트에서 Lazy Loading 기능을 활용했습니다. 이를 통해 서버에서 초기 HTML을 생성하여 클라이언트로 전달하고, 최소한의 자바스크립트 작업으로 페이지를 빠르게 렌더링할 수 있게 되었습니다. 이 접근법으로 최종 렌더링 시간이 약 3.5초 단축되었습니다.
 - 최종 해결: SSR 방식으로도 여전히 렌더링 속도가 충분히 빠르지 않다고 판단되어, Incremental Static Regeneration(ISR) 방식을 도입했습니다. 이를 통해 최종 렌더링 속도를 대폭 향상시키고, 최신 데이터 제공과 SEO 최적화의 이점을 동시에 누릴 수 있었습니다. 최종 렌더링을 약 1초로 단축시켰습니다.
-- 
+
 ### 이전 코드와 비교
 
 <img src="https://github.com/user-attachments/assets/ea83d92f-1fd2-43f5-898c-724b28551bf0" width="30%" height="30%"/>
