@@ -38,10 +38,7 @@ export default function Search() {
               {place.title}&nbsp;&nbsp;&nbsp;
               <S.RateWrapper>
                 <Image
-                  src={
-                    '/rate.png' ||
-                    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-                  }
+                  src={'/common/rate.png'}
                   alt={place.title}
                   width={11}
                   height={11}

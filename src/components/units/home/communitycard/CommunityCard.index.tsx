@@ -11,7 +11,7 @@ export default function CommunityCard() {
         <S.ImageWrapper>
           <Image
             src={
-              '/communitycard.png' ||
+              '/home/communitycard/communitycard.png' ||
               'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
             }
             alt={'커뮤니티 카드'}

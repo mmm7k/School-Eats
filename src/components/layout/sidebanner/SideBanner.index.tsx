@@ -4,7 +4,11 @@ import React, { useState, useEffect } from 'react';
 export default function SideBanner(): JSX.Element {
   const [currentGif, setCurrentGif] = useState(0);
   const [fade, setFade] = useState(true);
-  const gifImages = ['/sidegif2.webp', '/sidegif3.webp', '/sidegif1.webp'];
+  const gifImages = [
+    '/layout/sidebanner/sidegif2.webp',
+    '/layout/sidebanner/sidegif3.webp',
+    '/layout/sidebanner/sidegif1.webp',
+  ];
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false); // 페이드 아웃 시작

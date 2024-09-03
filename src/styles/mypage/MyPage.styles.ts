@@ -27,7 +27,7 @@ export const Title = styled.span`
 `;
 
 export const BackButton = styled.a`
-  background-image: url('/backarrow.png');
+  background-image: url('/common/backarrow.png');
   background-size: cover;
   height: 1.625rem;
   width: 1.625rem;
@@ -37,7 +37,7 @@ export const BackButton = styled.a`
 export const SearchIcon = styled.div`
   width: 1.9375rem;
   height: 1.9375rem;
-  background-image: url('/searchicon.png');
+  background-image: url('/common/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
@@ -45,7 +45,7 @@ export const SearchIcon = styled.div`
 export const TitleBookmarkIcon = styled.div`
   width: 1.8125rem;
   height: 1.8125rem;
-  background-image: url('/bookmark.png');
+  background-image: url('/common/bookmark.png');
   background-size: cover;
   margin-top: 3%;
   margin-left: 0.4375rem;
@@ -127,7 +127,7 @@ export const ContentsText = styled.span`
 export const BookmarkIcon = styled.div`
   width: 1.25rem;
   height: 1.25rem;
-  background-image: url('/bookmark.png');
+  background-image: url('/common/bookmark.png');
   background-size: cover;
   margin-right: 3%;
 `;

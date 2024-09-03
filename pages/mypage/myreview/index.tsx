@@ -79,7 +79,7 @@ export default function MyReview() {
                     <S.RateWrapper>
                       <Image
                         src={
-                          '/rate.png' ||
+                          '/common/rate.png' ||
                           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                         }
                         alt={`Rating: ${review.rating ? review.rating.toFixed(1) : 'Not rated'}`}

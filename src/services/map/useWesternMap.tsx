@@ -24,28 +24,28 @@ export default function useWesternMap(): JSX.Element {
 
           {
             name: '피렌체',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145592898249774, 126.92968267121469),
             route: '/place/피렌체',
           },
           {
             name: '헝그리브라더스',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14606589092191, 126.9293009228942),
             route: '/place/헝그리브라더스',
           },
           {
             name: '프랭크버거',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14575312478092, 126.93008856450622),
             route: '/place/프랭크버거',
           },
           {
             name: '노브랜드버거',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145176528117496, 126.93056641511407),
             route: '/place/노브랜드버거',

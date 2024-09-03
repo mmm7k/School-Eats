@@ -28,7 +28,7 @@ export default function LoginPage(): JSX.Element {
       <S.Title>만나서 반가워요!</S.Title>
 
       <S.KakaoButtonWrapper onClick={kakaoLogin}>
-        <S.KakaoLogo src="/kakao.png" />
+        <S.KakaoLogo src="/common/kakao.png" />
         카카오로 간편 로그인
       </S.KakaoButtonWrapper>
       <S.Line>

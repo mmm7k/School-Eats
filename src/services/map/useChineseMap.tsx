@@ -23,7 +23,7 @@ export default function useChineseMap(): JSX.Element {
           //중식
           {
             name: '백두산',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14359797325633, 126.92482585917169),
             route: '/place/백두산',
@@ -31,7 +31,7 @@ export default function useChineseMap(): JSX.Element {
 
           {
             name: '일품',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14556586537565, 126.92969641170197),
             route: '/place/일품',
@@ -39,7 +39,7 @@ export default function useChineseMap(): JSX.Element {
 
           {
             name: '옌타이',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14524404050269, 126.93040998190367),
             route: '/place/옌타이',
@@ -47,7 +47,7 @@ export default function useChineseMap(): JSX.Element {
 
           {
             name: '탕화쿵푸마라탕',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.144405108979605, 126.92926120797044),
             route: '/place/탕화쿵푸마라탕',
@@ -55,7 +55,7 @@ export default function useChineseMap(): JSX.Element {
 
           {
             name: '마라클럽',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14647573716354, 126.92883417725054),
             route: '/place/마라클럽',

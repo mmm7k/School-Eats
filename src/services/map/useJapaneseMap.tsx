@@ -24,28 +24,28 @@ export default function useJapaneseMap(): JSX.Element {
 
           {
             name: '소보쿠',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14720714131704, 126.92723133525503),
             route: '/place/소보쿠',
           },
           {
             name: '통큰돈까스',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14523238403192, 126.92973510658162),
             route: '/place/통큰돈까스',
           },
           {
             name: '돈까스틱',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14480684564143, 126.93034999876991),
             route: '/place/돈까스틱',
           },
           {
             name: '라멘티스트',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14516003902124, 126.92932914059989),
             route: '/place/라멘티스트',
@@ -53,7 +53,7 @@ export default function useJapaneseMap(): JSX.Element {
 
           {
             name: '교다이',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14502759073875, 126.93019617867957),
             route: '/place/교다이',

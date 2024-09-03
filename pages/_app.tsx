@@ -122,7 +122,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           content="https://firebasestorage.googleapis.com/v0/b/school-eats.appspot.com/o/metaimage.jpg?alt=media&token=4a5bbe21-8cc3-4468-adc8-52f937cd477f"
         ></meta>
         <meta property="og:description" content="대학생들의 점심 고민을 해결해줄 School Eats!"></meta>
-        <link rel="icon" href="/logo.png"></link>
+        <link rel="icon" href="/common/logo.png"></link>
         <link rel="manifest" href="/manifest.json" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"

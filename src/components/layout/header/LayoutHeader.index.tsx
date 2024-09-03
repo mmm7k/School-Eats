@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import * as S from './LayoutHeader.styles';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { isLoggedIn } from '../../../commons/globalstate/globalstate';
 import { useRouter } from 'next/router';
 import { Modal } from 'antd';

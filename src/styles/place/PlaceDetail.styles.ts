@@ -29,7 +29,7 @@ export const HeaderText = styled.span`
 `;
 
 export const BackButton = styled.a`
-  background-image: url('/backarrow.png');
+  background-image: url('/common/backarrow.png');
   background-size: cover;
   height: 1.625rem;
   width: 1.625rem;
@@ -39,7 +39,7 @@ export const BackButton = styled.a`
 export const SearchIcon = styled.div`
   width: 1.9375rem;
   height: 1.9375rem;
-  background-image: url('/searchicon.png');
+  background-image: url('/common/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
@@ -47,7 +47,7 @@ export const SearchIcon = styled.div`
 export const TitleBookmarkIcon = styled.div`
   width: 1.8125rem;
   height: 1.8125rem;
-  background-image: url('/bookmark.png');
+  background-image: url('/common/bookmark.png');
   background-size: cover;
   margin-top: 3%;
   margin-left: 0.4375rem;
@@ -177,14 +177,6 @@ export const ReviewInput = styled.textarea`
   }
 `;
 
-export const deleteIcon = styled.div`
-  background-image: url('/deleteicon.png');
-  width: 0.875rem;
-  height: 0.875rem;
-  background-size: cover;
-  margin-left: 0.625rem;
-`;
-
 export const ReviewWrapper = styled.div`
   margin-top: 4%;
   height: auto;
@@ -240,7 +232,7 @@ export const CancelButton = styled.button`
 export const BookmarkIcon = styled.div`
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url('/bookmark.png');
+  background-image: url('/common/bookmark.png');
   background-size: cover;
   margin-left: 10%;
   cursor: pointer;
@@ -250,7 +242,7 @@ export const BookmarkIcon = styled.div`
 export const ColorBookmarkIcon = styled.div`
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url('/colorbookmark.png');
+  background-image: url('/common/colorbookmark.png');
   background-size: cover;
   margin-left: 10%;
   cursor: pointer;

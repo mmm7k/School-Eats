@@ -1,9 +1,9 @@
 import * as S from './Navbar.styles';
-import HomeButton from '../../../../public/homebutton.svg';
-import PlaceButton from '../../../../public/placebutton.svg';
-import BoardButton from '../../../../public/boardbutton.svg';
-import MypageButton from '../../../../public/mypagebutton.svg';
-import MapButton from '../../../../public/mapbutton.svg';
+import HomeButton from '../../../../public/common/homebutton.svg';
+import PlaceButton from '../../../../public/layout/navbar/placebutton.svg';
+import BoardButton from '../../../../public/layout/navbar/boardbutton.svg';
+import MypageButton from '../../../../public/layout/navbar/mypagebutton.svg';
+import MapButton from '../../../../public/layout/navbar/mapbutton.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';

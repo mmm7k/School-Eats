@@ -19,7 +19,7 @@ export const HomeButtonWrapper = styled.div`
 `;
 
 export const BackButton = styled.a`
-  background-image: url('/backarrow.png');
+  background-image: url('/common/backarrow.png');
   background-size: cover;
   height: 1.625rem;
   width: 1.625rem;
@@ -27,7 +27,7 @@ export const BackButton = styled.a`
 `;
 
 export const HomeButton = styled.a`
-  background-image: url('/homebutton.svg');
+  background-image: url('/common/homebutton.svg');
   background-size: cover;
   height: 1.6875rem;
   width: 1.6875rem;

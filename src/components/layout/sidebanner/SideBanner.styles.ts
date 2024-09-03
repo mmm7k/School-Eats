@@ -33,7 +33,7 @@ export const Title = styled.div`
 export const Image = styled.div`
   height: 182px;
   width: 270px;
-  background-image: url('/sidebannerimage.png');
+  background-image: url('/layout/sidebanner/sidebannerimage.png');
   background-size: cover;
   border-radius: 18px;
 `;

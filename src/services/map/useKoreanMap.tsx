@@ -24,28 +24,28 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '고기오닭갈비',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14449078311788, 126.92933794935098),
             route: '/place/고기오닭갈비',
           },
           {
             name: '길목식당',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14515740629279, 126.92868169258986),
             route: '/place/길목식당',
           },
           {
             name: '무진장떡볶이',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14441879083262, 126.9295382804047),
             route: '/place/무진장떡볶이',
           },
           {
             name: '보해식당',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14555366799371, 126.9281107099927),
             route: '/place/보해식당',
@@ -53,14 +53,14 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '마당쇠',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145157288258524, 126.92848142205447),
             route: '/place/마당쇠',
           },
           {
             name: '벼락',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.144790779038544, 126.9298424795479),
             route: '/place/벼락',
@@ -68,7 +68,7 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '돈웅',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14440312056813, 126.92971661543767),
             route: '/place/돈웅',
@@ -76,7 +76,7 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '옴서감서',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14441011875619, 126.93012812067502),
             route: '/place/옴서감서',
@@ -84,7 +84,7 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '송죽',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14463504728581, 126.92941738372326),
             route: '/place/송죽',
@@ -92,7 +92,7 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '동궁찜닭',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.145482896482356, 126.93040154825137),
             route: '/place/동궁찜닭',
@@ -100,7 +100,7 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '이조감자탕',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14507882521611, 126.9291728352491),
             route: '/place/이조감자탕',
@@ -108,14 +108,14 @@ export default function useKoreanMap(): JSX.Element {
 
           {
             name: '밤실골국밥',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148201575336635, 126.93229776026321),
             route: '/place/밤실골국밥',
           },
           {
             name: '박대감집',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14534900362218, 126.9287802892827),
             route: '/place/박대감집',

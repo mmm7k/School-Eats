@@ -21,10 +21,7 @@ export default function Banner(): JSX.Element {
         <Link href="/guide">
           <S.SliderImage>
             <Image
-              src={
-                '/banner1.webp' ||
-                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-              }
+              src={'/home/banner/banner1.webp'}
               alt={'배너'}
               layout="fill"
               placeholder="blur"
@@ -42,10 +39,7 @@ export default function Banner(): JSX.Element {
         <Link href="/feedback">
           <S.SliderImage>
             <Image
-              src={
-                '/banner2.webp' ||
-                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-              }
+              src={'/home/banner/banner2.webp'}
               alt={'배너'}
               layout="fill"
               placeholder="blur"
@@ -62,10 +56,7 @@ export default function Banner(): JSX.Element {
         <Link href="/request">
           <S.SliderImage>
             <Image
-              src={
-                '/banner3.webp' ||
-                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
-              }
+              src={'/home/banner/banner3.webp'}
               alt={'배너'}
               layout="fill"
               placeholder="blur"

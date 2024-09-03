@@ -22,7 +22,7 @@ export const Logo = styled.div`
 export const LogoImage = styled.div`
   width: 3.125rem;
   height: 3.125rem;
-  background-image: url('/logo.png');
+  background-image: url('/common/logo.png');
   background-size: cover;
 `;
 
@@ -41,7 +41,7 @@ export const IconWrapper = styled.div`
 export const SearchIcon = styled.div`
   width: 1.9375rem;
   height: 1.9375rem;
-  background-image: url('/searchicon.png');
+  background-image: url('/common/searchicon.png');
   background-size: cover;
   cursor: pointer;
 `;
@@ -49,7 +49,7 @@ export const SearchIcon = styled.div`
 export const BookmarkIcon = styled.div`
   width: 1.8125rem;
   height: 1.8125rem;
-  background-image: url('/bookmark.png');
+  background-image: url('/common/bookmark.png');
   background-size: cover;
   margin-top: 3%;
   margin-left: 0.4375rem;

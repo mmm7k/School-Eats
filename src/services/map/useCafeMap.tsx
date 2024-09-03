@@ -23,35 +23,35 @@ export default function useCafeMap(): JSX.Element {
           //카페~
           {
             name: '소맥베이커리',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14512088091175, 126.92067364615829),
             route: '/place/소맥베이커리',
           },
           {
             name: '솔티드머랭',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.148196020756, 126.9266268771945),
             route: '/place/솔티드머랭',
           },
           {
             name: '스타벅스',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14459266339337, 126.93016088563874),
             route: '/place/스타벅스',
           },
           {
             name: '코로로9',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.147688364546944, 126.92557656534944),
             route: '/place/코코로9',
           },
           {
             name: '플로리다',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14926498612606, 126.9243487535859),
             route: '/place/플로리다',
@@ -59,7 +59,7 @@ export default function useCafeMap(): JSX.Element {
 
           {
             name: '사보르커피',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14501647357641, 126.9304568138993),
             route: '/place/사보르커피',
@@ -67,7 +67,7 @@ export default function useCafeMap(): JSX.Element {
 
           {
             name: '카페도심',
-            imageSrc: '/logo.png',
+            imageSrc: '/common/logo.png',
             //@ts-ignore
             position: new kakao.maps.LatLng(35.14576697464869, 126.93066193452695),
             route: '/place/카페도심',

@@ -24,7 +24,7 @@ export default function SignupPage(): JSX.Element {
       </S.CouponDiv>
       <S.kakaoText>간편 회원가입</S.kakaoText>
       <S.Button onClick={kakaoLogin}>
-        <S.logo src="/kakao.png" />
+        <S.logo src="/common/kakao.png" />
       </S.Button>
       <>
         <hr style={{ margin: '8%', width: '100%', height: '1px', backgroundColor: '#E6E6E6' }} />

@@ -14,7 +14,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/all.png' ||
+                    '/home/mapbutton/all.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'전체'}
@@ -32,7 +32,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/rice.png' ||
+                    '/home/mapbutton/rice.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'한식'}
@@ -50,7 +50,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/dumpling.png' ||
+                    '/home/mapbutton/dumpling.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'중식'}
@@ -68,7 +68,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/sushi.png' ||
+                    '/home/mapbutton/sushi.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'일식'}
@@ -86,7 +86,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/pizza.png' ||
+                    '/home/mapbutton/pizza.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'양식'}
@@ -104,7 +104,7 @@ export default function MapButton() {
               <S.ImageWrapper>
                 <Image
                   src={
-                    '/coffee.png' ||
+                    '/home/mapbutton/coffee.png' ||
                     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                   }
                   alt={'카페'}

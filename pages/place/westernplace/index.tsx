@@ -101,7 +101,7 @@ export default function WesternPlace({ initialPosts }: { initialPosts: Post[] })
                   <S.RateWrapper>
                     <Image
                       src={
-                        '/rate.png' ||
+                        '/common/rate.png' ||
                         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
                       }
                       alt={post.title}
