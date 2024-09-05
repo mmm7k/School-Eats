@@ -4,7 +4,7 @@ import { Select } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import SkeletonPlace from '../../../src/components/units/place/Skeleton';
+import SkeletonPlace from '../../../src/components/place/Skeleton';
 import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient } from 'react-query';
 import { fetchPosts } from '../../../src/services/place/useGetCategoryPosts';

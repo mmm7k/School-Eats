@@ -1,7 +1,7 @@
 import { Global } from '@emotion/react';
 import { globalStyles } from '../src/commons/styles/globalStyles';
 import { AppProps } from 'next/app';
-import Layout from '../src/components/layout';
+
 import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
 import { RecoilRoot } from 'recoil';
@@ -34,6 +34,7 @@ export const authInstance = getAuth();
 export const db = getFirestore(firebaseapp);
 export const storage = getStorage(firebaseapp);
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import Layout from '../src/layout';
 
 declare global {
   interface Window {

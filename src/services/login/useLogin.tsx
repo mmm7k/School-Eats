@@ -39,7 +39,7 @@ export const useLogin = () => {
         setLayoutEmail(userCredential.user.email?.split('@')[0]);
         setLoggedin(true);
         if (!autologin) {
-          // 자동로그인이 활성화된 경우만 세션 만료 시간 설정
+          // 자동로그인이 활성화되지 않은 경우만 세션 만료 시간 설정
           const now = new Date();
           const sessionExpiry = now.getTime() + 3600000;
 
