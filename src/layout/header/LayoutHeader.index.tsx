@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import * as S from './LayoutHeader.styles';
 import { useRecoilState } from 'recoil';
-import { isLoggedIn } from '../../../commons/globalstate/globalstate';
 import { useRouter } from 'next/router';
 import { Modal } from 'antd';
+import { isLoggedIn } from '../../commons/globalstate/globalstate';
 
 export default function LayoutHeader(): JSX.Element {
   const [login] = useRecoilState(isLoggedIn);
