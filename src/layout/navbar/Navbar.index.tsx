@@ -7,7 +7,7 @@ import MapButton from '../../../../public/layout/navbar/mapbutton.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
-import { isLoggedIn } from '../../../commons/globalstate/globalstate';
+import { isLoggedIn } from '../../commons/globalstate/globalstate';
 
 export default function Navbar(): JSX.Element {
   const router = useRouter();
